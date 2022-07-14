@@ -1,0 +1,34 @@
+import React from 'react';
+import { Layout } from 'antd';
+import AppHeader from '../../components/Header/Header';
+import { Content, Footer } from 'antd/lib/layout/layout';
+import AppContent from '../../components/List/Content';
+import AppFooter from '../../components/Footer/Footer';
+import { Routes, Route } from 'react-router-dom';
+import CartPage from './CartPage';
+import AppLogin from '../../pages/Login/Login';
+import AppRegister from '../../pages/Register/Register';
+
+
+const { Header } = Layout;
+
+export default function HomePage() {
+    return (
+        <Layout className='mainLayout'>
+            <Header>
+                <AppHeader />
+            </Header>
+            <Content>
+                <Routes>
+                    <Route path='/' element={<AppContent />} />
+                    <Route path='/cart' element={<CartPage />} />
+                    <Route path='/login' element={<AppLogin />} />
+                    <Route path='/register' element={<AppRegister />} />
+                </Routes>
+            </Content>
+            <Footer>
+                <AppFooter />
+            </Footer>
+        </Layout>
+    )
+}

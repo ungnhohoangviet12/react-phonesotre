@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "name": "Iphone pro mã",
+      "information": "4GB",
+      "price": "1000000",
+      "evaluate": "5 sao",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/246195/TimerThumb/samsung-galaxy-a73.jpg",
+      "id": 1
+    },
+    {
+      "name": "Ipad",
+      "information": "4gb",
+      "price": "1000",
+      "evaluate": "4  sao",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/246195/TimerThumb/samsung-galaxy-a73.jpg",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "First Name": "ung",
+      "Last Name": "viet",
+      "Phone": "0393334473",
+      "Password": "hennho",
+      "Confirm Password": "fas",
+      "Birth Day": "fsda",
+      "Sex": "fasd",
+      "Address": "fsafas",
+      "District": "fasdfsa",
+      "City": "fsafsa",
+      "id": "L1v4HwD"
+    }
+  ]
+}
