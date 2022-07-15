@@ -53,7 +53,7 @@ export default function AppLogin() {
                 </Form.Item>
                 <Form.Item
                 >
-                    <Button type="primary" size='large' block htmlType="submit">
+                    <Button type="primary" block htmlType="submit">
                         Submit
                     </Button>
                 </Form.Item>
