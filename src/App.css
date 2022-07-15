@@ -14,24 +14,16 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 15px;
+  background-color: yellow;
 }
 
 
-.mainLayout .ant-layout-header {
-  background: gray;
-  padding: 0;
-  height: 80px;
-  line-height: 1.6;
-}
 
 p {
   font-size: 16px;
   line-height: 1.6;
 }
 
-.bgGray {
-  background: #fafafa;
-}
 
 /* 
 title holder
@@ -53,11 +45,6 @@ title holder
   left: 50%;
   height: 3px;
   width: 50px;
-}
-
-.titleHolder h2 {
-  font-size: 28px;
-  margin: 0;
 }
 
 /* 
@@ -477,34 +464,6 @@ i {
 }
 
 
-.item-price {
-  color: red;
-  font-weight: bold;
-  margin: 0;
-
-}
-
-.item-space {
-    color: gray;
-    font-weight: 500;
-    margin: 0;
-}
-
-.item-user {
-  margin: 0;
-  font-size: 12px;
-
-}
-
-.item-backup {
-  margin: 0;
-  font-size: 12px;
-}
-
-.item-access {
-  margin: 0;
-  font-size: 12px;
-}
 
 .title-header  {
     color: white;
@@ -522,22 +481,13 @@ i {
   font-size: 1.5em;
 }
 
-main {
-  background-color:  #ccffcc;
-}
-
 .sibar {
   height: 50px;
   background-color: black;
 }
 
-.ant-input-search-button {
-  background-color: rgb(48, 20, 20)  !important;
-  border: 1px solid rgb(48, 20, 20)  !important;
-}
-
-
 .h-700 {
   height: 700px;
 }
+
 

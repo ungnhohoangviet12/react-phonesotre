@@ -8,7 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 import CartPage from './CartPage';
 import AppLogin from '../../pages/Login/Login';
 import AppRegister from '../../pages/Register/Register';
-
+import './cartpage.scss'
 
 const { Header } = Layout;
 

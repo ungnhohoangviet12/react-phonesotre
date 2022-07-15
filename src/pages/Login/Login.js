@@ -1,5 +1,6 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import React from 'react';
+import './login.scss';
 
 export default function AppLogin() {
     const onFinish = (values) => {
@@ -10,14 +11,11 @@ export default function AppLogin() {
         console.log('Failed:', errorInfo);
     };
     return (
-        <div className='container-fluid h-700 content'>
+        <div className='container-login'>
             <Form
                 name="basic"
-                labelCol={{
-                    span: 8,
-                }}
                 wrapperCol={{
-                    span: 16,
+                    span: 24,
                 }}
                 initialValues={{
                     remember: true,
@@ -26,8 +24,8 @@ export default function AppLogin() {
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
+                <h1>Login</h1>
                 <Form.Item
-                    label="Username"
                     name="username"
                     rules={[
                         {
@@ -36,11 +34,10 @@ export default function AppLogin() {
                         },
                     ]}
                 >
-                    <Input />
-                </Form.Item>
+                    <Input placeholder='Tên đăng nhập' />
+                </Form.Item >
 
                 <Form.Item
-                    label="Password"
                     name="password"
                     rules={[
                         {
@@ -49,27 +46,14 @@ export default function AppLogin() {
                         },
                     ]}
                 >
-                    <Input.Password />
+                    <Input.Password placeholder='mật khẩu' />
                 </Form.Item>
-
-                <Form.Item
-                    name="remember"
-                    valuePropName="checked"
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                    }}
-                >
+                <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 2, span: 16 }}>
                     <Checkbox>Remember me</Checkbox>
                 </Form.Item>
-
                 <Form.Item
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                    }}
                 >
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" size='large' block htmlType="submit">
                         Submit
                     </Button>
                 </Form.Item>

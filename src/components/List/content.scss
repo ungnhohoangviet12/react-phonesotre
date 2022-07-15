@@ -1,0 +1,29 @@
+.advertisement {
+    background-color: #F59400;
+   
+}
+.item-name {
+    color: #007185;
+    font-weight: 500;
+    margin: 0;
+    font-family:  "Amazon Ember",Arial,sans-serif;
+    &:hover{
+        color: red;
+    }
+}
+.item-price {
+    color: black;
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.item-information {
+    margin: 0;
+    color: black;
+}
+
+.item-evaluate {
+    margin: 0;
+    color: black;
+}

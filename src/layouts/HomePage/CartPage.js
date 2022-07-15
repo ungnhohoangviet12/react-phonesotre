@@ -89,9 +89,9 @@ export default function CartPage() {
     return (
         <div>
             <div className='content' style={{ height: '100px', width: '100%' }}>
-                <h1 style={{ marginLeft: '100px', color: 'red', fontSize: '2em', fontStyle: 'italic' }}>Giỏ hàng</h1>
+                <h1 style={{ marginLeft: '100px', color: 'red', fontSize: '2em', fontStyle: 'italic' }}>Shopping Cart</h1>
             </div>
-            <div className='container-fluid '>
+            <div className='container-cart '>
                 <List
                     grid={{
                         gutter: 16,

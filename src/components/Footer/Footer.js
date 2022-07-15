@@ -3,7 +3,7 @@ import { BackTop } from 'antd';
 
 export default function AppFooter() {
     return (
-        <div className='container-fluid'>
+        <div className='container-footer'>
             <div className="footer">
                 <div className="logo">
                     <i className="fas fa-bolt"></i>

@@ -2,7 +2,7 @@ import { Button, Card, List, Menu, Pagination } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllTasks } from '../../apis/ProductApi';
-// import axios from 'axios';
+import './content.scss';
 
 
 export default function AppContent() {
@@ -32,7 +32,7 @@ export default function AppContent() {
 
     return (
         <div className="container-fluid content">
-            <div style={{ backgroundColor: 'gray' }}>
+            <div className='advertisement'>
                 <img src="https://images.fpt.shop/unsafe/fit-in/filters:quality(80):fill(transparent)/fptshop.com.vn/Uploads/Originals/2022/7/8/637928720848483199_des-top-head-banner.png" alt="" />
             </div>
             <Menu
@@ -65,10 +65,11 @@ export default function AppContent() {
                             style={{ width: 220 }}
                             cover={<img alt="example" src={item.image} />}
                         >
-                            <p className='item-price'>{item.name}</p>
-                            <p className='item-space'>{item.information}</p>
-                            <p className='item-backup'>{item.evaluate}</p>
-                            <Button type='primary' ><i className='fab fa-telegram-plane'></i>Xem chi tiết</Button>
+                            <p className='item-name'>{item.name}</p>
+                            <p className='item-information'>{item.information}</p>
+                            <p className='item-evaluate'>{item.evaluate}</p>
+                            <p className='item-price'>{item.price}</p>
+                            <Button type='primary' >Xem chi tiết</Button>
                         </Card>
                     </List.Item>
 
@@ -94,10 +95,12 @@ export default function AppContent() {
                             style={{ width: 220 }}
                             cover={<img alt="example" src={item.image} />}
                         >
-                            <p className='item-price'>{item.name}</p>
-                            <p className='item-space'>{item.information}</p>
-                            <p className='item-user'>{item.evaluate}</p>
-                            <Button type='primary' ><i className='fab fa-telegram-plane'></i>Xem chi tiết</Button>
+                            <p className='item-name'>{item.name}</p>
+                            <p className='item-information'>{item.information}</p>
+                            <p className='item-evaluate'>{item.evaluate}</p>
+                            <p className='item-price'>{item.price}</p>
+
+                            <Button type='primary' >Xem chi tiết</Button>
                         </Card>
                     </List.Item>
                 )}

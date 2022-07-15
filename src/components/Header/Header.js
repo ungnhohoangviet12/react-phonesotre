@@ -1,11 +1,15 @@
 import { Menu, Input } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './header.scss'
+
+
 const { Search } = Input;
+
 
 export default function AppHeader() {
     return (
-        <div className='container-fluid'>
+        <div>
             <div className="header">
                 <div className="logo" >
                     <h3 className='title-header'>Shop store</h3>
