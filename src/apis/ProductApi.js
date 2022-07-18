@@ -1,31 +1,27 @@
+import axiosClient from '../untils/axiosClient';
 
-import axiosClient from "../untils/axiosClient"
+export const getProducts = async (params) => {
+    const res = await axiosClient.get('products', {
+        params: params,
+    });
+    return res;
+};
 
-export const getAllTasks = async () => {
-    const { data } = await axiosClient.get('products', {
-        params: {
-            _sort: 'id',
-            _order: 'desc',
-        }
-    })
-    return data
-}
+export const getProductById = async (id) => {
+    const { data } = await axiosClient.get(`products/${id}`);
+    return data;
+};
 
-export const deleteTaksById = async (id) => {
-    await axiosClient.delete(`products/${id}`)
-}
+export const deleteProductById = (id) => {
+    return axiosClient.delete(`products/${id}`);
+};
 
-export const createNewTask = async (body) => {
-    await axiosClient.post('products', { ...body })
-}
+export const createProduct = async (product) => {
+    const res = await axiosClient.post('products', { ...product });
+    return res;
+};
 
-export const updateTaskById = async (id, body) => {
-    await axiosClient.put(`products/${id}`, {
-        ...body
-    })
-}
-
-export const getTaskById = async id => {
-    const { data } = await axiosClient.get(`products/${id}`)
-    return data
-}
+export const updateProduct = async (id, product) => {
+    const res = await axiosClient.put(`products/${id}`, { ...product });
+    return res;
+};

@@ -1,7 +1,7 @@
 import { Button, Card, List, Menu, Pagination } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllTasks } from '../../apis/ProductApi';
+import { getProducts } from '../../apis/ProductApi';
 import './content.scss';
 
 
@@ -17,9 +17,9 @@ export default function AppContent() {
 
     const handleGetAllTask = async () => {
         try {
-            const data = await getAllTasks()
+            const data = await getProducts()
             console.log(data);
-            data && setDatas(data)
+            data && setDatas(data.data)
         } catch (error) {
             console.log(error);
         }
@@ -32,6 +32,7 @@ export default function AppContent() {
 
     return (
         <div className="container-fluid content">
+
             <div className='advertisement'>
                 <img src="https://images.fpt.shop/unsafe/fit-in/filters:quality(80):fill(transparent)/fptshop.com.vn/Uploads/Originals/2022/7/8/637928720848483199_des-top-head-banner.png" alt="" />
             </div>
@@ -66,8 +67,6 @@ export default function AppContent() {
                             cover={<img alt="example" src={item.image} />}
                         >
                             <p className='item-name'>{item.name}</p>
-                            <p className='item-information'>{item.information}</p>
-                            <p className='item-evaluate'>{item.evaluate}</p>
                             <p className='item-price'>{item.price}</p>
                             <Button type='primary' >Xem chi tiết</Button>
                         </Card>

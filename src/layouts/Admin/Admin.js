@@ -1,0 +1,77 @@
+import {
+    HomeOutlined,
+    UploadOutlined,
+    UserOutlined,
+} from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
+import './admin.scss'
+import DashBoard from './DashBoard/DashBoard';
+import ListOrders from './Orders/ListOrders';
+import ListProduct from './Products/ListProduct';
+import ListUsers from './Users/ListUsers';
+const { Sider, Content } = Layout;
+export default function Admin() {
+    return (
+        <Layout>
+            <Sider trigger={null} >
+                <div className="logo" />
+                <Menu
+                    theme="dark"
+                    mode="inline"
+                    defaultSelectedKeys={['1']}
+                    items={[
+                        {
+                            key: '1',
+                            icon: <HomeOutlined />,
+                            label: (
+                                <Link to='/admin/dashboard' >Dashboard</Link>
+                            ),
+
+                        },
+                        {
+                            key: '2',
+                            icon: <UserOutlined />,
+                            label: (
+                                <Link to='/admin/Products' >Products</Link>
+                            ),
+                        },
+                        {
+                            key: '3',
+                            icon: <UserOutlined />,
+                            label: (
+                                <Link to='/admin/users' >Users</Link>
+                            ),
+                        },
+                        {
+                            key: '4',
+                            icon: <UploadOutlined />,
+                            label: (
+                                <Link to='/admin/orders' >Orders</Link>
+                            ),
+
+                        },
+                    ]}
+                />
+            </Sider>
+            <Layout className="site-layout">
+                <Content
+                    className="site-layout-background"
+                    style={{
+                        margin: '24px 16px',
+                        padding: 24,
+                        minHeight: 280,
+                    }}
+                >
+                    <Routes>
+                        <Route path='products' element={<ListProduct />} />
+                        <Route path='users' element={<ListUsers />} />
+                        <Route path='orders' element={<ListOrders />} />
+                        <Route path='dashboard' element={<DashBoard />} />
+                    </Routes>
+                    <Outlet />
+                </Content>
+            </Layout>
+        </Layout>
+    )
+}
