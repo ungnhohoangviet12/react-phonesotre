@@ -6,8 +6,10 @@ import Admin from './layouts/Admin/Admin';
 
 
 function App() {
+
   return (
     <div className="app">
+
       <Routes>
         <Route path='' element={<HomePage />}>
           <Route path='login' />
@@ -16,7 +18,10 @@ function App() {
           <Route path='login' />
         </Route>
         <Route path='/admin' element={<Admin />}>
-          <Route path='products' />
+          <Route path='products' >
+            <Route path='add' />
+            <Route path='edit/:id' />
+          </Route>
           <Route path='users' />
           <Route path='orders' />
           <Route path='dashboard' />

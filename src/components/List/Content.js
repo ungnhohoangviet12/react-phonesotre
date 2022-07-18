@@ -1,29 +1,26 @@
 import { Button, Card, List, Menu, Pagination } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getProducts } from '../../apis/ProductApi';
 import './content.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadUsers } from '../../redux/actions';
 
 
 export default function AppContent() {
     const [current, setCurrent] = useState(3);
-    const [datas, setDatas] = useState([]);
 
+
+
+
+    const dispatch = useDispatch();
+    const products = useSelector(state => state.data.users)
+    console.log(products);
 
     useEffect(() => {
-        handleGetAllTask()
+        dispatch(loadUsers())
     }, [])
 
 
-    const handleGetAllTask = async () => {
-        try {
-            const data = await getProducts()
-            console.log(data);
-            data && setDatas(data.data)
-        } catch (error) {
-            console.log(error);
-        }
-    }
 
     const onChange = (page) => {
         console.log(page);
@@ -58,7 +55,7 @@ export default function AppContent() {
                     xl: 5,
                     xxl: 5,
                 }}
-                dataSource={datas}
+                dataSource={products}
                 renderItem={(item) => (
                     <List.Item>
 
@@ -86,7 +83,7 @@ export default function AppContent() {
                     xl: 5,
                     xxl: 5,
                 }}
-                dataSource={datas}
+                dataSource={products}
                 renderItem={(item) => (
                     <List.Item>
 
