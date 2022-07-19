@@ -1,9 +1,12 @@
-import { Button, Card, List, Menu, Pagination } from 'antd';
+import { Button, Card, Col, List, Menu, Pagination, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import './content.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadUsers } from '../../redux/actions';
+import image1 from '../../assets/images/anh1.png';
+import image2 from '../../assets/images/anh2.png';
+import image3 from '../../assets/images/anh3.png';
+import image4 from '../../assets/images/anh4.png';
 
 
 export default function AppContent() {
@@ -33,17 +36,12 @@ export default function AppContent() {
             <div className='advertisement'>
                 <img src="https://images.fpt.shop/unsafe/fit-in/filters:quality(80):fill(transparent)/fptshop.com.vn/Uploads/Originals/2022/7/8/637928720848483199_des-top-head-banner.png" alt="" />
             </div>
-            <Menu
-                mode="horizontal"
-                defaultSelectedKeys={['Home']}
-                theme='dark'
-            >
-                <Menu.Item key='xiaomi'><Link to='/xiaomi'>Xiaomi</Link></Menu.Item>
-                <Menu.Item key='iphone'><Link to='/xiaomi'>Iphone</Link></Menu.Item>
-                <Menu.Item key='samsung'><Link to='/xiaomi'>Samsung</Link></Menu.Item>
-                <Menu.Item key='oppo'><Link to='/xiaomi'>Oppo</Link></Menu.Item>
-            </Menu>
-
+            <Row>
+                <Col span={6}><img src={image1} alt="" /></Col>
+                <Col span={6}><img src={image2} alt="" /></Col>
+                <Col span={6}><img src={image3} alt="" /></Col>
+                <Col span={6}><img src={image4} alt="" /></Col>
+            </Row>
             <h2 className='titleHolder title-item'>Sản phẩm mới</h2>
             <List
                 grid={{

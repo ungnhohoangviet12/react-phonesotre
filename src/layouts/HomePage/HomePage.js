@@ -9,6 +9,8 @@ import CartPage from './CartPage';
 import AppLogin from '../../pages/Login/Login';
 import AppRegister from '../../pages/Register/Register';
 import './cartpage.scss'
+import UserProduct from '../../components/List/UserProduct';
+import Sider from 'antd/lib/layout/Sider';
 
 
 const { Header } = Layout;
@@ -23,6 +25,7 @@ export default function HomePage() {
                 <Content>
                     <Routes>
                         <Route path='' element={<AppContent />} />
+                        <Route path='/product' element={<UserProduct />} />
                         <Route path='/cart' element={<CartPage />} />
                         <Route path='/login' element={<AppLogin />} />
                         <Route path='/register' element={<AppRegister />} />
