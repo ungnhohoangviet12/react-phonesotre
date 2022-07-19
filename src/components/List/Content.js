@@ -10,11 +10,6 @@ import image4 from '../../assets/images/anh4.png';
 
 
 export default function AppContent() {
-    const [current, setCurrent] = useState(3);
-
-
-
-
     const dispatch = useDispatch();
     const products = useSelector(state => state.data.users)
     console.log(products);
@@ -23,25 +18,32 @@ export default function AppContent() {
         dispatch(loadUsers())
     }, [])
 
-
-
-    const onChange = (page) => {
-        console.log(page);
-        setCurrent(page);
-    };
-
     return (
         <div className="container-fluid content">
 
             <div className='advertisement'>
                 <img src="https://images.fpt.shop/unsafe/fit-in/filters:quality(80):fill(transparent)/fptshop.com.vn/Uploads/Originals/2022/7/8/637928720848483199_des-top-head-banner.png" alt="" />
             </div>
-            <Row>
-                <Col span={6}><img src={image1} alt="" /></Col>
-                <Col span={6}><img src={image2} alt="" /></Col>
-                <Col span={6}><img src={image3} alt="" /></Col>
-                <Col span={6}><img src={image4} alt="" /></Col>
-            </Row>
+            <div className='row-content'>
+                <Row >
+                    <Col span={6}>
+                        <img className='img-logo' src={image1} alt="" />
+                        <h2>Chỉ giảm online</h2>
+                    </Col>
+                    <Col span={6}>
+                        <img className='img-logo' src={image2} alt="" />
+                        <h2>Đồng giá 99k</h2>
+                    </Col>
+                    <Col span={6}>
+                        <img className='img-logo' src={image3} alt="" />
+                        <h2>Xả hàng giảm sốc</h2>
+                    </Col>
+                    <Col span={6}>
+                        <img className='img-logo' src={image4} alt="" />
+                        <h2>Siêu sale xiaomi</h2>
+                    </Col>
+                </Row>
+            </div>
             <h2 className='titleHolder title-item'>Sản phẩm mới</h2>
             <List
                 grid={{
@@ -99,8 +101,26 @@ export default function AppContent() {
                     </List.Item>
                 )}
             />
-            <div className="titleHolder">
-                <Pagination current={current} onChange={onChange} total={50} />
+            <div className='xuhuong'>
+                <h2>Xu hướng mua sắm</h2>
+                <div className='cart'>
+                    <div className='item'>
+                        <div className='title'>
+                            <p>Điện thoại</p>
+                            <p className='blue'>Galaxy M Series</p></div>
+                    </div>
+                    <div className='item'>
+                        <div className='title'>
+                            <p>Điện thoại</p>
+                            <p className='blue'>Galaxy M Series</p></div>
+                    </div>
+                    <div className='item'>
+                        <div className='title'>
+                            <p>Điện thoại</p>
+                            <p className='blue'>Galaxy M Series</p></div>
+                    </div>
+
+                </div>
             </div>
         </div>
     )

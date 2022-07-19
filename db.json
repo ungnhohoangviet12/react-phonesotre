@@ -1,18 +1,6 @@
 {
   "products": [
     {
-      "name": "cô gái xinh đẹp",
-      "price": "$1000",
-      "image": "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-      "id": 10
-    },
-    {
-      "name": "cô gái nga",
-      "price": "$100",
-      "image": "https://images.unsplash.com/flagged/photo-1559502867-c406bd78ff24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-      "id": 19
-    },
-    {
       "name": "girl bỉ",
       "price": "$20000",
       "image": "https://images.unsplash.com/photo-1569518082290-b170f86999d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",

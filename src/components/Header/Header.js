@@ -14,9 +14,9 @@ export default function AppHeader() {
                 <div className="logo" >
                     <h3 className='title-header'>Shop store</h3>
                 </div>
-                <div className='w-400' >
+                {/* <div className='w-400' >
                     <Search placeholder="nhập tên điện thoại cần tìm" enterButton size='large' danger />
-                </div>
+                </div> */}
                 <Menu
                     mode="horizontal"
                     defaultSelectedKeys={['Home']}
