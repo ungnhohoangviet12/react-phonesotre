@@ -1,11 +1,12 @@
 import { Button, Col, Form, Input, Modal, Row, Space, Table, } from 'antd';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function CartPage() {
 
-
-
+    const [value, setValue] = useState(1);
+    const navigate = useNavigate();
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = () => {
         setIsModalVisible(true);
@@ -37,15 +38,22 @@ export default function CartPage() {
         },
         {
             title: 'Giá',
-            dataIndex: 'price',
+            // dataIndex: 'price',
             key: 'price',
+            render: (_, record) => (
+                <Space size="middle">
+                    {record.key && <span>
+                        {record.price * value}
+                    </span>}
+                </Space>
+            ),
         },
         {
             title: 'Số lượng',
             key: 'amount',
             dataIndex: 'amount',
             render: (_, record) => (
-                <input type="number" />
+                <input value={value} onChange={e => setValue(e.target.value)} type="number" />
             ),
         },
         {
@@ -63,7 +71,7 @@ export default function CartPage() {
             product: 'https://images.unsplash.com/photo-1658176057724-dad45dbf7dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80',
             key: '1',
             name: 'John Brown',
-            price: 32,
+            price: 321,
             amount: 'New York No. 1 Lake Park',
             image: 'vl',
         },
@@ -99,13 +107,11 @@ export default function CartPage() {
                         <div className='sumprice'>
                             <h3>Tổng tiền</h3>
                         </div>
-                        <Button type='primary' block>Thanh toán</Button><br />
-                        <Button block>Tiếp tục mua hàng</Button>
+                        <Button type='primary' block onClick={showModal}>Thanh toán</Button><br />
+                        <Button block onClick={() => navigate("/")}>Tiếp tục mua hàng</Button>
                     </Col>
                 </Row>
-                <Button style={{ float: 'right' }} type="primary" onClick={showModal}>
-                    Mua hàng
-                </Button>
+
                 <Modal title="Thông tin" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                     <Form
                         labelCol={{ span: 4 }}

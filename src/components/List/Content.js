@@ -1,23 +1,25 @@
-import { Card, Col, List, Row } from 'antd';
+import { Card, List } from 'antd';
 import React, { useEffect } from 'react';
 import './content.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
-import image1 from '../../assets/images/anh1.png';
-import image2 from '../../assets/images/anh2.png';
-import image3 from '../../assets/images/anh3.png';
-import image4 from '../../assets/images/anh4.png';
-import { FaStar } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function AppContent() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const products = useSelector(state => state.data.users)
-    console.log(products);
 
     useEffect(() => {
         dispatch(loadProducts())
     }, [])
+
+    const handleDetails = (id) => {
+        navigate(`product/details/${id}`)
+
+    }
 
     return (
         <div className="container-fluid content">
@@ -42,7 +44,7 @@ export default function AppContent() {
 
                         <Card title={item.title}
                             style={{ width: 220 }}
-                            cover={<img alt="example" src={item.image} />}
+                            cover={<img onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
                         >
                             <p className='item-name'>{item.name}</p>
                             <p className='item-price'>{item.price}</p>

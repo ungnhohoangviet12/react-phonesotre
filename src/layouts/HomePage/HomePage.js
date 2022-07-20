@@ -10,6 +10,7 @@ import AppLogin from '../../pages/Login/Login';
 import AppRegister from '../../pages/Register/Register';
 import './cartpage.scss'
 import UserProduct from '../../components/List/UserProduct';
+import ProductDetails from './details/ProductDetails';
 
 
 const { Header } = Layout;
@@ -28,6 +29,7 @@ export default function HomePage() {
                         <Route path='/cart' element={<CartPage />} />
                         <Route path='/login' element={<AppLogin />} />
                         <Route path='/register' element={<AppRegister />} />
+                        <Route path='product/details/:id' element={<ProductDetails />} />
                     </Routes>
                 </Content>
                 <Footer>
