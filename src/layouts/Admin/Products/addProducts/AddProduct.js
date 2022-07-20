@@ -1,7 +1,7 @@
 import { Button, Form, Input } from 'antd';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addUser } from '../../../../redux/actions';
+import { addProduct } from '../../../../redux/actions/productActions';
 import { useNavigate } from 'react-router-dom';
 // import './login.scss';
 
@@ -12,7 +12,7 @@ export default function AddProduct() {
         console.log('Success:', values);
         if (!values.name || !values.price || !values.image) {
         } else {
-            dispatch(addUser(values));
+            dispatch(addProduct(values));
             navigate('/admin/products');
         }
     };

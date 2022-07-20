@@ -1,3 +1,9 @@
+.search  {
+    margin-top: 150px;
+    margin-left: 100px;
+}
+
+
 .container-userproduct {
     width: 95%;
     margin-left: 5%;
@@ -13,5 +19,18 @@
         li {
             height: 100px;
         }
+      
+    }
+
+}
+
+.chonloc {
+    display: flex;
+    margin-left: 10px;
+    
+    select {
+        border: 1px solid gray;
+        margin-left: 10px;
     }
 }
+

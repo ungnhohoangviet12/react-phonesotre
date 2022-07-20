@@ -1,4 +1,4 @@
-import * as types from './actionType';
+import * as types from '../actionType';
 
 
 const initialState = {
@@ -7,31 +7,31 @@ const initialState = {
     loading: true
 }
 
-const usersReducers = (state = initialState, action) => {
+const productsReducers = (state = initialState, action) => {
     switch (action.type) {
-        case types.GET_USERS:
+        case types.GET_PRODUCTS:
             return {
                 ...state,
                 users: action.payload,
                 loading: false,
             }
-        case types.DELETE_USERS:
+        case types.DELETE_PRODUCTS:
             return {
                 ...state,
                 loading: false,
             }
-        case types.ADD_USERS:
+        case types.ADD_PRODUCTS:
             return {
                 ...state,
                 loading: false
             }
-        case types.GET_SINGLE_USERS:
+        case types.GET_SINGLE_PRODUCTS:
             return {
                 ...state,
                 user: action.payload,
                 loading: false
             }
-        case types.UPDATE_USER:
+        case types.UPDATE_PRODUCTS:
             return {
                 ...state,
                 loading: false
@@ -42,4 +42,4 @@ const usersReducers = (state = initialState, action) => {
 
 }
 
-export default usersReducers
+export default productsReducers

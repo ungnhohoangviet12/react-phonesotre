@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadUsers } from '../../redux/actions';
+import { loadProducts } from '../../redux/actions/productActions';
 import './userproduct.scss'
-import { Button, Card, List, Menu } from 'antd';
+import { Card, Col, List, Menu, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import Search from 'antd/lib/transfer/search';
+import { FaStar } from 'react-icons/fa';
 
 
 
@@ -16,7 +17,7 @@ export default function UserProduct() {
     console.log(products);
 
     useEffect(() => {
-        dispatch(loadUsers())
+        dispatch(loadProducts())
     }, [])
 
 
@@ -24,21 +25,25 @@ export default function UserProduct() {
 
     return (
         <div>
-            <div className='mt-100 w-400 ml-100'>
-                <Search placeholder="nhập tên điện thoại cần tìm" enterButton size='large' danger />
+            <div className='search'>
+                <Row>
+                    <Col span={6}>
+                        <Search placeholder="nhập tên điện thoại cần tìm" enterButton size='large' danger />
+                    </Col>
+                    <Col span={6}>
+                        <div className='chonloc'>
+                            <h3>Tìm kiếm theo giá:</h3>
+                            <select name="" id="">
+                                <option value="">trên $1000</option>
+                                <option value="">từ $300 đến $1000</option>
+                                <option value="">dưới $300</option>
+                            </select>
+                        </div>
+                    </Col>
+                </Row>
             </div>
             <div className='container-userproduct'>
 
-                <div className='sibar'>
-                    <Menu style={{ height: '1000px' }}
-                        defaultSelectedKeys={['Home']}
-                    >
-                        <Menu.Item key='xiaomi'><Link to='/xiaomi'>Xiaomi</Link></Menu.Item>
-                        <Menu.Item key='iphone'><Link to='/xiaomi'>Iphone</Link></Menu.Item>
-                        <Menu.Item key='samsung'><Link to='/xiaomi'>Samsung</Link></Menu.Item>
-                        <Menu.Item key='oppo'><Link to='/xiaomi'>Oppo</Link></Menu.Item>
-                    </Menu>
-                </div>
                 <div className='content'>
                     <List
                         grid={{
@@ -60,7 +65,18 @@ export default function UserProduct() {
                                 >
                                     <p className='item-name'>{item.name}</p>
                                     <p className='item-price'>{item.price}</p>
-                                    <Button type='primary' >Xem chi tiết</Button>
+                                    {[...Array(5)].map(() => {
+
+                                        return (
+                                            <label>
+
+                                                <FaStar
+                                                    color="#ffc107"
+                                                    className='star' size={15}
+                                                />
+                                            </label>
+                                        )
+                                    })}
                                 </Card>
                             </List.Item>
 

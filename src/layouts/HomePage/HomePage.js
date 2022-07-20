@@ -10,7 +10,6 @@ import AppLogin from '../../pages/Login/Login';
 import AppRegister from '../../pages/Register/Register';
 import './cartpage.scss'
 import UserProduct from '../../components/List/UserProduct';
-import Sider from 'antd/lib/layout/Sider';
 
 
 const { Header } = Layout;

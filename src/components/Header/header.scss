@@ -1,7 +1,22 @@
 .mainLayout .ant-layout-header {
+  .header {
+    margin-top: 0;
+    height: 60px;
+    button {
+      background-color: black;
+      border: 1px solid black;
+    }
+    input {
+      border: 1px solid red;
+    }
+  
+  }
     padding: 0;
-    height: 80px;
+    height: 105px;
     line-height: 1.6;
+    background-color: #ee2624;
+    display: block;
+  
     .title-header {
       margin-left: 40px;
     }
@@ -11,6 +26,20 @@
     i{
       color: white;
     }
-    
-  }
-  
+
+    .bot {
+      .ant-col {
+        h4 {
+          text-align: center;
+          color: white;
+          margin-right: 0;
+          margin: 10px;
+        }
+        &:hover {
+          background-color: rgb(235, 60, 60);
+          border-radius: 10px ;
+        }
+      }
+    }
+   
+}

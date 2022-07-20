@@ -3,9 +3,34 @@
 }
 
 .container-cart {
-    margin: 0 auto;
+    margin: 140px auto;
     max-width: 1200px;
     padding: 0 15px;
     background-color: white;
+    .col-cart {
+        border: 1px solid gray;
+        padding: 30px;
+        padding-left: 20px;
+    }
+
+    .sumprice {
+        height: 190px;
+    }
+    button {
+        margin-top: 10px;
+    }
+
+    input {
+        width: 65px;
+        border: 1px solid gray;
+        &:hover{
+        border: 1px solid #4dd2ff;
+            
+        }
+    }
+
+    h2 {
+        text-align: center;
+    }
   }
   

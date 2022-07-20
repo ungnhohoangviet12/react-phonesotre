@@ -1,31 +1,25 @@
 import { Button, Form, Input } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSingleUser, updateUser } from '../../../../redux/actions';
+import { getSingleUser, updateUser } from '../../../../redux/actions/productActions';
 import { useNavigate, useParams } from 'react-router-dom';
-// import './login.scss';
 
 export default function EditProduct() {
-    const [state, setState] = useState({
-        name: "",
-        email: "",
-        contact: "",
-        address: ""
-    });
+    const [form] = Form.useForm()
     const { id } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const { user } = useSelector(state => state.data);
 
-
     useEffect(() => {
         dispatch(getSingleUser(id))
     }, [])
 
     useEffect(() => {
-        if (user) {
-            setState({ ...user })
+        if (Object.entries(user).length) {
+            console.log(user, 'user');
+            form.setFieldsValue({ ...user })
         }
     }, [user])
 
@@ -49,11 +43,10 @@ export default function EditProduct() {
         navigate('/admin/products')
     }
 
-    const { name, price, image } = state
     return (
         <div className='container-login'>
             <Form
-                name="basic"
+                form={form}
                 wrapperCol={{
                     span: 24,
                 }}
@@ -67,8 +60,6 @@ export default function EditProduct() {
                 <h1>Thay đổi sản phẩm</h1>
                 <Form.Item
                     name="name"
-
-
                     rules={[
                         {
                             required: true,
@@ -86,7 +77,7 @@ export default function EditProduct() {
                         },
                     ]}
                 >
-                    <Input value={price} placeholder='Giá sản phẩm' />
+                    <Input placeholder='Giá sản phẩm' />
                 </Form.Item>
                 <Form.Item
                     name="image"

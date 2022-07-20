@@ -2,11 +2,8 @@ import { Button, Space, Table } from 'antd';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { deleteUser, loadUsers } from '../../../redux/actions';
-
-
-
-
+import { deleteProduct, loadProducts } from '../../../redux/actions/productActions';
+import './listproduct.scss';
 
 
 const ListProduct = () => {
@@ -14,8 +11,8 @@ const ListProduct = () => {
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure wanted to delete the user ?")) {
-            dispatch(deleteUser(id));
-            dispatch(loadUsers());
+            dispatch(deleteProduct(id));
+            dispatch(loadProducts());
         }
     }
     const handleEdit = (id) => {
@@ -26,7 +23,7 @@ const ListProduct = () => {
     console.log(products);
 
     useEffect(() => {
-        dispatch(loadUsers())
+        dispatch(loadProducts())
     }, [])
 
 
@@ -35,7 +32,6 @@ const ListProduct = () => {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            // render: (text) => <a>{text}</a>,
         },
         {
             title: 'Price',
@@ -44,8 +40,12 @@ const ListProduct = () => {
         },
         {
             title: 'Image',
-            dataIndex: 'image',
             key: 'image',
+            render: (text, record, index) => {
+                return (
+                    <img src={record.image} alt='' width={50} />
+                )
+            }
         },
 
         {

@@ -4,7 +4,7 @@ import './login.scss';
 
 export default function AppLogin() {
     const onFinish = (values) => {
-        console.log('Success:', values);
+        console.log(values.username + "_" + values.password);
     };
 
     const onFinishFailed = (errorInfo) => {

@@ -6,7 +6,7 @@ export default function AppFooter() {
         <div className='container-footer'>
             <div className="footer">
                 <div className="logo">
-                    <i className="fas fa-bolt"></i>
+
                     <a href='http://www.google.com'>Shop Store</a>
                 </div>
                 <ul className='socials'>

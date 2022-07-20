@@ -1,12 +1,13 @@
-import { Button, Card, Col, List, Menu, Pagination, Row } from 'antd';
-import React, { useEffect, useState } from 'react';
+import { Card, Col, List, Row } from 'antd';
+import React, { useEffect } from 'react';
 import './content.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadUsers } from '../../redux/actions';
+import { loadProducts } from '../../redux/actions/productActions';
 import image1 from '../../assets/images/anh1.png';
 import image2 from '../../assets/images/anh2.png';
 import image3 from '../../assets/images/anh3.png';
 import image4 from '../../assets/images/anh4.png';
+import { FaStar } from 'react-icons/fa'
 
 
 export default function AppContent() {
@@ -15,36 +16,16 @@ export default function AppContent() {
     console.log(products);
 
     useEffect(() => {
-        dispatch(loadUsers())
+        dispatch(loadProducts())
     }, [])
 
     return (
         <div className="container-fluid content">
-
-            <div className='advertisement'>
-                <img src="https://images.fpt.shop/unsafe/fit-in/filters:quality(80):fill(transparent)/fptshop.com.vn/Uploads/Originals/2022/7/8/637928720848483199_des-top-head-banner.png" alt="" />
+            <div className='content-title'>
+                <span className='title'>shopphone</span>
+                <span> / Điện thoại - Máy tính bảng</span>
             </div>
-            <div className='row-content'>
-                <Row >
-                    <Col span={6}>
-                        <img className='img-logo' src={image1} alt="" />
-                        <h2>Chỉ giảm online</h2>
-                    </Col>
-                    <Col span={6}>
-                        <img className='img-logo' src={image2} alt="" />
-                        <h2>Đồng giá 99k</h2>
-                    </Col>
-                    <Col span={6}>
-                        <img className='img-logo' src={image3} alt="" />
-                        <h2>Xả hàng giảm sốc</h2>
-                    </Col>
-                    <Col span={6}>
-                        <img className='img-logo' src={image4} alt="" />
-                        <h2>Siêu sale xiaomi</h2>
-                    </Col>
-                </Row>
-            </div>
-            <h2 className='titleHolder title-item'>Sản phẩm mới</h2>
+            <h1>Bán điện thoại - máy tính bảng</h1>
             <List
                 grid={{
                     gutter: 16,
@@ -65,13 +46,38 @@ export default function AppContent() {
                         >
                             <p className='item-name'>{item.name}</p>
                             <p className='item-price'>{item.price}</p>
-                            <Button type='primary' >Xem chi tiết</Button>
+                            {/* {[...Array(5)].map(() => {
+
+                                return (
+                                    <label>
+
+                                        <FaStar
+                                            color="#ffc107"
+                                            className='star' size={14}
+                                        />
+                                    </label>
+                                )
+                            })} */}
+                            <div>
+                                <span>189.000đ</span>
+                                <span className='price-red'>{item.sale}</span>
+                            </div>
+                            <div className='hoatoc'>
+                                <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
+                                <span>hỏa tốc</span>
+                            </div>
+                            <div className='sell'>
+                                <span>Đã bán {item.sell}</span>
+                                <div className='star'>
+
+                                    <span><FaStar color='#ffc600' />5</span>
+                                </div>
+                            </div>
                         </Card>
                     </List.Item>
 
                 )}
             />
-            <h2 className='titleHolder title-item'>Sản phẩm Hot</h2>
 
             <List
                 grid={{
@@ -95,8 +101,21 @@ export default function AppContent() {
                             <p className='item-information'>{item.information}</p>
                             <p className='item-evaluate'>{item.evaluate}</p>
                             <p className='item-price'>{item.price}</p>
+                            <div>
+                                <span>189.000đ</span>
+                                <span className='price-red'>{item.sale}</span>
+                            </div>
+                            <div className='hoatoc'>
+                                <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
+                                <span>hỏa tốc</span>
+                            </div>
+                            <div className='sell'>
+                                <span>Đã bán {item.sell}</span>
+                                <div className='star'>
 
-                            <Button type='primary' >Xem chi tiết</Button>
+                                    <span><FaStar color='#ffc600' />5</span>
+                                </div>
+                            </div>
                         </Card>
                     </List.Item>
                 )}

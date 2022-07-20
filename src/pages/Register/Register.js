@@ -7,6 +7,9 @@ import {
 } from 'antd';
 import { DatePicker } from 'antd';
 import './register.scss'
+import { addUser } from '../../redux/actions/commentAction';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function AppRegister() {
     const { Option } = Select;
@@ -32,9 +35,16 @@ export default function AppRegister() {
         },
     };
     const [form] = Form.useForm();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const onFinish = (data) => {
-        console.log(data.FirstName, data.LastName);
+        console.log('Success:', data);
+        if (!data.FirstName || !data.LastName || !data.city) {
+        } else {
+            dispatch(addUser(data));
+            navigate('/login');
+        }
     };
 
     const prefixSelector = (

@@ -1,91 +1,140 @@
-.advertisement {
-    background-color: #F59400;
-   
-}
-.item-name {
-    color: #007185;
-    font-weight: 500;
-    margin: 0;
-    font-family:  "Amazon Ember",Arial,sans-serif;
-    &:hover{
-        color: red;
+.container-fluid {
+    .content-title {
+        margin-top: 150px;
+        .title {
+            color: #0f62fe;
+            font-family: inherit;
+        }
     }
-}
-.item-price {
-    color: black;
-    font-size: 1.2em;
-    margin: 0;
-    font-weight: bold;
-}
 
-.item-information {
-    margin: 0;
-    color: black;
-}
 
-.item-evaluate {
-    margin: 0;
-    color: black;
-}
-
-.row-content {
-    .ant-row {
-        margin-top: 20px;
-        .ant-col {
-            height: 75px;
-            display: flex;
-            .img-logo {
-                width: 60px;
-                height: 60px;
+    h1 {
+        font-weight: 1000;
+        font-size: 23px;
+        line-height: 2.2rem;
+        color: #0f1e29;
+        letter-spacing: .015rem;
+        font-family: inherit;
+    }
+    
+    
+    .ant-card {
+        height: 450px;
+       .hoatoc {
+        img {
+            width: 20px;
+        }
+        span {
+            color: green;
+            margin-left: 3px;
+        }
+       }
+       .sell {
+        display: flex;
+            span {
+            display: block;
+            min-width: 43%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+       }
+    }
+    .item-name {
+        height: 3rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        margin:0;
+    }
+    .item-price {
+        color: black;
+        font-size: 1.2em;
+        margin: 0;
+        font-weight: 700;
+        color: #0f1e29;
+        font-size: 16px;
+        line-height: 2.2rem;
+        letter-spacing: 0;
+    }
+    
+    .price-red {
+        color: #ee2624;
+        margin-left: 10px;
+    }
+    
+    .item-information {
+        margin: 0;
+        color: black;
+    }
+    
+    .item-evaluate {
+        margin: 0;
+        color: black;
+    }
+    
+    .row-content {
+        .ant-row {
+            margin-top: 20px;
+            .ant-col {
+                height: 75px;
+                display: flex;
+                .img-logo {
+                    width: 60px;
+                    height: 60px;
+                }
+                h2 {
+                    margin: 10px;
+                }
             }
-            h2 {
-                margin: 10px;
-            }
+            
         }
         
     }
     
-}
-
-.xuhuong {
-    width: 100%;
-    height: 300px;
-    background-color: violet;
-    border-radius: 15px;
-    margin: 10px 0;
-
-    h2 {
-        text-align: center;
-        font-size:1.7;
-        font-weight: 700px;
-    }
-    .cart {
+    .xuhuong {
         width: 100%;
-        height: 230px;
-        display: flex;
-        
-        .item {
-            width: 25%;
-            height: 100%;
-            background-color: white;
-            margin: 20px 4%;
-            border-radius: 10px;
-            background-image: url('https://cdn.tgdd.vn/2022/06/banner/Deskx1-280x235.png');
-
-            .title {
-                margin-top: 150px;
-                margin-left: 20px;
-
-            p {
-                margin: 0;
-                font-size: 18px;
-                font-weight: 470;
-            }
-            .blue {
-                color: #2f80ed;
-            }
-
+        height: 300px;
+        border-radius: 15px;
+        margin: 10px 0;
+    
+        h2 {
+            text-align: center;
+            font-size:1.7;
+            font-weight: 700px;
+        }
+        .cart {
+            width: 100%;
+            height: 230px;
+            display: flex;
+            
+            .item {
+                width: 25%;
+                height: 100%;
+                background-color: white;
+                margin: 20px 4%;
+                border-radius: 10px;
+                background-image: url('https://cdn.tgdd.vn/2022/06/banner/Deskx1-280x235.png');
+    
+                .title {
+                    margin-top: 150px;
+                    margin-left: 20px;
+    
+                p {
+                    margin: 0;
+                    font-size: 18px;
+                    font-weight: 470;
+                }
+                .blue {
+                    color: #2f80ed;
+                }
+    
+                }
             }
         }
     }
 }
+
+
