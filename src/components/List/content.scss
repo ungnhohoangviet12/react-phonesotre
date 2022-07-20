@@ -40,6 +40,13 @@
         }
        }
     }
+
+    .item-image  {
+        &:hover {
+            width: 103%;
+        }
+    }
+
     .item-name {
         height: 3rem;
         text-overflow: ellipsis;

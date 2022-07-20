@@ -1,10 +1,10 @@
 import { Button, Col, Form, Input, Modal, Row, Space, Table, } from 'antd';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 export default function CartPage() {
-
+    const { id } = useParams();
     const [value, setValue] = useState(1);
     const navigate = useNavigate();
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -42,7 +42,7 @@ export default function CartPage() {
             key: 'price',
             render: (_, record) => (
                 <Space size="middle">
-                    {record.key && <span>
+                    {record.id = id && <span>
                         {record.price * value}
                     </span>}
                 </Space>

@@ -44,7 +44,7 @@ export default function AppContent() {
 
                         <Card title={item.title}
                             style={{ width: 220 }}
-                            cover={<img onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
+                            cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
                         >
                             <p className='item-name'>{item.name}</p>
                             <p className='item-price'>{item.price}</p>
