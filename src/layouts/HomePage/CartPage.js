@@ -1,11 +1,11 @@
 import { Button, Col, Form, Input, Modal, Row, Space, Table, } from 'antd';
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from 'react-use-cart';
 
 
 export default function CartPage() {
-    const { id } = useParams();
-    const [value, setValue] = useState(1);
+    const { isEmpty, items, totalItems, totalUniqueItems, cartTotal, removeItem, updateItemQuantity, emptyCart } = useCart();
     const navigate = useNavigate();
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = () => {
@@ -25,10 +25,9 @@ export default function CartPage() {
     const columns = [
         {
             title: 'Sản phẩm',
-            dataIndex: 'product',
             key: 'product',
             render: (_, record) => (
-                <img width={40} src={record.product} alt="" />
+                <img width={40} src={record.image} alt="" />
             ),
         },
         {
@@ -38,13 +37,12 @@ export default function CartPage() {
         },
         {
             title: 'Giá',
-            // dataIndex: 'price',
             key: 'price',
             render: (_, record) => (
                 <Space size="middle">
-                    {record.id = id && <span>
-                        {record.price * value}
-                    </span>}
+                    <span>
+                        {record.price * record.quantity}
+                    </span>
                 </Space>
             ),
         },
@@ -53,7 +51,11 @@ export default function CartPage() {
             key: 'amount',
             dataIndex: 'amount',
             render: (_, record) => (
-                <input value={value} onChange={e => setValue(e.target.value)} type="number" />
+                <div className='quantity'>
+                    <button onClick={() => updateItemQuantity(record.id, record.quantity - 1)}>-</button>
+                    <h3>{record.quantity}</h3>
+                    <button onClick={() => updateItemQuantity(record.id, record.quantity + 1)}>+</button>
+                </div>
             ),
         },
         {
@@ -61,38 +63,11 @@ export default function CartPage() {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <Button type='primary' danger>Delete</Button>
+                    <Button onClick={() => removeItem(record.id)} type='primary' danger>Delete</Button>
                 </Space>
             ),
         },
     ];
-    const data = [
-        {
-            product: 'https://images.unsplash.com/photo-1658176057724-dad45dbf7dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80',
-            key: '1',
-            name: 'John Brown',
-            price: 321,
-            amount: 'New York No. 1 Lake Park',
-            image: 'vl',
-        },
-        {
-            product: 'https://images.unsplash.com/photo-1658176057724-dad45dbf7dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80',
-            key: '2',
-            name: 'John Brown',
-            price: 32,
-            amount: 'New York No. 1 Lake Park',
-            image: 'vl',
-        },
-        {
-            product: 'https://images.unsplash.com/photo-1658176057724-dad45dbf7dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80',
-            key: '3',
-            name: 'John Brown',
-            price: 32,
-            amount: 'New York No. 1 Lake Park',
-            image: 'vl',
-        },
-    ];
-
 
     return (
         <div>
@@ -100,12 +75,15 @@ export default function CartPage() {
 
                 <Row gutter={[16, 16]}>
                     <Col span={18}>
-                        <Table columns={columns} dataSource={data} />
+                        <Table columns={columns} dataSource={items} />
                     </Col>
                     <Col className="col-cart" span={6}>
                         <h2>Tổng giỏ hàng</h2>
                         <div className='sumprice'>
-                            <h3>Tổng tiền</h3>
+                            <h3>Tổng tiền {totalItems}</h3>
+                            <h3>{totalUniqueItems}</h3>
+                            <h4>{cartTotal}</h4>
+                            <Button onClick={() => emptyCart()}>clear</Button>
                         </div>
                         <Button type='primary' block onClick={showModal}>Thanh toán</Button><br />
                         <Button block onClick={() => navigate("/")}>Tiếp tục mua hàng</Button>

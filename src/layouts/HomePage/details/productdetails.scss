@@ -1,0 +1,22 @@
+.productDetails  {
+    margin-top: 100px;
+    .headers {
+        margin: 0;
+        padding: 0;
+        span {
+            font-weight: 400;
+            font-size: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            font-family: inherit;
+            color: #0f62fe;
+            margin: 10px;
+        }
+    }
+    .container  {
+        width: 95%;
+        
+        margin: 10px auto;
+        background-color: gray;
+    }
+}
