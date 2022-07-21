@@ -84,10 +84,10 @@ export default function CartPage() {
 
                 <Row gutter={[16, 16]}>
 
-                    <Col span={18}>
+                    <Col className='scroll-product' span={18}>
                         <Table columns={columns} dataSource={items} />
                     </Col>
-                    <Col className="col-cart" span={6}>
+                    <Col className="col-cart" style={{ height: "400px" }} span={6}>
                         <h2>Tổng giỏ hàng</h2>
                         <div className='sumprice'>
                             <h3>Tổng tiền: <span style={{ color: 'red', display: 'inline-block' }} className='cartTotal'>{cartTotal}đ</span></h3>

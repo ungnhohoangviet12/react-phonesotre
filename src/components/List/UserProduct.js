@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
 import './userproduct.scss'
-import { Card, Col, List, Menu, Row } from 'antd';
-import { Link } from 'react-router-dom';
+import { Card, Col, List, Row } from 'antd';
 import Search from 'antd/lib/transfer/search';
 import { FaStar } from 'react-icons/fa';
 
@@ -13,7 +12,7 @@ export default function UserProduct() {
 
 
     const dispatch = useDispatch();
-    const products = useSelector(state => state.data.users)
+    const { products } = useSelector(state => state.data)
     console.log(products);
 
     useEffect(() => {

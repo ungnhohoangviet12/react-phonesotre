@@ -9,11 +9,11 @@ import { useCart } from 'react-use-cart';
 
 
 export default function ProductDetails() {
-    const { addItem, updateItemQuantity, items } = useCart();
+    const { addItem, items } = useCart();
     const navigate = useNavigate();
     const { id } = useParams();
     const dispatch = useDispatch();
-    const { user } = useSelector(state => state.data);
+    const { product } = useSelector(state => state.data);
     useEffect(() => {
         dispatch(getSingleProduct(id))
     }, [])
@@ -28,14 +28,14 @@ export default function ProductDetails() {
             <div className='container'>
                 <Row gutter={[16, 16]}>
                     <Col span={8}>
-                        <img width={340} src={user.image} alt="" />
+                        <img width={340} src={product.image} alt="" />
                     </Col>
                     <Col span={16}>
                         <Row >
-                            <h1 className='title-name'>{user.name}</h1>
+                            <h1 className='title-name'>{product.name}</h1>
                         </Row>
                         <Row>
-                            <span className='title-price'>{user.price}</span>
+                            <span className='title-price'>{product.price}</span>
                         </Row>
                         <Row className='ant-row-4'>
                             <AiFillCarryOut size={16} /> <span className='purchases'>  20 lượt mua</span>

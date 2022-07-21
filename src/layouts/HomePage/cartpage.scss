@@ -9,6 +9,10 @@
     background-color: white;
 
    
+    .scroll-product {
+        height: 400px;
+        overflow: scroll;
+    }
     .col-cart {
         border: 1px solid gray;
         padding: 30px;
@@ -52,3 +56,4 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+

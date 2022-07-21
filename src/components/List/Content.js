@@ -13,7 +13,7 @@ export default function AppContent() {
     const { addItem } = useCart();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const products = useSelector(state => state.data.users)
+    const { products } = useSelector(state => state.data)
 
     useEffect(() => {
         dispatch(loadProducts())
