@@ -35,7 +35,7 @@ export default function ProductDetails() {
                             <h1 className='title-name'>{product.name}</h1>
                         </Row>
                         <Row>
-                            <span className='title-price'>{product.price}</span>
+                            <span className='title-price'>{product.price}đ</span>
                         </Row>
                         <Row className='ant-row-4'>
                             <AiFillCarryOut size={16} /> <span className='purchases'>  20 lượt mua</span>

@@ -24,6 +24,7 @@ export default function AppContent() {
 
     }
 
+
     return (
         <div className="container-fluid content">
             <div className='content-title'>
@@ -50,7 +51,7 @@ export default function AppContent() {
                             cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
                         >
                             <p className='item-name'>{item.name}</p>
-                            <p className='item-price'>{item.price}</p>
+                            <p className='item-price'>{item.price}đ</p>
                             <div>
                                 <span>189.000đ</span>
                                 <span className='price-red'>{item.sale}</span>
@@ -91,7 +92,7 @@ export default function AppContent() {
                             cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
                         >
                             <p className='item-name'>{item.name}</p>
-                            <p className='item-price'>{item.price}</p>
+                            <p className='item-price'>{item.price}đ</p>
                             <div>
                                 <span>189.000đ</span>
                                 <span className='price-red'>{item.sale}</span>

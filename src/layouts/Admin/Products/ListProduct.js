@@ -32,6 +32,13 @@ const ListProduct = () => {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
+            render: (text, record, index) => {
+                return (
+                    <span className='admin-list-name'>
+                        {record.name}
+                    </span>
+                )
+            }
         },
         {
             title: 'Price',

@@ -1,4 +1,4 @@
-import { Button, Col, Form, Input, Modal, Row, Space, Table, } from 'antd';
+import { Button, Col, Form, Input, Modal, Radio, Row, Space, Table, RadioChangeEventTarget } from 'antd';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
@@ -19,6 +19,8 @@ export default function CartPage() {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
+
+    const [value, setValue] = useState(1);
 
 
 
@@ -75,27 +77,38 @@ export default function CartPage() {
         },
     ];
 
+    const onChange = (e) => {
+        console.log('radio checked', e.target.value);
+        setValue(e.target.value);
+    };
+
     return (
 
         <div>
 
             <div className='container-cart'>
-                {isEmpty && <h1>Giỏ hàng rỗng</h1>}
+                {isEmpty ? <h1>Giỏ hàng rỗng</h1> : <h1> số lượng sẩn phẩm: {totalUniqueItems}</h1>
+                }
+                <h4>Tổng số mặt hàng: {totalItems}</h4>
+
 
                 <Row gutter={[16, 16]}>
-
                     <Col className='scroll-product' span={16}>
                         <Table columns={columns} dataSource={items} />
                     </Col>
                     <Col span={2} />
-                    <Col className="col-cart" style={{ height: "400px" }} span={6}>
+                    <Col className="col-cart" style={{ height: "400px", borderRadius: '20px', padding: '34px', }} span={6}>
                         <h2>Tổng giỏ hàng</h2>
                         <div className='sumprice'>
+                            <Radio.Group onChange={onChange} value={value}>
+                                <Radio value={1}>Thanh toán trực tiếp</Radio>
+                                <Radio value={2}>Thanh toán online</Radio>
+                            </Radio.Group>
                             <h3>Tổng tiền: <span style={{ color: 'red', display: 'inline-block' }} className='cartTotal'>{cartTotal}đ</span></h3>
-                            <h3 >tổng số mặt hàng duy nhất: {totalUniqueItems}</h3>
-                            <h4>Tổng số mặt hàng: {totalItems}</h4>
-                            <Button onClick={() => emptyCart()}>clear</Button>
+
+                            <Button danger onClick={() => emptyCart()}>clear</Button>
                         </div>
+
                         <Button type='primary' block onClick={showModal}>Thanh toán</Button><br />
                         <Button block onClick={() => navigate("/")}>Tiếp tục mua hàng</Button>
                     </Col>
