@@ -1,7 +1,7 @@
 import { Button, Form, Input } from 'antd';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSingleUser, updateUser } from '../../../../redux/actions/productActions';
+import { getSingleProduct, updateProduct } from '../../../../redux/actions/productActions';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function EditProduct() {
@@ -10,25 +10,25 @@ export default function EditProduct() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { user } = useSelector(state => state.data);
+    const { product } = useSelector(state => state.data);
 
     useEffect(() => {
-        dispatch(getSingleUser(id))
+        dispatch(getSingleProduct(id))
     }, [])
 
     useEffect(() => {
-        if (Object.entries(user).length) {
-            console.log(user, 'user');
-            form.setFieldsValue({ ...user })
+        if (Object.entries(product).length) {
+            console.log(product, 'user');
+            form.setFieldsValue({ ...product })
         }
-    }, [user])
+    }, [product])
 
     const onFinish = (values) => {
         console.log('Success:', values);
         console.log(id);
         if (!values.name || !values.price || !values.image) {
         } else {
-            dispatch(updateUser(values, id));
+            dispatch(updateProduct(values, id));
             navigate('/admin/products');
         }
     };

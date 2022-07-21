@@ -2,8 +2,8 @@ import * as types from '../actionType';
 
 
 const initialState = {
-    users: [],
-    user: {},
+    products: [],
+    product: {},
     loading: true
 }
 
@@ -12,7 +12,7 @@ const productsReducers = (state = initialState, action) => {
         case types.GET_PRODUCTS:
             return {
                 ...state,
-                users: action.payload,
+                products: action.payload,
                 loading: false,
             }
         case types.DELETE_PRODUCTS:
@@ -28,7 +28,7 @@ const productsReducers = (state = initialState, action) => {
         case types.GET_SINGLE_PRODUCTS:
             return {
                 ...state,
-                user: action.payload,
+                product: action.payload,
                 loading: false
             }
         case types.UPDATE_PRODUCTS:

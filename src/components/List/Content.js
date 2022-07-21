@@ -1,4 +1,4 @@
-import { Button, Card, List } from 'antd';
+import { Card, List } from 'antd';
 import React, { useEffect } from 'react';
 import './content.scss';
 import { useDispatch, useSelector } from 'react-redux';

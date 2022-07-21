@@ -32,9 +32,15 @@ export default function CartPage() {
         },
         {
             title: 'Tên',
-            dataIndex: 'name',
             key: 'name',
+            render: (_, record) => (
+                <span className='render-name'>
+                    {record.name}
+                </span>
+            ),
         },
+
+
         {
             title: 'Giá',
             key: 'price',
@@ -52,9 +58,9 @@ export default function CartPage() {
             dataIndex: 'amount',
             render: (_, record) => (
                 <div className='quantity'>
-                    <button onClick={() => updateItemQuantity(record.id, record.quantity - 1)}>-</button>
-                    <h3>{record.quantity}</h3>
-                    <button onClick={() => updateItemQuantity(record.id, record.quantity + 1)}>+</button>
+                    <Button onClick={() => updateItemQuantity(record.id, record.quantity - 1)}>-</Button>
+                    <p style={{ marginTop: '13px' }}>{record.quantity}</p>
+                    <Button onClick={() => updateItemQuantity(record.id, record.quantity + 1)}>+</Button>
                 </div>
             ),
         },
@@ -70,19 +76,23 @@ export default function CartPage() {
     ];
 
     return (
+
         <div>
+
             <div className='container-cart'>
+                {isEmpty && <h1>Giỏ hàng rỗng</h1>}
 
                 <Row gutter={[16, 16]}>
+
                     <Col span={18}>
                         <Table columns={columns} dataSource={items} />
                     </Col>
                     <Col className="col-cart" span={6}>
                         <h2>Tổng giỏ hàng</h2>
                         <div className='sumprice'>
-                            <h3>Tổng tiền {totalItems}</h3>
-                            <h3>{totalUniqueItems}</h3>
-                            <h4>{cartTotal}</h4>
+                            <h3>Tổng tiền: <span style={{ color: 'red', display: 'inline-block' }} className='cartTotal'>{cartTotal}đ</span></h3>
+                            <h3 >tổng số mặt hàng duy nhất: {totalUniqueItems}</h3>
+                            <h4>Tổng số mặt hàng: {totalItems}</h4>
                             <Button onClick={() => emptyCart()}>clear</Button>
                         </div>
                         <Button type='primary' block onClick={showModal}>Thanh toán</Button><br />

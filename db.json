@@ -5,7 +5,7 @@
       "price": "139.000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 2612
     },
     {
@@ -13,7 +13,7 @@
       "price": "139.000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 212
     },
     {
@@ -21,7 +21,7 @@
       "price": "139.000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 269
     },
     {
@@ -29,7 +29,7 @@
       "price": "139.000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 268
     },
     {
@@ -37,7 +37,7 @@
       "price": "139.000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 267
     },
     {
@@ -45,7 +45,7 @@
       "price": "139.000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 266
     },
     {
@@ -53,7 +53,7 @@
       "price": "139.000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 265
     },
     {
@@ -61,7 +61,7 @@
       "price": "139.000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 264
     },
     {
@@ -69,7 +69,7 @@
       "price": "139000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 263
     },
     {
@@ -77,7 +77,7 @@
       "price": "139000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 262
     },
     {
@@ -85,10 +85,9 @@
       "price": "139000",
       "sell": 90,
       "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale" : "-27%",
+      "sale": "-27%",
       "id": 261
     },
-
     {
       "name": "[Thanh Lý] Điện Thoại Apple iPhone Xs Max 64GB - Hàng Nhập Khẩu",
       "price": "15990000",
@@ -115,47 +114,6 @@
     }
   ],
   "users": [
-    {
-      "First Name": "ung",
-      "Last Name": "viet",
-      "Phone": "0393334473",
-      "Password": "hennho",
-      "Confirm Password": "fas",
-      "Birth Day": "fsda",
-      "Sex": "fasd",
-      "Address": "fsafas",
-      "District": "fasdfsa",
-      "City": "fsafsa",
-      "id": "L1v4HwD"
-    },
-    {
-      "First Name": "ung",
-      "Last Name": "viet",
-      "Phone": "0393334473",
-      "Password": "hennho",
-      "Confirm Password": "fas",
-      "Birth Day": "fsda",
-      "Sex": "fasd",
-      "Address": "fsafas",
-      "District": "fasdfsa",
-      "City": "fsafsa",
-      "id": "L1v4HwD"
-    },
-    {
-      "FirstName": "ung",
-      "LastName": "viet",
-      "email": "ungnhohoangviet@gmail.com",
-      "password": "saranhez0",
-      "confirm": "saranhez0",
-      "nickname": "tinhkenny123123",
-      "prefix": "84",
-      "phone": "393334473",
-      "year": "2022-07-13T11:28:35.360Z",
-      "gender": "male",
-      "district": "Hải Châu",
-      "city": "Đà Nẵng",
-      "id": "9v1xwQj"
-    },
     {
       "FirstName": "ngueyn",
       "LastName": "teo",

@@ -1,9 +1,9 @@
 import * as types from '../actionType';
 import axios from 'axios';
 
-const getProducts = (users) => ({
+const getProducts = (products) => ({
     type: types.GET_PRODUCTS,
-    payload: users
+    payload: products
 });
 
 const productDelete = () => ({
@@ -12,13 +12,13 @@ const productDelete = () => ({
 const productAdd = () => ({
     type: types.ADD_PRODUCTS
 })
-const getProduct = (user) => ({
+const getProduct = (product) => ({
     type: types.GET_SINGLE_PRODUCTS,
-    payload: user,
+    payload: product,
 })
-const productUpdate = (user) => ({
+const productUpdate = (product) => ({
     type: types.UPDATE_PRODUCTS,
-    payload: user
+    payload: product
 })
 
 
@@ -43,9 +43,9 @@ export const deleteProduct = (id) => {
 
 };
 
-export const addProduct = (user) => {
+export const addProduct = (product) => {
     return function (dispatch) {
-        axios.post(`${process.env.REACT_APP_BE_URL}/products`, user).then((resp) => {
+        axios.post(`${process.env.REACT_APP_BE_URL}/products`, product).then((resp) => {
             console.log("resp", resp);
             dispatch(productAdd());
             // dispatch(loadUsers());
@@ -54,7 +54,7 @@ export const addProduct = (user) => {
 
 };
 
-export const getSingleUser = (id) => {
+export const getSingleProduct = (id) => {
     return function (dispatch) {
         axios.get(`${process.env.REACT_APP_BE_URL}/products/${id}`).then((resp) => {
             console.log("resp", resp);
@@ -64,10 +64,10 @@ export const getSingleUser = (id) => {
 
 };
 
-export const updateUser = (user, id) => {
-    console.log(user, id);
+export const updateProduct = (product, id) => {
+    console.log(product, id);
     return function (dispatch) {
-        axios.put(`${process.env.REACT_APP_BE_URL}/products/${id}`, user).then((resp) => {
+        axios.put(`${process.env.REACT_APP_BE_URL}/products/${id}`, product).then((resp) => {
             console.log("resp", resp);
             dispatch(productUpdate());
         }).catch(error => console.log(error))

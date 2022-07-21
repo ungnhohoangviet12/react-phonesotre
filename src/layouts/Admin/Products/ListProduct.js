@@ -10,7 +10,7 @@ const ListProduct = () => {
     const navigate = useNavigate();
 
     const handleDelete = (id) => {
-        if (window.confirm("Are you sure wanted to delete the user ?")) {
+        if (window.confirm("Are you sure wanted to delete the product ?")) {
             dispatch(deleteProduct(id));
             dispatch(loadProducts());
         }
@@ -19,7 +19,7 @@ const ListProduct = () => {
         navigate(`/admin/products/edit/${id}`)
     }
     const dispatch = useDispatch();
-    const products = useSelector(state => state.data.users)
+    const products = useSelector(state => state.data.products)
     console.log(products);
 
     useEffect(() => {

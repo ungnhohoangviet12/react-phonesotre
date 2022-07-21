@@ -2,22 +2,22 @@ import * as types from '../actionType';
 import axios from 'axios';
 
 const getUsers = (users) => ({
-    type: types.GET_PRODUCTS,
+    type: types.GET_USERS,
     payload: users
 });
 
 const userDelete = () => ({
-    type: types.DELETE_PRODUCTS
+    type: types.DELETE_USERS
 })
 const userAdd = () => ({
-    type: types.ADD_PRODUCTS
+    type: types.ADD_USERS
 })
 const getUser = (user) => ({
-    type: types.GET_SINGLE_PRODUCTS,
+    type: types.GET_SINGLE_USERS,
     payload: user,
 })
 const userUpdate = (user) => ({
-    type: types.UPDATE_PRODUCTS,
+    type: types.UPDATE_USERS,
     payload: user
 })
 
