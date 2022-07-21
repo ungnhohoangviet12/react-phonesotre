@@ -2,9 +2,11 @@ import { Button, Space, Table } from 'antd';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteUser, loadUsers } from '../../../redux/actions/userActions';
+import { useNavigate } from 'react-router-dom';
 
 
 const ListUsers = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const users = useSelector(state => state.data2.users)
     console.log(users);
@@ -19,6 +21,11 @@ const ListUsers = () => {
             dispatch(deleteUser(id));
             dispatch(loadUsers());
         }
+    }
+
+
+    const handleView = (id) => {
+        navigate(`/admin/users/view/${id}`)
     }
 
     const columns = [
@@ -47,75 +54,11 @@ const ListUsers = () => {
             key: 'action',
             render: (text, record, index) => (
                 <Space size="middle">
-                    <Button type='primary' >View</Button>
+                    <Button type='primary' onClick={() => handleView(record.id)}>View</Button>
                     <Button type='primary' danger onClick={() => handleDeleteUser(record.id)}>Delete</Button>
                 </Space>
             ),
         },
-    ];
-
-    const handleDelete = () => {
-        alert('co cai con cac')
-    }
-    const data = [
-        {
-            key: '1',
-            name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
-            tags: ['nice', 'developer'],
-        },
-        {
-            key: '2',
-            name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
-            tags: ['loser'],
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-
-        },
-
     ];
 
     return (

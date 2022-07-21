@@ -12,6 +12,7 @@ import AddProduct from './Products/addProducts/AddProduct';
 import EditProduct from './Products/editProducts/EditProduct';
 import ListProduct from './Products/ListProduct';
 import ListUsers from './Users/ListUsers';
+import ViewUser from './Users/ViewUser';
 const { Sider, Content } = Layout;
 export default function Admin() {
     return (
@@ -70,6 +71,7 @@ export default function Admin() {
                         <Route path='products/add' element={<AddProduct />} />
                         <Route path='products/edit/:id' element={<EditProduct />} />
                         <Route path='users' element={<ListUsers />} />
+                        <Route path='users/view/:id' element={<ViewUser />} />
                         <Route path='orders' element={<ListOrders />} />
                         <Route path='dashboard' element={<DashBoard />} />
                     </Routes>

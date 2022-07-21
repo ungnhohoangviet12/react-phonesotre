@@ -23,7 +23,10 @@ function App() {
             <Route path='add' />
             <Route path='edit/:id' />
           </Route>
-          <Route path='users' />
+          <Route path='users' >
+            <Route path='view/:id' />
+          </Route>
+
           <Route path='orders' />
           <Route path='dashboard' />
         </Route>
