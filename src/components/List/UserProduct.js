@@ -2,13 +2,18 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
 import './userproduct.scss'
-import { Card, Col, List, Row } from 'antd';
-import Search from 'antd/lib/transfer/search';
-import { FaStar } from 'react-icons/fa';
+import { Card, List, } from 'antd';
+import { FaStar, FaCartPlus } from 'react-icons/fa';
+import { useCart } from 'react-use-cart';
+import { useNavigate } from 'react-router-dom';
+import { Pagination } from 'antd'
+
 
 
 
 export default function UserProduct() {
+    const { addItem } = useCart();
+    const navigate = useNavigate();
 
 
     const dispatch = useDispatch();
@@ -21,66 +26,105 @@ export default function UserProduct() {
 
 
 
+    const handleDetails = (id) => {
+        navigate(`/product/details/${id}`)
+
+    }
 
     return (
-        <div>
-            <div className='search'>
-                <Row>
-                    <Col span={6}>
-                        <Search placeholder="nhập tên điện thoại cần tìm" enterButton size='large' danger />
-                    </Col>
-                    <Col span={6}>
-                        <div className='chonloc'>
-                            <h3>Tìm kiếm theo giá:</h3>
-                            <select name="" id="">
-                                <option value="">trên $1000</option>
-                                <option value="">từ $300 đến $1000</option>
-                                <option value="">dưới $300</option>
-                            </select>
-                        </div>
-                    </Col>
-                </Row>
+        <div style={{ display: 'flex' }}>
+            <div style={{ width: "270px", minHeight: "700px", background: 'white' }}>
+
             </div>
-            <div className='container-userproduct'>
+            <div className="container-fluid content">
+                <div className='content-title'>
+                    <span className='title'>shopphone</span>
+                    <span> / Điện thoại - Máy tính bảng</span>
+                </div>
+                <h1>Bán điện thoại - máy tính bảng</h1>
 
-                <div className='content'>
-                    <List
-                        grid={{
-                            gutter: 16,
-                            xs: 1,
-                            sm: 2,
-                            md: 2,
-                            lg: 3,
-                            xl: 3,
-                            xxl: 3,
-                        }}
-                        dataSource={products}
-                        renderItem={(item) => (
-                            <List.Item>
+                <List
+                    grid={{
+                        gutter: 16,
+                        xs: 1,
+                        sm: 2,
+                        md: 3,
+                        lg: 3,
+                        xl: 3,
+                        xxl: 3,
+                    }}
+                    dataSource={products}
+                    renderItem={(item) => (
+                        <List.Item>
 
-                                <Card title={item.title}
-                                    style={{ width: 220 }}
-                                    cover={<img alt="example" src={item.image} />}
-                                >
-                                    <p className='item-name'>{item.name}</p>
-                                    <p className='item-price'>{item.price}</p>
-                                    {[...Array(5)].map(() => {
+                            <Card title={item.title}
+                                style={{ width: 220 }}
+                                cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
+                            >
+                                <p className='item-name'>{item.name}</p>
+                                <p className='item-price'>{item.price}</p>
+                                <div>
+                                    <span>189.000đ</span>
+                                    <span className='price-red'>{item.sale}</span>
+                                </div>
+                                <div className='hoatoc'>
+                                    <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
+                                    <span>hỏa tốc</span>
+                                </div>
+                                <div className='sell'>
+                                    <span>Đã bán {item.sell}</span>
+                                    <div className='star'>
+                                        <span><FaStar color='#ffc600' />5</span>
+                                    </div>
+                                    <FaCartPlus onClick={() => addItem(item)} color='brown' size={20} ></FaCartPlus>
+                                </div>
+                            </Card>
+                        </List.Item>
 
-                                        return (
-                                            <label>
+                    )}
+                />
 
-                                                <FaStar
-                                                    color="#ffc107"
-                                                    className='star' size={15}
-                                                />
-                                            </label>
-                                        )
-                                    })}
-                                </Card>
-                            </List.Item>
+                <List
+                    grid={{
+                        gutter: 16,
+                        xs: 1,
+                        sm: 2,
+                        md: 3,
+                        lg: 3,
+                        xl: 3,
+                        xxl: 3,
+                    }}
+                    dataSource={products}
+                    renderItem={(item) => (
+                        <List.Item>
 
-                        )}
-                    />
+                            <Card title={item.title}
+                                style={{ width: 220 }}
+                                cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
+                            >
+                                <p className='item-name'>{item.name}</p>
+                                <p className='item-price'>{item.price}</p>
+                                <div>
+                                    <span>189.000đ</span>
+                                    <span className='price-red'>{item.sale}</span>
+                                </div>
+                                <div className='hoatoc'>
+                                    <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
+                                    <span>hỏa tốc</span>
+                                </div>
+                                <div className='sell'>
+                                    <span>Đã bán {item.sell}</span>
+                                    <div className='star'>
+                                        <span><FaStar color='#ffc600' />5</span>
+                                    </div>
+                                    <FaCartPlus onClick={() => addItem(item)} color='brown' size={20} ></FaCartPlus>
+                                </div>
+                            </Card>
+                        </List.Item>
+                    )}
+                />
+                <div style={{ textAlign: 'center' }}>
+                    <Pagination defaultCurrent={1} total={50} />
                 </div>
             </div>
 

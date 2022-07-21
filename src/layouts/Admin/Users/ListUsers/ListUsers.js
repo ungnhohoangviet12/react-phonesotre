@@ -1,7 +1,7 @@
 import { Button, Space, Table } from 'antd';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteUser, loadUsers } from '../../../redux/actions/userActions';
+import { deleteUser, loadUsers } from '../../../../redux/actions/userActions';
 import { useNavigate } from 'react-router-dom';
 
 

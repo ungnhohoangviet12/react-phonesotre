@@ -11,8 +11,8 @@ import ListOrders from './Orders/ListOrders';
 import AddProduct from './Products/addProducts/AddProduct';
 import EditProduct from './Products/editProducts/EditProduct';
 import ListProduct from './Products/ListProduct';
-import ListUsers from './Users/ListUsers';
-import ViewUser from './Users/ViewUser';
+import ListUsers from './Users/ListUsers/ListUsers';
+import ViewUser from './Users/ViewUser/ViewUser';
 const { Sider, Content } = Layout;
 export default function Admin() {
     return (
