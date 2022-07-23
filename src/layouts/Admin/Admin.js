@@ -3,7 +3,7 @@ import {
     UploadOutlined,
     UserOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import { Button, Layout, Menu } from 'antd';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import './admin.scss'
 import DashBoard from './DashBoard/DashBoard';
@@ -54,10 +54,12 @@ export default function Admin() {
                             ),
 
                         },
+
                     ]}
                 />
             </Sider>
             <Layout className="site-layout">
+                <Button onClick={() => localStorage.removeItem('role')}>logout</Button>
                 <Content
                     className="site-layout-background"
                     style={{
