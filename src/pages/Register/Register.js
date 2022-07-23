@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     Button,
     Form,
@@ -12,6 +12,10 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 export default function AppRegister() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     const { Option } = Select;
     const formItemLayout = {
         wrapperCol: {
@@ -42,7 +46,9 @@ export default function AppRegister() {
         console.log('Success:', data);
         if (!data.FirstName || !data.LastName || !data.city) {
         } else {
+            data.role = "user"
             dispatch(addUser(data));
+            console.log(data);
             navigate('/login');
         }
     };

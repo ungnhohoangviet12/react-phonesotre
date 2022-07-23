@@ -1,11 +1,46 @@
 import { Button, Checkbox, Form, Input } from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './login.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadUsers } from '../../redux/actions/userActions';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function AppLogin() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const users = useSelector(state => state.data2.users)
+
+
+    useEffect(() => {
+        dispatch(loadUsers())
+    }, [])
+
+
+
     const onFinish = (values) => {
-        console.log(values.username + "_" + values.password);
+        const find = users.findIndex(todo => (todo.email === values.email && todo.password === values.password))
+        if (find !== -1 && users[find].role === "user") {
+            localStorage.setItem("role", users[find].role)
+            console.log(localStorage.getItem('role'));
+            navigate('/')
+
+        }
+        else if (find !== -1 && users[find].role === "admin") {
+            navigate('/admin')
+            localStorage.setItem("role", users[find].role)
+            console.log(localStorage.getItem('role'));
+        } else {
+            alert("bạn đã nhập sai")
+        }
+
     };
+
+
+    useEffect(() => {
+
+        window.scrollTo(0, 0)
+    }, [])
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
@@ -26,15 +61,15 @@ export default function AppLogin() {
             >
                 <h1>Login</h1>
                 <Form.Item
-                    name="username"
+                    name="email"
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your username!',
+                            message: 'Please input your email!',
                         },
                     ]}
                 >
-                    <Input placeholder='Tên đăng nhập' />
+                    <Input placeholder='Email đăng nhập' />
                 </Form.Item >
 
                 <Form.Item

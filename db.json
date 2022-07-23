@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "name": "Điện Thoại Nokia 105 dùng 1 Sim - Pin sạc đầy đủ",
-      "price": "139000",
-      "sell": 90,
-      "image": "https://media3.scdn.vn/img4/2020/02_13/n5OEE2gEOvxaSwZ5OmcX_simg_de2fe0_250x250_maxb.png",
-      "sale": "-27%",
-      "id": 261
-    },
-    {
       "name": "[Thanh Lý] Điện Thoại Apple iPhone Xs Max 64GB - Hàng Nhập Khẩu",
       "price": "15990000",
       "image": "https://media3.scdn.vn/img4/2020/10_16/GFr6z9ZGdvVFOX0gi8AC_simg_de2fe0_250x250_maxb.jpg",
@@ -144,21 +136,6 @@
   "users": [
     {
       "FirstName": "Nguyễn",
-      "LastName": "Tèo",
-      "email": "nguyenvanteo@gmail.com",
-      "password": "saranhez0",
-      "confirm": "saranhez0",
-      "nickname": "teonana123.belo",
-      "prefix": "84",
-      "phone": "584186966",
-      "year": "2022-07-21T11:29:50.434Z",
-      "gender": "male",
-      "district": "Numbenr",
-      "city": "con tom",
-      "id": "DWk7o_w"
-    },
-    {
-      "FirstName": "Nguyễn",
       "LastName": "Phượng",
       "email": "nguyenthilanphuong@gmail.com",
       "password": "phuongyeudau",
@@ -170,7 +147,8 @@
       "gender": "Female",
       "district": "Numbenr",
       "city": "Quảng Nam",
-      "id": "DWk7o_ws"
+      "id": "DWk7o_ws",
+      "role": "user"
     },
     {
       "FirstName": "Hoài",
@@ -185,7 +163,9 @@
       "gender": "Female",
       "district": "Hải Châu",
       "city": "Đã nẵng",
-      "id": "DWk7o_wa"
+      "id": "DWk7o_wa",
+      "role": "user"
+
     },
     {
       "FirstName": "Đặng",
@@ -200,7 +180,9 @@
       "gender": "Female",
       "district": "Thăng Bình",
       "city": "Quảng Nam",
-      "id": "DWk7o_wtv"
+      "id": "DWk7o_wtv",
+      "role": "user"
+
     },
     {
       "FirstName": "ngueyn",
@@ -215,7 +197,9 @@
       "gender": "male",
       "district": "Numbenr",
       "city": "con tom",
-      "id": "DWk7o_was"
+      "id": "DWk7o_was",
+      "role": "user"
+
     },
     {
       "FirstName": "ngueyn",
@@ -230,7 +214,9 @@
       "gender": "male",
       "district": "Numbenr",
       "city": "con tom",
-      "id": "DWk7o_waa"
+      "id": "DWk7o_waa",
+      "role": "user"
+
     },
     {
       "FirstName": "Nguyễn",
@@ -245,7 +231,9 @@
       "gender": "male",
       "district": "Numbenr",
       "city": "con tom",
-      "id": "DWk7o_wasa"
+      "id": "DWk7o_wasa",
+      "role": "user"
+
     },
     {
       "FirstName": "ngueyn",
@@ -260,7 +248,9 @@
       "gender": "male",
       "district": "Numbenr",
       "city": "con tom",
-      "id": "DWk7o_wfs"
+      "id": "DWk7o_wfs",
+      "role": "user"
+
     },
     {
       "FirstName": "Bảo",
@@ -275,7 +265,9 @@
       "gender": "female",
       "district": "Numbenr",
       "city": "Quãng Ngãi",
-      "id": "DWk7o_wasfd"
+      "id": "DWk7o_wasfd",
+      "role": "user"
+
     },
     {
       "FirstName": "hồ",
@@ -290,7 +282,75 @@
       "gender": "Female",
       "district": "Numbenr",
       "city": "Quảng Ngãi",
-      "id": "DWk7o_wafds"
+      "id": "DWk7o_wafds",
+      "role": "user"
+
+    },
+    {
+      "FirstName": "nguyễn ",
+      "LastName": "long",
+      "email": "nguyenvanlong@gmail.com",
+      "password": "saranhez0",
+      "confirm": "saranhez0",
+      "nickname": "vietpro124123",
+      "prefix": "84",
+      "phone": "693334473",
+      "year": "2022-07-01T13:29:42.997Z",
+      "gender": "male",
+      "district": "Hải Châu",
+      "city": "Đà Nẵng",
+      "id": "BGZ3tb6",
+      "role": "user"
+
+    },
+    {
+      "FirstName": "ads",
+      "LastName": "dsadsa",
+      "email": "nguyenvanlong@gmail.com",
+      "password": "1",
+      "confirm": "1",
+      "nickname": "12",
+      "prefix": "84",
+      "phone": "0393334473",
+      "year": "2022-07-05T08:01:52.664Z",
+      "gender": "female",
+      "district": "Hải Châu",
+      "city": "Đà Nẵng",
+      "id": "W-mUiTv",
+      "role": "user"
+
+    },
+    {
+      "FirstName": "ads",
+      "LastName": "dsadsa",
+      "email": "nguyenvanlong@gmail.com",
+      "password": "1",
+      "confirm": "1",
+      "nickname": "12",
+      "prefix": "84",
+      "phone": "0393334473",
+      "year": "2022-07-05T08:01:52.664Z",
+      "gender": "female",
+      "district": "Hải Châu",
+      "city": "Đà Nẵng",
+      "role": "user",
+      "id": "syr6IBa"
+    },
+    {
+      "FirstName": "ads",
+      "LastName": "dsadsa",
+      "email": "admin@gmail.com",
+      "password": "1",
+      "confirm": "1",
+      "nickname": "12",
+      "prefix": "84",
+      "phone": "0393334473",
+      "year": "2022-07-05T08:01:52.664Z",
+      "gender": "female",
+      "district": "Hải Châu",
+      "city": "Đà Nẵng",
+      "role": "admin",
+      "id": "syr6sIBa"
     }
   ]
 }

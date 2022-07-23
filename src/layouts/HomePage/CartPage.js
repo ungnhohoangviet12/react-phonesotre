@@ -1,5 +1,5 @@
 import { Button, Col, Form, Input, Modal, Radio, Row, Space, Table, RadioChangeEventTarget } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 
@@ -21,6 +21,10 @@ export default function CartPage() {
     };
 
     const [value, setValue] = useState(1);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
 
 
@@ -49,7 +53,7 @@ export default function CartPage() {
             render: (_, record) => (
                 <Space size="middle">
                     <span>
-                        {record.price * record.quantity}
+                        {new Intl.NumberFormat('vi').format(record.price * record.quantity)}đ
                     </span>
                 </Space>
             ),
@@ -61,7 +65,7 @@ export default function CartPage() {
             render: (_, record) => (
                 <div className='quantity'>
                     <Button onClick={() => updateItemQuantity(record.id, record.quantity - 1)}>-</Button>
-                    <p style={{ marginTop: '13px' }}>{record.quantity}</p>
+                    <p style={{ margin: '2px 6px' }}>{record.quantity}</p>
                     <Button onClick={() => updateItemQuantity(record.id, record.quantity + 1)}>+</Button>
                 </div>
             ),
@@ -97,14 +101,16 @@ export default function CartPage() {
                         <Table columns={columns} dataSource={items} />
                     </Col>
                     <Col span={2} />
-                    <Col className="col-cart" style={{ height: "400px", borderRadius: '20px', padding: '34px', }} span={6}>
+                    <Col className="col-cart" style={{ height: "373px", borderRadius: '20px', }} span={6}>
                         <h2>Tổng giỏ hàng</h2>
                         <div className='sumprice'>
-                            <Radio.Group onChange={onChange} value={value}>
-                                <Radio value={1}>Thanh toán trực tiếp</Radio>
-                                <Radio value={2}>Thanh toán online</Radio>
-                            </Radio.Group>
-                            <h3>Tổng tiền: <span style={{ color: 'red', display: 'inline-block' }} className='cartTotal'>{cartTotal}đ</span></h3>
+                            <div style={{ height: '70px', marginTop: '20px' }}>
+                                <Radio.Group onChange={onChange} value={value}>
+                                    <Radio value={1}>Thanh toán trực tiếp</Radio>
+                                    <Radio value={2}>Thanh toán online</Radio>
+                                </Radio.Group>
+                            </div>
+                            <h3>Tổng tiền: <span style={{ color: 'red', display: 'inline-block' }} className='cartTotal'>{new Intl.NumberFormat('vi').format(cartTotal)}đ</span></h3>
 
                             <Button danger onClick={() => emptyCart()}>clear</Button>
                         </div>

@@ -9,7 +9,6 @@ const ListUsers = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const users = useSelector(state => state.data2.users)
-    console.log(users);
 
     useEffect(() => {
         dispatch(loadUsers())

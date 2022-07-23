@@ -22,6 +22,9 @@
     }
     a {
       color: white !important;
+      .ant-menu-item:after {
+        width: 0px;
+      }
     }
     i{
       color: white;

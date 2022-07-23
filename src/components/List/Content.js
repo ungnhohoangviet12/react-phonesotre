@@ -14,6 +14,13 @@ export default function AppContent() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { products } = useSelector(state => state.data)
+    const { search } = useSelector(state => state)
+    console.log(search);
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     useEffect(() => {
         dispatch(loadProducts())
@@ -42,16 +49,22 @@ export default function AppContent() {
                     xl: 5,
                     xxl: 5,
                 }}
-                dataSource={products}
-                renderItem={(item) => (
-                    <List.Item>
+                dataSource={products.filter((item) => {
+                    if (search === "") {
+                        return item
+                    } else if (item.name.toLowerCase().includes(search.toLowerCase())) {
+                        return item
 
+                    }
+                })}
+                renderItem={(item, index) => (
+                    < List.Item key={index}>
                         <Card title={item.title}
                             style={{ width: 220 }}
                             cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
                         >
                             <p className='item-name'>{item.name}</p>
-                            <p className='item-price'>{item.price}đ</p>
+                            <p className='item-price'>{new Intl.NumberFormat('vi').format(item.price)}đ</p>
                             <div>
                                 <span>189.000đ</span>
                                 <span className='price-red'>{item.sale}</span>
@@ -68,52 +81,13 @@ export default function AppContent() {
                                 <FaCartPlus onClick={() => addItem(item)} color='brown' size={20} ></FaCartPlus>
                             </div>
                         </Card>
-                    </List.Item>
+                    </List.Item >
 
-                )}
+                )
+                }
             />
 
-            <List
-                grid={{
-                    gutter: 16,
-                    xs: 1,
-                    sm: 2,
-                    md: 3,
-                    lg: 4,
-                    xl: 5,
-                    xxl: 5,
-                }}
-                dataSource={products}
-                renderItem={(item) => (
-                    <List.Item>
-
-                        <Card title={item.title}
-                            style={{ width: 220 }}
-                            cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
-                        >
-                            <p className='item-name'>{item.name}</p>
-                            <p className='item-price'>{item.price}đ</p>
-                            <div>
-                                <span>189.000đ</span>
-                                <span className='price-red'>{item.sale}</span>
-                            </div>
-                            <div className='hoatoc'>
-                                <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
-                                <span>hỏa tốc</span>
-                            </div>
-                            <div className='sell'>
-                                <span>Đã bán {item.sell}</span>
-                                <div className='star'>
-                                    <span><FaStar color='#ffc600' />5</span>
-                                </div>
-                                <FaCartPlus onClick={() => addItem(item)} color='brown' size={20} ></FaCartPlus>
-                            </div>
-                        </Card>
-                    </List.Item>
-
-                )}
-            />
-            <div className='xuhuong'>
+            < div className='xuhuong' >
                 <h2>Xu hướng mua sắm</h2>
                 <div className='cart'>
                     <div className='item'>
@@ -133,7 +107,7 @@ export default function AppContent() {
                     </div>
 
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }

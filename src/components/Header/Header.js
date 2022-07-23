@@ -1,13 +1,28 @@
+import { UploadOutlined } from '@ant-design/icons';
 import { Menu, Input, Row, Col } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './header.scss'
+import { useCart } from 'react-use-cart';
+import './header.scss';
+import { useDispatch } from 'react-redux';
+import { searchProduct } from '../../redux/actions/productActions';
 
 
 const { Search } = Input;
 
 
 export default function AppHeader() {
+    const dispatch = useDispatch();
+    const [search, setSearch] = useState();
+    const { totalUniqueItems } = useCart();
+
+
+    const handleSearch = (e) => {
+        setSearch(e.target.value)
+        dispatch(searchProduct(search))
+    }
+
+
     return (
         <div>
             <div className="top">
@@ -16,29 +31,64 @@ export default function AppHeader() {
                         <h3 className='title-header'>Shop store</h3>
                     </div>
                     <div className='w-400' >
-                        <Search placeholder="Tìm kiếm trên Shopphone..." enterButton size='large' danger />
+                        <Search onChange={handleSearch} placeholder="Tìm kiếm trên Shopphone" enterButton size='large' />
                     </div>
                     <Menu
                         mode="horizontal"
                         defaultSelectedKeys={['Home']}
-                    >
-                        <Menu.Item key='Home'><i className="fa-solid fa-house"></i><Link to='/'>Home</Link></Menu.Item>
-                        <Menu.Item key='Home'><i className="fa-solid fa-house"></i><Link to='/product'>Product</Link></Menu.Item>
-                        <Menu.Item key='Cart'><i className="fa-solid fa-cart-arrow-down"></i><Link to='/cart'>Cart
-                        </Link></Menu.Item>
-                        <Menu.Item key='Login'><Link to='/login'>Login</Link></Menu.Item>
-                        <Menu.Item key='Register'>
-                            <Link to='/register'>Resgiter</Link>
-                        </Menu.Item>
-                        {/* <Menu.Item key='Logout'>
-                        <i className="fa-solid fa-right-from-bracket"></i>
-                        <Link to='/logout'>Logout</Link>
-                    </Menu.Item> */}
-                    </Menu>
-                </div>
+                        items={[
+                            {
+                                key: '1',
+                                icon: <i className="fa-solid fa-house" />,
+                                label: (
+                                    <Link to='/' >Home</Link>
+                                ),
 
-            </div>
-            <div className="bot">
+                            },
+                            {
+                                key: '2',
+                                icon: <i className="fa-solid fa-house" />,
+                                label: (
+                                    <Link to='/product' >Product</Link>
+                                ),
+                            },
+                            {
+                                key: '3',
+                                icon: <i className="fa-solid fa-cart-arrow-down" />,
+                                label: (
+                                    <Link to='/cart' >Cart <span>{totalUniqueItems}</span></Link>
+                                ),
+                            },
+                            {
+                                key: '4',
+                                icon: <UploadOutlined />,
+                                label: (
+                                    <Link to='/login' >Login</Link>
+                                ),
+
+                            },
+                            {
+                                key: '5',
+                                icon: <UploadOutlined />,
+                                label: (
+                                    <Link to='/register' >Register</Link>
+                                ),
+
+                            },
+                            // {
+                            //     key: '6',
+                            //     icon: <i className="fa-solid fa-right-from-bracket"></i>,
+                            //     label: (
+                            //         <Link to='/logout' >Login</Link>
+                            //     ),
+
+                            // },
+                        ]}
+                    />
+                </div >
+
+            </div >
+            <div className="bot" >
                 <Row gutter={[16, 16]}>
                     <Col span={6}>
                         <h4>Điện thoại cũ</h4>
@@ -53,7 +103,7 @@ export default function AppHeader() {
                         <h4>Tai nghe</h4>
                     </Col>
                 </Row>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }

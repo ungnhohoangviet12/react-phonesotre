@@ -14,6 +14,11 @@ export default function ProductDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.data);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     useEffect(() => {
         dispatch(getSingleProduct(id))
     }, [])

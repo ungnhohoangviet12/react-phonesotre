@@ -144,7 +144,6 @@ header
 .header .ant-menu li.ant-menu-item:after {
   content: '';
   background: #1890ff;
-  width: 1px;
   position: absolute;
   top: 2px;
   bottom: 2px;
