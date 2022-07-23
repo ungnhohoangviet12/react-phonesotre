@@ -14,27 +14,28 @@ export default function AppLogin() {
 
     useEffect(() => {
         dispatch(loadUsers())
+
     }, [])
-
-
 
     const onFinish = (values) => {
         const find = users.findIndex(todo => (todo.email === values.email && todo.password === values.password))
         if (find !== -1 && users[find].role === "user") {
-            localStorage.setItem("role", users[find].role)
-            console.log(localStorage.getItem('role'));
+            localStorage.setItem("role", "user")
             navigate('/')
 
         }
         else if (find !== -1 && users[find].role === "admin") {
-            navigate('/admin')
-            localStorage.setItem("role", users[find].role)
-            console.log(localStorage.getItem('role'));
+            localStorage.setItem("role", "admin")
+            navigate('/admin', { replace: false })
+
         } else {
             alert("bạn đã nhập sai")
         }
 
     };
+
+
+
 
 
     useEffect(() => {
