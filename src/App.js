@@ -11,6 +11,8 @@ function App() {
   return (
     <div className="app">
       <Routes>
+
+        {/* user */}
         {(role === "user" || "rong") && <Route path='' element={<HomePage />}>
           <Route path='login' />
           <Route path='product' />
@@ -18,6 +20,8 @@ function App() {
           <Route path='register' />
           <Route path='product/details/:id' />
         </Route>}
+
+        {/* admin  */}
         {role === "admin" && <Route path='/admin' element={<Admin />}>
           <Route path='products' >
             <Route path='add' />

@@ -1,11 +1,12 @@
 import { UploadOutlined } from '@ant-design/icons';
 import { Menu, Input, Row, Col } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import './header.scss';
 import { useDispatch } from 'react-redux';
 import { searchProduct } from '../../redux/actions/productActions';
+import { loadUsers } from '../../redux/actions/userActions';
 
 
 const { Search } = Input;
@@ -23,7 +24,15 @@ export default function AppHeader() {
     }
 
 
+
+    const role = localStorage.getItem('role');
+
+    const remove = () => {
+        localStorage.removeItem("role");
+    }
+
     return (
+
         <div>
             <div className="top">
                 <div className="header">
@@ -36,7 +45,40 @@ export default function AppHeader() {
                     <Menu
                         mode="horizontal"
                         defaultSelectedKeys={['Home']}
-                        items={[
+                        items={role === "user" ? [
+                            {
+                                key: '1',
+                                icon: <i className="fa-solid fa-house" />,
+                                label: (
+                                    <Link to='/' >Home</Link>
+                                ),
+
+                            },
+                            {
+                                key: '2',
+                                icon: <i className="fa-solid fa-house" />,
+                                label: (
+                                    <Link to='/product' >Product</Link>
+                                ),
+                            },
+                            {
+                                key: '3',
+                                icon: <i className="fa-solid fa-cart-arrow-down" />,
+                                label: (
+                                    <Link to='/cart' >Cart <span>{totalUniqueItems}</span></Link>
+                                ),
+                            },
+                            {
+                                key: '6',
+                                icon: <i className="fa-solid fa-right-from-bracket"></i>,
+                                label: (
+                                    <Link onClick={remove} to='/login' >Logout</Link>
+                                ),
+
+                            },
+
+
+                        ] : [
                             {
                                 key: '1',
                                 icon: <i className="fa-solid fa-house" />,
@@ -75,14 +117,7 @@ export default function AppHeader() {
                                 ),
 
                             },
-                            // {
-                            //     key: '6',
-                            //     icon: <i className="fa-solid fa-right-from-bracket"></i>,
-                            //     label: (
-                            //         <Link to='/logout' >Login</Link>
-                            //     ),
 
-                            // },
                         ]}
                     />
                 </div >

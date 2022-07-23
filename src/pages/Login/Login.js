@@ -26,7 +26,7 @@ export default function AppLogin() {
         }
         else if (find !== -1 && users[find].role === "admin") {
             localStorage.setItem("role", "admin")
-            navigate('/admin', { replace: false })
+            navigate('/admin')
 
         } else {
             alert("bạn đã nhập sai")

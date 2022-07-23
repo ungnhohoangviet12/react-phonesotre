@@ -133,7 +133,24 @@
       "id": 2630
     }
   ],
-  "users": [
+  "users": 
+  [
+    {
+      "FirstName": "ads",
+      "LastName": "dsadsa",
+      "email": "admin@gmail.com",
+      "password": "1",
+      "confirm": "1",
+      "nickname": "12",
+      "prefix": "84",
+      "phone": "0393334473",
+      "year": "2022-07-05T08:01:52.664Z",
+      "gender": "female",
+      "district": "Hải Châu",
+      "city": "Đà Nẵng",
+      "role": "admin",
+      "id": "syr6sIBa"
+    },
     {
       "FirstName": "Nguyễn",
       "LastName": "Phượng",
@@ -335,22 +352,7 @@
       "city": "Đà Nẵng",
       "role": "user",
       "id": "syr6IBa"
-    },
-    {
-      "FirstName": "ads",
-      "LastName": "dsadsa",
-      "email": "admin@gmail.com",
-      "password": "1",
-      "confirm": "1",
-      "nickname": "12",
-      "prefix": "84",
-      "phone": "0393334473",
-      "year": "2022-07-05T08:01:52.664Z",
-      "gender": "female",
-      "district": "Hải Châu",
-      "city": "Đà Nẵng",
-      "role": "admin",
-      "id": "syr6sIBa"
     }
+   
   ]
 }

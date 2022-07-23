@@ -49,6 +49,11 @@ const ListUsers = () => {
             dataIndex: 'gender',
         },
         {
+            title: 'role',
+            key: 'role',
+            dataIndex: 'role',
+        },
+        {
             title: 'Action',
             key: 'action',
             render: (text, record, index) => (
