@@ -1,4 +1,4 @@
-import { Button, Space, Table } from 'antd';
+import { Button, message, Popconfirm, Space, Table } from 'antd';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,11 +9,12 @@ import './listproduct.scss';
 const ListProduct = () => {
     const navigate = useNavigate();
 
+
+
     const handleDelete = (id) => {
-        if (window.confirm("Are you sure wanted to delete the product ?")) {
-            dispatch(deleteProduct(id));
-            dispatch(loadProducts());
-        }
+        dispatch(deleteProduct(id));
+        dispatch(loadProducts());
+        message.success('xóa thành công');
     }
     const handleEdit = (id) => {
         navigate(`/admin/products/edit/${id}`)
@@ -64,9 +65,12 @@ const ListProduct = () => {
 
                         <Button
                             onClick={() => handleEdit(record.id)}
-                            type='primary' >Edit</Button>
-                        <Button
-                            onClick={() => handleDelete(record.id)} type='primary' danger>Delete</Button>
+                            type='primary' >Edit
+                        </Button>
+                        <Popconfirm onConfirm={() => handleDelete(record.id)} title="Bạn có muốn xóa sản phẩm?" okText="Có" cancelText="Không" >
+                            <Button type='primary' danger>Delete</Button>
+                        </Popconfirm>
+
                     </Space>
                 )
             }

@@ -1,4 +1,4 @@
-import { Button, Space, Table } from 'antd';
+import { Button, message, Popconfirm, Space, Table } from 'antd';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteUser, loadUsers } from '../../../../redux/actions/userActions';
@@ -16,10 +16,9 @@ const ListUsers = () => {
 
 
     const handleDeleteUser = (id) => {
-        if (window.confirm("Are you sure wanted to delete the product ?")) {
-            dispatch(deleteUser(id));
-            dispatch(loadUsers());
-        }
+        dispatch(deleteUser(id));
+        dispatch(loadUsers());
+        message.success('Xóa thành công');
     }
 
 
@@ -59,7 +58,14 @@ const ListUsers = () => {
             render: (text, record, index) => (
                 <Space size="middle">
                     <Button type='primary' onClick={() => handleView(record.id)}>View</Button>
-                    <Button type='primary' danger onClick={() => handleDeleteUser(record.id)}>Delete</Button>
+                    <Popconfirm
+                        title="Bạn có muốn xóa người dùng?"
+                        onConfirm={() => handleDeleteUser(record.id)}
+                        okText="Yes"
+                        cancelText="No"
+                    >
+                        <Button type='primary' danger>Delete</Button>
+                    </Popconfirm>
                 </Space>
             ),
         },

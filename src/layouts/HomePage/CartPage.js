@@ -1,4 +1,4 @@
-import { Button, Col, Form, Input, Modal, Radio, Row, Space, Table, RadioChangeEventTarget } from 'antd';
+import { Button, Col, Form, Input, Modal, Radio, Row, Space, Table, RadioChangeEventTarget, Popconfirm, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
@@ -26,6 +26,10 @@ export default function CartPage() {
         window.scrollTo(0, 0)
     }, [])
 
+    const handleRemoveItem = (id) => {
+        removeItem(id);
+        message.success("xóa thành công");
+    }
 
 
     const columns = [
@@ -75,7 +79,14 @@ export default function CartPage() {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <Button onClick={() => removeItem(record.id)} type='primary' danger>Delete</Button>
+                    <Popconfirm
+                        title="Are you sure to delete this task?"
+                        onConfirm={() => handleRemoveItem(record.id)}
+                        okText="Có"
+                        cancelText="không"
+                    >
+                        <Button type='primary' danger>Delete</Button>
+                    </Popconfirm>
                 </Space>
             ),
         },

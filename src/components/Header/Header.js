@@ -14,16 +14,13 @@ const { Search } = Input;
 
 export default function AppHeader() {
     const dispatch = useDispatch();
-    const [search, setSearch] = useState();
     const { totalUniqueItems } = useCart();
 
 
     const handleSearch = (e) => {
-        setSearch(e.target.value)
-        dispatch(searchProduct(search))
+        dispatch(searchProduct(e.target.value))
+
     }
-
-
 
     const role = localStorage.getItem('role');
 

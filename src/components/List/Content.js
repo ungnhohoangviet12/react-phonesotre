@@ -1,4 +1,4 @@
-import { Card, List } from 'antd';
+import { Card, List, message } from 'antd';
 import React, { useEffect } from 'react';
 import './content.scss';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,6 +29,11 @@ export default function AppContent() {
     const handleDetails = (id) => {
         navigate(`product/details/${id}`)
 
+    }
+
+    const handleToDetails = (item) => {
+        addItem(item)
+        message.success("đã thêm vào giỏ hàng")
     }
 
 
@@ -78,7 +83,7 @@ export default function AppContent() {
                                 <div className='star'>
                                     <span><FaStar color='#ffc600' />5</span>
                                 </div>
-                                <FaCartPlus onClick={() => addItem(item)} color='brown' size={20} ></FaCartPlus>
+                                <FaCartPlus onClick={() => handleToDetails(item)} color='brown' size={20} ></FaCartPlus>
                             </div>
                         </Card>
                     </List.Item >

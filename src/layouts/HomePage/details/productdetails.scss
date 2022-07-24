@@ -61,6 +61,10 @@
                 margin: 17px 0;
                 .ant-col-4 {
                     display: flex;
+                    .amount-product  {
+                        display: block;
+                        margin: 4px;
+                    }
                 }
             }
 
@@ -72,6 +76,35 @@
                     font-size: 16px;
                     line-height: 2.2rem;
                     letter-spacing: 0;
+                }
+               
+            }
+
+            .ant-row-8 {
+                padding: 0;
+                .sell-app {
+                    display: inline-block;
+                    margin-left: 7px;
+                }
+                img {
+                    margin: 4px 10px;
+                }
+            }
+
+            .ant-row-9 {
+                margin-top: 60px;
+                .endow {
+                    font-weight: 700;
+                    color: #0f1e29;
+                    font-size: 16px;
+                    line-height: 2.2rem;
+                    letter-spacing: 0;
+                }
+                .endiw {
+                    display: flex;
+                    .hours {
+                        margin: 6px;
+                    }
                 }
             }
             

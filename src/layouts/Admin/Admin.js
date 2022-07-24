@@ -13,8 +13,17 @@ import EditProduct from './Products/editProducts/EditProduct';
 import ListProduct from './Products/ListProduct';
 import ListUsers from './Users/ListUsers/ListUsers';
 import ViewUser from './Users/ViewUser/ViewUser';
+import { useNavigate } from 'react-router-dom';
 const { Sider, Content } = Layout;
+
 export default function Admin() {
+    const navigate = useNavigate();
+
+    const handlelogout = () => {
+        localStorage.removeItem('role')
+        navigate('/')
+    }
+
     return (
         <Layout>
             <Sider trigger={null} >
@@ -54,12 +63,20 @@ export default function Admin() {
                             ),
 
                         },
+                        {
+                            key: '5',
+                            // icon: <UploadOutlined />,
+                            label: (
+                                < Button onClick={handlelogout}>logout</Button>
+
+                            ),
+
+                        },
 
                     ]}
                 />
             </Sider>
             <Layout className="site-layout">
-                <Button onClick={() => localStorage.removeItem('role')}>logout</Button>
                 <Content
                     className="site-layout-background"
                     style={{

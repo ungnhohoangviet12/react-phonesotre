@@ -22,7 +22,7 @@ function App() {
         </Route>}
 
         {/* admin  */}
-        {role === "admin" && <Route path='/admin' element={<Admin />}>
+        <Route path='/admin' element={<Admin />}>
           <Route path='products' >
             <Route path='add' />
             <Route path='edit/:id' />
@@ -33,7 +33,7 @@ function App() {
 
           <Route path='orders' />
           <Route path='dashboard' />
-        </Route>}
+        </Route>
         <Route path="*" element={<Navigate to={role === "admin" ? "/admin" : "/"} />} />
       </Routes>
     </div>

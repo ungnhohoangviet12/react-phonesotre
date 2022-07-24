@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Checkbox, Form, Input, message } from 'antd';
 import React, { useEffect } from 'react';
 import './login.scss';
 import { useSelector, useDispatch } from 'react-redux';
@@ -20,6 +20,7 @@ export default function AppLogin() {
     const onFinish = (values) => {
         const find = users.findIndex(todo => (todo.email === values.email && todo.password === values.password))
         if (find !== -1 && users[find].role === "user") {
+            message.success('đăng nhập thành công')
             localStorage.setItem("role", "user")
             navigate('/')
 
