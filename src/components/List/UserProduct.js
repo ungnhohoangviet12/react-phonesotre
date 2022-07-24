@@ -6,7 +6,7 @@ import { Card, List, } from 'antd';
 import { FaStar, FaCartPlus } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
-import { Pagination } from 'antd'
+import { Pagination } from 'antd';
 
 
 const pageSize = 6;
@@ -22,7 +22,6 @@ export default function UserProduct() {
             maxIndex: 0
         }
     );
-
 
     const { addItem } = useCart();
     const navigate = useNavigate();
@@ -74,7 +73,6 @@ export default function UserProduct() {
                     <span> / Điện thoại - Máy tính bảng</span>
                 </div>
                 <h1>Bán điện thoại - máy tính bảng</h1>
-
                 <List
                     grid={{
                         gutter: 16,

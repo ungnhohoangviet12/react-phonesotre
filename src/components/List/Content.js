@@ -1,4 +1,5 @@
-import { Card, List, message } from 'antd';
+import { Card, Col, List, message, Row } from 'antd';
+import Slider from "react-slick";
 import React, { useEffect } from 'react';
 import './content.scss';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,16 +7,54 @@ import { loadProducts } from '../../redux/actions/productActions';
 import { FaStar, FaCartPlus } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 
 export default function AppContent() {
+
     const { addItem } = useCart();
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { products } = useSelector(state => state.data)
     const { search } = useSelector(state => state)
-    console.log(search);
+
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
 
     useEffect(() => {
@@ -35,8 +74,6 @@ export default function AppContent() {
         addItem(item)
         message.success("đã thêm vào giỏ hàng")
     }
-
-
     return (
         <div className="container-fluid content">
             <div className='content-title'>
@@ -44,6 +81,16 @@ export default function AppContent() {
                 <span> / Điện thoại - Máy tính bảng</span>
             </div>
             <h1>Bán điện thoại - máy tính bảng</h1>
+            <div>
+                <Row gutter={[16, 16]}>
+                    <Col span={18}>
+                        <img src="https://didongthongminh.vn/images/slideshow/2022/07/23/slideshow_large/khai-tru%CC%9Bo%CC%9Bng-rg---a%CC%89nh-ba%CC%80i-vie%CC%82%CC%81t--1660-%C3%97-600-px_1658540395.webp" alt="" />
+                    </Col>
+                    <Col span={6}>
+                        <h1>ung nho hoang viet</h1>
+                    </Col>
+                </Row>
+            </div>
             <List
                 grid={{
                     gutter: 16,
@@ -91,6 +138,27 @@ export default function AppContent() {
                 )
                 }
             />
+            <div className='slick'>
+                <h1 style={{ color: 'white' }}>SĂN SALE GIÁ SỐC MỖI NGÀY</h1>
+                <Slider {...settings}>
+                    {products.map((item, index) => (
+                        <div key={index} className='item-slick'>
+                            <img src={item.image} alt="" />
+                            <span></span>
+                            <h3 className='name'>{item.name}</h3>
+                            <div>
+                                <strong className='price'>{new Intl.NumberFormat('vi').format(item.price)}đ</strong>
+                                <small>-17%</small>
+                            </div>
+                            <p className='item-gift'>quà 1.100.000₫</p>
+                            <p>
+                                <b>4.3</b>
+                                <FaStar size={14} color='#fb6e2e' />
+                            </p>
+                        </div>
+                    ))}
+                </Slider>
+            </div>
 
             < div className='xuhuong' >
                 <h2>Xu hướng mua sắm</h2>
