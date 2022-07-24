@@ -82,16 +82,16 @@ export default function AppContent() {
                 <span> / Điện thoại - Máy tính bảng</span>
             </div>
             <h1>Bán điện thoại - máy tính bảng</h1>
-            <div>
+            <div className='banner'>
                 <Row gutter={[16, 16]}>
                     <Col span={18}>
                         <img src="https://didongthongminh.vn/images/slideshow/2022/07/23/slideshow_large/khai-tru%CC%9Bo%CC%9Bng-rg---a%CC%89nh-ba%CC%80i-vie%CC%82%CC%81t--1660-%C3%97-600-px_1658540395.webp" alt="" />
                     </Col>
                     <Col span={6}>
                         <img src={samsung} alt="" />
-                        <h3>Samsung Galaxy S22 Ultra 5G 256GB</h3>
-                        <h1>28.990.000₫</h1>
-                        <span>33.990.000₫</span>
+                        <h3 className='st-name'>Samsung Galaxy S22 Ultra 5G 256GB</h3>
+                        <h1 className='st-price-main'>28.990.000₫</h1>
+                        <strike>33.990.000₫</strike>
                     </Col>
                 </Row>
             </div>

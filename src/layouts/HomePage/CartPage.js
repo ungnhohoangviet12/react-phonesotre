@@ -14,6 +14,7 @@ export default function CartPage() {
 
     const handleOk = () => {
         setIsModalVisible(false);
+        message.success('thanh toán thành công')
     };
 
     const handleCancel = () => {
@@ -123,7 +124,9 @@ export default function CartPage() {
                             </div>
                             <h3>Tổng tiền: <span style={{ color: 'red', display: 'inline-block' }} className='cartTotal'>{new Intl.NumberFormat('vi').format(cartTotal)}đ</span></h3>
 
-                            <Button danger onClick={() => emptyCart()}>clear</Button>
+                            <Popconfirm onConfirm={() => emptyCart()} title="bạn có muốn xóa hết?" okText="Có" cancelText="Không">
+                                <Button danger >clear</Button>
+                            </Popconfirm>
                         </div>
 
                         <Button type='primary' block onClick={showModal}>Thanh toán</Button><br />
