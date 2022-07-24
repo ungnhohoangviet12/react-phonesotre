@@ -1,10 +1,16 @@
-import React from 'react';
-import { Button } from 'antd';
+import './App.css'
+import MainDash from './components/MainDash/MainDash';
+import RightSide from './components/RigtSide/RightSide';
 
-export default function DashBoard() {
+function DashBoard() {
     return (
-        <div>
-            <h1>DashBoard</h1>
+        <div className="App">
+            <div className="AppGlass">
+                <MainDash />
+                <RightSide />
+            </div>
         </div>
-    )
+    );
 }
+
+export default DashBoard;
