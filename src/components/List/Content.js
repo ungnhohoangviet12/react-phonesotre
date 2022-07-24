@@ -1,6 +1,6 @@
-import { Card, Col, List, message, Row } from 'antd';
+import { Card, Col, List, message, Pagination, Row } from 'antd';
 import Slider from "react-slick";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './content.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
@@ -12,9 +12,18 @@ import "slick-carousel/slick/slick-theme.css";
 import samsung from '../../assets/images/samsung.webp'
 
 
-
+const pageSize = 6;
 
 export default function AppContent() {
+
+    const [states, setStates] = useState(
+        {
+            totalPage: 0,
+            current: 1,
+            minIndex: 0,
+            maxIndex: 0
+        }
+    );
 
     const { addItem } = useCart();
     const dispatch = useDispatch();
@@ -75,6 +84,17 @@ export default function AppContent() {
         addItem(item)
         message.success("đã thêm vào giỏ hàng")
     }
+
+    const handleChange = (page) => {
+        setStates({
+            current: page,
+            minIndex: (page - 1) * pageSize,
+            maxIndex: page * pageSize
+        });
+        console.log(states);
+    };
+
+
     return (
         <div className="container-fluid content">
             <div className='content-title'>
@@ -105,6 +125,8 @@ export default function AppContent() {
                     xl: 5,
                     xxl: 5,
                 }}
+
+
                 dataSource={products.filter((item) => {
                     if (search === "") {
                         return item
@@ -113,35 +135,44 @@ export default function AppContent() {
 
                     }
                 })}
-                renderItem={(item, index) => (
-                    < List.Item key={index}>
-                        <Card title={item.title}
-                            style={{ width: 220 }}
-                            cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
-                        >
-                            <p className='item-name'>{item.name}</p>
-                            <p className='item-price'>{new Intl.NumberFormat('vi').format(item.price)}đ</p>
-                            <div>
-                                <span>189.000đ</span>
-                                <span className='price-red'>{item.sale}</span>
-                            </div>
-                            <div className='hoatoc'>
-                                <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
-                                <span>hỏa tốc</span>
-                            </div>
-                            <div className='sell'>
-                                <span>Đã bán {item.sell}</span>
-                                <div className='star'>
-                                    <span><FaStar color='#ffc600' />5</span>
+                renderItem={(item, index) =>
+                    index >= states.minIndex &&
+                    index < states.maxIndex &&
+                    (
+                        < List.Item key={index}>
+                            <Card title={item.title}
+                                style={{ width: 220 }}
+                                cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
+                            >
+                                <p className='item-name'>{item.name}</p>
+                                <p className='item-price'>{new Intl.NumberFormat('vi').format(item.price)}đ</p>
+                                <div>
+                                    <span>189.000đ</span>
+                                    <span className='price-red'>{item.sale}</span>
                                 </div>
-                                <FaCartPlus onClick={() => handleToDetails(item)} color='brown' size={20} ></FaCartPlus>
-                            </div>
-                        </Card>
-                    </List.Item >
+                                <div className='hoatoc'>
+                                    <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
+                                    <span>hỏa tốc</span>
+                                </div>
+                                <div className='sell'>
+                                    <span>Đã bán {item.sell}</span>
+                                    <div className='star'>
+                                        <span><FaStar color='#ffc600' />5</span>
+                                    </div>
+                                    <FaCartPlus onClick={() => handleToDetails(item)} color='brown' size={20} ></FaCartPlus>
+                                </div>
+                            </Card>
+                        </List.Item >
 
-                )
+                    )
                 }
             />
+            <Pagination pageSize={pageSize}
+                defaultCurrent={2}
+                current={states.current}
+                total={products.length}
+                onChange={handleChange}
+                style={{ bottom: "0px" }} />
             <div className='slick'>
                 <h1 style={{ color: 'white' }}>SĂN SALE GIÁ SỐC MỖI NGÀY</h1>
                 <Slider {...settings}>
