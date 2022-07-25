@@ -111,22 +111,6 @@
   ],
   "users": [
     {
-      "FirstName": "Nguyễn",
-      "LastName": "Phượng",
-      "email": "nguyenthilanphuong@gmail.com",
-      "password": "phuongyeudau",
-      "confirm": "phuongyeudau",
-      "nickname": "phuongcute.vietcute",
-      "prefix": "84",
-      "phone": "065989645",
-      "year": "2000-07-22T11:29:50.434Z",
-      "gender": "Female",
-      "district": "Numbenr",
-      "city": "Quảng Nam",
-      "id": "DWk7o_ws",
-      "role": "user"
-    },
-    {
       "FirstName": "Hoài",
       "LastName": "Trâm",
       "email": "hoaitram@gmail.com",
@@ -140,7 +124,7 @@
       "district": "Hải Châu",
       "city": "Đã nẵng",
       "id": "DWk7o_wa",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "Đặng",
@@ -156,7 +140,7 @@
       "district": "Thăng Bình",
       "city": "Quảng Nam",
       "id": "DWk7o_wtv",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "ngueyn",
@@ -172,7 +156,7 @@
       "district": "Numbenr",
       "city": "con tom",
       "id": "DWk7o_was",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "ngueyn",
@@ -188,7 +172,23 @@
       "district": "Numbenr",
       "city": "con tom",
       "id": "DWk7o_waa",
-      "role": "user"
+      "role": false
+    },
+    {
+      "FirstName": "ngueyn",
+      "LastName": "teo",
+      "email": "nguyenvanteo@gmail.com",
+      "password": "saranhez0",
+      "confirm": "saranhez0",
+      "nickname": "teonana123.belo",
+      "prefix": "84",
+      "phone": "584186966",
+      "year": "2022-07-21T11:29:50.434Z",
+      "gender": "male",
+      "district": "Numbenr",
+      "city": "con tom",
+      "id": "DWk7o_waaa",
+      "role": true
     },
     {
       "FirstName": "Nguyễn",
@@ -204,7 +204,7 @@
       "district": "Numbenr",
       "city": "con tom",
       "id": "DWk7o_wasa",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "ngueyn",
@@ -220,7 +220,7 @@
       "district": "Numbenr",
       "city": "con tom",
       "id": "DWk7o_wfs",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "Bảo",
@@ -236,7 +236,7 @@
       "district": "Numbenr",
       "city": "Quãng Ngãi",
       "id": "DWk7o_wasfd",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "hồ",
@@ -252,7 +252,7 @@
       "district": "Numbenr",
       "city": "Quảng Ngãi",
       "id": "DWk7o_wafds",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "nguyễn ",
@@ -268,7 +268,7 @@
       "district": "Hải Châu",
       "city": "Đà Nẵng",
       "id": "BGZ3tb6",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "ads",
@@ -284,12 +284,12 @@
       "district": "Hải Châu",
       "city": "Đà Nẵng",
       "id": "W-mUiTv",
-      "role": "user"
+      "role": false
     },
     {
       "FirstName": "ads",
       "LastName": "dsadsa",
-      "email": "nguyenvanlong@gmail.com",
+      "email": "admin@gmail.com",
       "password": "1",
       "confirm": "1",
       "nickname": "12",
@@ -299,7 +299,7 @@
       "gender": "female",
       "district": "Hải Châu",
       "city": "Đà Nẵng",
-      "role": "user",
+      "role": true,
       "id": "syr6IBa"
     }
   ]

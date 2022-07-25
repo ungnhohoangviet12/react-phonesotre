@@ -1,20 +1,20 @@
 import { UploadOutlined } from '@ant-design/icons';
-import { Menu, Input, Row, Col } from 'antd';
-import React, { useEffect, useState } from 'react';
+import { Menu, Input, Row, Col, message } from 'antd';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import './header.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { searchProduct } from '../../redux/actions/productActions';
-import { loadUsers } from '../../redux/actions/userActions';
-
 
 const { Search } = Input;
 
 
 export default function AppHeader() {
     const dispatch = useDispatch();
+    const { isLoggIn } = useSelector(state => state.auth)
     const { totalUniqueItems } = useCart();
+    console.log(isLoggIn);
 
 
     const handleSearch = (e) => {
@@ -22,10 +22,11 @@ export default function AppHeader() {
 
     }
 
-    const role = localStorage.getItem('role');
+    const handleUser = () => {
+        message.success('có cái nồi')
+    }
 
     const remove = () => {
-        localStorage.removeItem("role");
     }
 
     return (
@@ -39,15 +40,17 @@ export default function AppHeader() {
                     <div className='w-400' >
                         <Search onChange={handleSearch} placeholder="Tìm kiếm trên Shopphone" enterButton size='large' />
                     </div>
+                    {isLoggIn && <img onClick={handleUser} width={50} style={{ borderRadius: '50%' }} src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />}
+
                     <Menu
                         mode="horizontal"
                         defaultSelectedKeys={['Home']}
-                        items={role === "user" ? [
+                        items={isLoggIn ? [
                             {
                                 key: '1',
                                 icon: <i className="fa-solid fa-house" />,
                                 label: (
-                                    <Link to='/' >Home</Link>
+                                    <Link to='/' >Trang chủ</Link>
                                 ),
 
                             },
@@ -55,21 +58,21 @@ export default function AppHeader() {
                                 key: '2',
                                 icon: <i className="fa-solid fa-house" />,
                                 label: (
-                                    <Link to='/product' >Product</Link>
+                                    <Link to='/product' >Sản Phẩm</Link>
                                 ),
                             },
                             {
                                 key: '3',
                                 icon: <i className="fa-solid fa-cart-arrow-down" />,
                                 label: (
-                                    <Link to='/cart' >Cart <span>{totalUniqueItems}</span></Link>
+                                    <Link to='/cart' ><span>{totalUniqueItems}</span></Link>
                                 ),
                             },
                             {
                                 key: '6',
                                 icon: <i className="fa-solid fa-right-from-bracket"></i>,
                                 label: (
-                                    <Link onClick={remove} to='/login' >Logout</Link>
+                                    <Link onClick={remove} to='/login' >Đăng xuất</Link>
                                 ),
 
                             },
@@ -80,7 +83,7 @@ export default function AppHeader() {
                                 key: '1',
                                 icon: <i className="fa-solid fa-house" />,
                                 label: (
-                                    <Link to='/' >Home</Link>
+                                    <Link to='/' >Trang chủ</Link>
                                 ),
 
                             },
@@ -88,21 +91,21 @@ export default function AppHeader() {
                                 key: '2',
                                 icon: <i className="fa-solid fa-house" />,
                                 label: (
-                                    <Link to='/product' >Product</Link>
+                                    <Link to='/product' >Sản Phẩm</Link>
                                 ),
                             },
                             {
                                 key: '3',
                                 icon: <i className="fa-solid fa-cart-arrow-down" />,
                                 label: (
-                                    <Link to='/cart' >Cart <span>{totalUniqueItems}</span></Link>
+                                    <Link to='/cart' ><span>{totalUniqueItems}</span></Link>
                                 ),
                             },
                             {
                                 key: '4',
                                 icon: <UploadOutlined />,
                                 label: (
-                                    <Link to='/login' >Login</Link>
+                                    <Link to='/login' >Đăng nhập</Link>
                                 ),
 
                             },
@@ -110,7 +113,7 @@ export default function AppHeader() {
                                 key: '5',
                                 icon: <UploadOutlined />,
                                 label: (
-                                    <Link to='/register' >Register</Link>
+                                    <Link to='/register' >Đăng ký</Link>
                                 ),
 
                             },

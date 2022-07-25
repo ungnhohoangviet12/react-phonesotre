@@ -4,12 +4,14 @@ import './login.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadUsers } from '../../redux/actions/userActions';
 import { useNavigate } from 'react-router-dom';
+import { actLoginSuccess } from '../../redux/actions/authAction';
 
 
 export default function AppLogin() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const users = useSelector(state => state.data2.users)
+    const { isLoading, notif, isLoggIn } = useSelector((state) => state.auth);
 
 
     useEffect(() => {
@@ -17,21 +19,30 @@ export default function AppLogin() {
 
     }, [])
 
+
     const onFinish = (values) => {
         const find = users.findIndex(todo => (todo.email === values.email && todo.password === values.password))
-        if (find !== -1 && users[find].role === "user") {
+        if (find !== -1 && users[find].role === false) {
+            dispatch(actLoginSuccess({
+                profile: values,
+                find: users[find].role
+            }));
             message.success('đăng nhập thành công')
-            localStorage.setItem("role", "user")
             navigate('/')
 
         }
-        else if (find !== -1 && users[find].role === "admin") {
-            localStorage.setItem("role", "admin")
+        else if (find !== -1 && users[find].role === true) {
+            dispatch(actLoginSuccess({
+                profile: values,
+                find: users[find].role
+            }));
+            message.success('đăng nhập thành công')
             navigate('/admin')
 
         } else {
             alert("bạn đã nhập sai")
         }
+
 
     };
 
@@ -40,9 +51,13 @@ export default function AppLogin() {
 
 
     useEffect(() => {
-
         window.scrollTo(0, 0)
-    }, [])
+        if (!isLoading && !isLoggIn && notif === 'loginFail') {
+            message.info('dang nhap thanh cong');
+        } else if (!isLoading && isLoggIn && notif === 'loginSucess') {
+            message.info('dang nhap thanh cong');
+        }
+    }, [isLoading])
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);

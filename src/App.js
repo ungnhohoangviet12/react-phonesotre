@@ -3,17 +3,19 @@ import HomePage from './layouts/HomePage/HomePage';
 import 'antd/dist/antd.min.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Admin from './layouts/Admin/Admin';
+import { useSelector } from 'react-redux';
 
 
 function App() {
-  const role = localStorage.getItem("role") || "rong"
+  const { isAuthenticated } = useSelector(state => state.auth)
+
 
   return (
     <div className="app">
       <Routes>
 
         {/* user */}
-        {(role === "user" || "rong") && <Route path='' element={<HomePage />}>
+        {!isAuthenticated && <Route path='' element={<HomePage />}>
           <Route path='login' />
           <Route path='product' />
           <Route path='cart' />
@@ -22,7 +24,7 @@ function App() {
         </Route>}
 
         {/* admin  */}
-        <Route path='/admin' element={<Admin />}>
+        {isAuthenticated && <Route path='/admin' element={<Admin />}>
           <Route path='products' >
             <Route path='add' />
             <Route path='edit/:id' />
@@ -33,8 +35,8 @@ function App() {
 
           <Route path='orders' />
           <Route path='dashboard' />
-        </Route>
-        <Route path="*" element={<Navigate to={role === "admin" ? "/admin" : "/"} />} />
+        </Route>}
+        <Route path="*" element={<Navigate to={isAuthenticated ? "/admin" : "/"} />} />
       </Routes>
     </div>
   );

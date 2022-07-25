@@ -20,7 +20,6 @@ export default function Admin() {
     const navigate = useNavigate();
 
     const handlelogout = () => {
-        localStorage.removeItem('role')
         navigate('/')
     }
 

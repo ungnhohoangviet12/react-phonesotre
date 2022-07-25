@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { Pagination } from 'antd';
 
 
-const pageSize = 6;
+const pageSize = 15;
 
 export default function UserProduct() {
 
@@ -63,25 +63,22 @@ export default function UserProduct() {
     }
 
     return (
-        <div style={{ display: 'flex' }}>
-            <div style={{ width: "270px", minHeight: "700px", background: 'white' }}>
-
-            </div>
+        <div >
             <div className="container-fluid content">
-                <div className='content-title'>
+                {/* <div className='content-title'>
                     <span className='title'>shopphone</span>
                     <span> / Điện thoại - Máy tính bảng</span>
                 </div>
-                <h1>Bán điện thoại - máy tính bảng</h1>
+                <h1>Bán điện thoại - máy tính bảng</h1> */}
                 <List
                     grid={{
                         gutter: 16,
                         xs: 1,
                         sm: 2,
                         md: 3,
-                        lg: 3,
-                        xl: 3,
-                        xxl: 3,
+                        lg: 4,
+                        xl: 5,
+                        xxl: 5,
                     }}
                     dataSource={products}
                     renderItem={(item, index) =>

@@ -9,7 +9,11 @@ export default function CartPage() {
     const navigate = useNavigate();
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = () => {
-        setIsModalVisible(true);
+        if (totalUniqueItems > 0) {
+            setIsModalVisible(true);
+        } else {
+            alert('giỏ hàng rỗng')
+        }
     };
 
     const handleOk = () => {
