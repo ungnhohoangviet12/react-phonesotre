@@ -1,75 +1,75 @@
 import * as types from '../actionType';
 import axios from 'axios';
 
-const getUsers = (users) => ({
-    type: types.GET_PRODUCTS,
-    payload: users
+const getOrders = (order) => ({
+    type: types.GET_ORDERS,
+    payload: order
 });
 
-const userDelete = () => ({
-    type: types.DELETE_PRODUCTS
+const orderDelete = () => ({
+    type: types.DELETE_ORDERS
 })
-const userAdd = () => ({
-    type: types.ADD_PRODUCTS
+const orderAdd = () => ({
+    type: types.ADD_ORDERS
 })
-const getUser = (user) => ({
-    type: types.GET_SINGLE_PRODUCTS,
-    payload: user,
+const getOrder = (order) => ({
+    type: types.GET_SINGLE_ORDERS,
+    payload: order,
 })
-const userUpdate = (user) => ({
-    type: types.UPDATE_PRODUCTS,
-    payload: user
+const orderUpdate = (order) => ({
+    type: types.UPDATE_ORDERS,
+    payload: order
 })
 
 
-export const loadUsers = () => {
+export const loadOrders = () => {
     return function (dispatch) {
-        axios.get(`${process.env.REACT_APP_BE_URL}/users`).then((resp) => {
+        axios.get(`${process.env.REACT_APP_BE_URL}/orders`).then((resp) => {
             console.log("resp", resp);
-            dispatch(getUsers(resp.data));
+            dispatch(getOrders(resp.data));
         }).catch(error => console.log(error))
     };
 
 };
 
-export const deleteUser = (id) => {
+export const deleteOrder = (id) => {
     return function (dispatch) {
-        axios.delete(`${process.env.REACT_APP_BE_URL}/users/${id}`).then((resp) => {
+        axios.delete(`${process.env.REACT_APP_BE_URL}/orders/${id}`).then((resp) => {
             console.log("resp", resp);
-            dispatch(userDelete());
-            dispatch(loadUsers());
+            dispatch(orderDelete());
+            dispatch(loadOrders());
         }).catch(error => console.log(error))
     };
 
 };
 
-export const addUser = (user) => {
+export const addOrder = (order) => {
     return function (dispatch) {
-        axios.post(`${process.env.REACT_APP_BE_URL}/users`, user).then((resp) => {
+        axios.post(`${process.env.REACT_APP_BE_URL}/orders`, order).then((resp) => {
             console.log("resp", resp);
-            dispatch(userAdd());
+            dispatch(orderAdd());
             // dispatch(loadUsers());
         }).catch(error => console.log(error))
     };
 
 };
 
-export const getSingleUser = (id) => {
+export const getSingleOrder = (id) => {
     return function (dispatch) {
-        axios.get(`${process.env.REACT_APP_BE_URL}/users/${id}`).then((resp) => {
+        axios.get(`${process.env.REACT_APP_BE_URL}/orders/${id}`).then((resp) => {
             console.log("resp", resp);
-            dispatch(getUser(resp.data));
+            dispatch(getOrder(resp.data));
         }).catch(error => console.log(error))
     };
 
 };
 
-export const updateUser = (user, id) => {
-    console.log(user, id);
+export const updateOrder = (order, id) => {
+    console.log(order, id);
     return function (dispatch) {
-        axios.put(`${process.env.REACT_APP_BE_URL}/users/${id}`, user).then((resp) => {
+        axios.put(`${process.env.REACT_APP_BE_URL}/orders/${id}`, order).then((resp) => {
             console.log("resp", resp);
-            dispatch(userUpdate());
+            dispatch(orderUpdate());
         }).catch(error => console.log(error))
     };
 

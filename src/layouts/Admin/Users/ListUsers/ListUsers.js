@@ -29,7 +29,7 @@ const ListUsers = () => {
     const columns = [
         {
             title: 'FirstName',
-            "dataIndex": 'FirstName',
+            dataIndex: 'FirstName',
             key: 'FirstName',
         },
         {

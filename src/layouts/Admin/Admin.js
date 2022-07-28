@@ -21,6 +21,7 @@ export default function Admin() {
 
     const handlelogout = () => {
         navigate('/')
+        window.location.reload()
     }
 
     return (

@@ -1,10 +1,13 @@
-import { Button, Col, Form, Input, Modal, Radio, Row, Space, Table, RadioChangeEventTarget, Popconfirm, message } from 'antd';
+import { Button, Col, Modal, Radio, Row, Space, Table, RadioChangeEventTarget, Popconfirm, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
+import { useDispatch } from 'react-redux';
+import { addOrder } from '../../redux/actions/orderAction';
 
 
 export default function CartPage() {
+    const dispatch = useDispatch();
     const { isEmpty, items, totalItems, totalUniqueItems, cartTotal, removeItem, updateItemQuantity, emptyCart } = useCart();
     const navigate = useNavigate();
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -15,10 +18,18 @@ export default function CartPage() {
             alert('giỏ hàng rỗng')
         }
     };
-
+    console.log(new Date());
     const handleOk = () => {
         setIsModalVisible(false);
+
+        dispatch(addOrder({
+            amount: totalItems,
+            total: cartTotal,
+            day: new Date(),
+            name: 'hoang viet'
+        }));
         message.success('thanh toán thành công')
+
     };
 
     const handleCancel = () => {
@@ -138,22 +149,8 @@ export default function CartPage() {
                     </Col>
                 </Row>
 
-                <Modal title="Thông tin" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                    <Form
-                        labelCol={{ span: 4 }}
-                        wrapperCol={{ span: 14 }}
-                        layout="horizontal"
-                    >
-                        <Form.Item label="Name">
-                            <Input placeholder='Nhập họ và tên của bạn' />
-                        </Form.Item>
-                        <Form.Item label="Address">
-                            <Input placeholder='Nhập địa chỉ nhận hàng' />
-                        </Form.Item>
-                        <Form.Item label="Phone">
-                            <Input placeholder='Nhập số điện thoại liên hệ' />
-                        </Form.Item>
-                    </Form>
+                <Modal title="Thanh toán" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                    <h1>Bạn có muốn thanh toán hay không</h1>
                 </Modal>
             </div>
         </div >

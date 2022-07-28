@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import './header.scss';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { searchProduct } from '../../redux/actions/productActions';
 
 const { Search } = Input;
@@ -12,9 +12,9 @@ const { Search } = Input;
 
 export default function AppHeader() {
     const dispatch = useDispatch();
-    const { isLoggIn } = useSelector(state => state.auth)
+    // const { isLoggIn } = useSelector(state => state.auth)
     const { totalUniqueItems } = useCart();
-    console.log(isLoggIn);
+
 
 
     const handleSearch = (e) => {
@@ -27,6 +27,7 @@ export default function AppHeader() {
     }
 
     const remove = () => {
+
     }
 
     return (
@@ -40,12 +41,12 @@ export default function AppHeader() {
                     <div className='w-400' >
                         <Search onChange={handleSearch} placeholder="Tìm kiếm trên Shopphone" enterButton size='large' />
                     </div>
-                    {isLoggIn && <img onClick={handleUser} width={50} style={{ borderRadius: '50%' }} src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />}
+                    <img onClick={handleUser} width={50} style={{ borderRadius: '50%' }} src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
 
                     <Menu
                         mode="horizontal"
                         defaultSelectedKeys={['Home']}
-                        items={isLoggIn ? [
+                        items={true ? [
                             {
                                 key: '1',
                                 icon: <i className="fa-solid fa-house" />,

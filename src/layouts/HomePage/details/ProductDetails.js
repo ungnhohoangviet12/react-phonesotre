@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSingleProduct } from '../../../redux/actions/productActions';
+import { addComment, loadComments } from '../../../redux/actions/commentAction';
 import { useParams } from 'react-router-dom';
 import './productdetails.scss'
-import { Button, Col, Row } from 'antd';
+import { Avatar, Button, Col, List, Row } from 'antd';
 import { AiFillCarryOut, AiTwotoneRedEnvelope, AiOutlineExclamationCircle } from "react-icons/ai";
 import { useCart } from 'react-use-cart';
 import { AiFillSafetyCertificate } from 'react-icons/ai';
@@ -12,6 +13,10 @@ import TextArea from 'antd/lib/input/TextArea';
 
 
 export default function ProductDetails() {
+    const { comments } = useSelector(state => state.comment)
+
+
+    const [title, setTitle] = useState();
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
     const { addItem, items } = useCart();
@@ -19,17 +24,29 @@ export default function ProductDetails() {
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.data);
 
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
+
+
+
     useEffect(() => {
         dispatch(getSingleProduct(id))
+        dispatch(loadComments())
     }, [])
 
-    const onChange = (e) => {
-    };
-
+    const handleAddComment = () => {
+        if (title) {
+            dispatch(addComment({
+                ad: product.id,
+                title: title
+            }))
+            dispatch(loadComments())
+            setTitle('')
+        }
+    }
     return (
         <div className='productDetails'>
             <div className="headers">
@@ -67,9 +84,21 @@ export default function ProductDetails() {
                         </Row>
                         <Row gutter={[16, 16]}>
                             <h2>Bình luận:</h2>
-                            <TextArea placeholder='hãy nêu nhận xét của bạn' cols={45} rows={5} showCount maxLength={100} onChange={onChange} />
-                            <Button type='primary'>Submit</Button>
+                            <TextArea value={title} placeholder='hãy nêu nhận xét của bạn' cols={45} rows={5} showCount maxLength={100} onChange={(e) => setTitle(e.target.value)} />
+                            <Button onClick={handleAddComment} type='primary'>Submit</Button>
                         </Row>
+                        <List
+                            itemLayout="horizontal"
+                            dataSource={comments.filter(s => s.ad === product.id)}
+                            renderItem={(item) => (
+                                <List.Item>
+                                    <List.Item.Meta
+                                        avatar={<Avatar src="https://images.unsplash.com/photo-1610041880800-9a4ec629b1ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />}
+                                        title={item.title}
+                                    />
+                                </List.Item>
+                            )}
+                        />
                     </Col>
                     <Col span={16}>
                         <Row >

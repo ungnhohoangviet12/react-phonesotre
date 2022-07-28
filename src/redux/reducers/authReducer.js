@@ -12,14 +12,12 @@ export const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.LOGIN_SUCCESS: {
             const { profile, find } = action.payload;
-            localStorage.setItem('accessToken', 'admin');
             console.log(profile, find);
             state = {
                 profile: profile,
                 isLoggIn: true,
-                // isAuthenticated: profile.role,
-                // isLoading: false,
-                // notif: 'loginSucess',
+                isLoading: false,
+                notif: 'loginSucess',
                 isAuthenticated: find
             };
             return { ...state };
@@ -35,7 +33,6 @@ export const authReducer = (state = initialState, action) => {
             return { ...state };
         }
         case types.LOGOUT: {
-            localStorage.removeItem('accessToken');
             return { ...initialState };
         }
         case types.GET_PROFILE_FAIL: {

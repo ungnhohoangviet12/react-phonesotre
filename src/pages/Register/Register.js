@@ -7,7 +7,7 @@ import {
 } from 'antd';
 import { DatePicker } from 'antd';
 import './register.scss'
-import { addUser } from '../../redux/actions/commentAction';
+import { addUser } from '../../redux/actions/userActions';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

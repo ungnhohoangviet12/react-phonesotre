@@ -11,53 +11,52 @@ export default function AppLogin() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const users = useSelector(state => state.data2.users)
-    const { isLoading, notif, isLoggIn } = useSelector((state) => state.auth);
 
 
     useEffect(() => {
         dispatch(loadUsers())
-
     }, [])
 
 
     const onFinish = (values) => {
         const find = users.findIndex(todo => (todo.email === values.email && todo.password === values.password))
-        if (find !== -1 && users[find].role === false) {
+        if (find !== -1 && users[find].role === true) {
             dispatch(actLoginSuccess({
                 profile: values,
-                find: users[find].role
+                isLogin: true
+            }));
+            const info = {
+                email: values.email,
+                password: values.password
+            }
+            localStorage.setItem('info', JSON.stringify(info))
+            navigate('/admin')
+            window.location.reload()
+            message.success('đăng nhập thành công')
+
+
+
+        } else if (find !== -1 && users[find].role === false) {
+            dispatch(actLoginSuccess({
+                profile: values,
             }));
             message.success('đăng nhập thành công')
+            window.location.reload()
             navigate('/')
 
         }
-        else if (find !== -1 && users[find].role === true) {
-            dispatch(actLoginSuccess({
-                profile: values,
-                find: users[find].role
-            }));
-            message.success('đăng nhập thành công')
-            navigate('/admin')
 
-        } else {
+        else {
             alert("bạn đã nhập sai")
         }
 
 
     };
 
-
-
-
-
     useEffect(() => {
         window.scrollTo(0, 0)
-        if (!isLoading && !isLoggIn && notif === 'loginFail') {
-            message.info('dang nhap thanh cong');
-        } else if (!isLoading && isLoggIn && notif === 'loginSucess') {
-            message.info('dang nhap thanh cong');
-        }
-    }, [isLoading])
+
+    }, [])
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
