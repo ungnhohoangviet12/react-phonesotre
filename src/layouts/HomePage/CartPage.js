@@ -15,20 +15,25 @@ export default function CartPage() {
         if (totalUniqueItems > 0) {
             setIsModalVisible(true);
         } else {
-            alert('giỏ hàng rỗng')
+            setIsModalVisible(true)
         }
     };
     console.log(new Date());
     const handleOk = () => {
-        setIsModalVisible(false);
+        if (isEmpty) {
+            setIsModalVisible(false);
+            message.error('thanh toán thất bại')
+        } else {
 
-        dispatch(addOrder({
-            amount: totalItems,
-            total: cartTotal,
-            day: new Date(),
-            name: 'hoang viet'
-        }));
-        message.success('thanh toán thành công')
+            dispatch(addOrder({
+                amount: totalItems,
+                total: cartTotal,
+                day: new Date(),
+                name: 'hoang viet'
+            }));
+            setIsModalVisible(false);
+            message.success('thanh toán thành công')
+        }
 
     };
 
@@ -150,7 +155,7 @@ export default function CartPage() {
                 </Row>
 
                 <Modal title="Thanh toán" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                    <h1>Bạn có muốn thanh toán hay không</h1>
+                    <h1>{isEmpty ? "Giỏ hàng rỗng" : "Bạn có muốn thanh toán hay không"}</h1>
                 </Modal>
             </div>
         </div >

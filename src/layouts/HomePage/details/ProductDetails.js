@@ -4,18 +4,19 @@ import { getSingleProduct } from '../../../redux/actions/productActions';
 import { addComment, loadComments } from '../../../redux/actions/commentAction';
 import { useParams } from 'react-router-dom';
 import './productdetails.scss'
-import { Avatar, Button, Col, List, message, Row } from 'antd';
+import { Avatar, Button, Col, List, message, Modal, Row } from 'antd';
 import { AiFillCarryOut, AiTwotoneRedEnvelope, AiOutlineExclamationCircle } from "react-icons/ai";
 import { useCart } from 'react-use-cart';
 import { AiFillSafetyCertificate } from 'react-icons/ai';
 import { FaStar } from 'react-icons/fa';
 import TextArea from 'antd/lib/input/TextArea';
+import { addOrder } from '../../../redux/actions/orderAction';
 
 
 export default function ProductDetails() {
     const { comments } = useSelector(state => state.comment)
-
-
+    const [mount, setMount] = useState(1);
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const [title, setTitle] = useState();
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
@@ -48,9 +49,29 @@ export default function ProductDetails() {
         }
     }
 
-    const handleAddProduct = (product) => {
+    const handleAddProduct = () => {
         addItem(product)
         message.success('thêm thành công')
+    }
+    const handleOrder = () => {
+        setIsModalVisible(true)
+
+    }
+    const handleOk = () => {
+        dispatch(addOrder({
+            amount: mount,
+            total: product.price * mount,
+            day: new Date(),
+            name: 'hoang viet'
+        }))
+        setIsModalVisible(false);
+        message.success('thanh toán thành công')
+
+    }
+
+
+    const handleCancel = () => {
+        setIsModalVisible(false)
     }
 
     return (
@@ -121,17 +142,17 @@ export default function ProductDetails() {
                                 <span className='purchases'>Chọn số lượng:</span>
                             </Col>
                             <Col className='ant-col-4' span={12}>
-                                <Button>_</Button>
-                                <h3 className='amount-product'>3</h3>
-                                <Button>+</Button>
+                                <Button onClick={() => setMount(mount - 1)}>_</Button>
+                                <h3 className='amount-product'>{mount}</h3>
+                                <Button onClick={() => setMount(mount + 1)}>+</Button>
                             </Col>
                         </Row>
                         <Row className='ant-row-6' gutter={[16, 16]}>
                             <Col span={12}>
-                                <Button onClick={() => handleAddProduct(product)} type='primary' size="large" block>Thêm vào giỏ hàng</Button>
+                                <Button onClick={handleAddProduct} type='primary' size="large" block>Thêm vào giỏ hàng</Button>
                             </Col>
                             <Col span={12}>
-                                <Button type='primary' size="large" block danger>Mua ngay</Button>
+                                <Button onClick={handleOrder} type='primary' size="large" block danger>Mua ngay</Button>
                             </Col>
                         </Row>
                         <Row className='ant-row-7'>
@@ -176,6 +197,9 @@ export default function ProductDetails() {
 
                     </Col>
                 </Row>
+                <Modal title="Thanh toán" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                    <h1>Bạn có muốn thanh toán hay không</h1>
+                </Modal>
             </div>
 
         </div>
