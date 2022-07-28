@@ -26,8 +26,12 @@ const ListOrders = () => {
         },
         {
             title: 'Tổng tiền',
-            dataIndex: 'total',
             key: 'total',
+            render: (text, record, index) => {
+                return (
+                    <li>{new Intl.NumberFormat('vi').format(record.total)}đ</li>
+                )
+            }
         },
         {
             title: 'Tên người dùng',

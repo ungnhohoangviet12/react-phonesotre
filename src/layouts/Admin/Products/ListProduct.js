@@ -43,8 +43,12 @@ const ListProduct = () => {
         },
         {
             title: 'Price',
-            dataIndex: 'price',
             key: 'price',
+            render: (text, record) => {
+                return (
+                    <li>{new Intl.NumberFormat('vi').format(record.price)}đ</li>
+                )
+            }
         },
         {
             title: 'Image',
