@@ -33,6 +33,7 @@ export default function CartPage() {
             }));
             setIsModalVisible(false);
             message.success('thanh toán thành công')
+            emptyCart();
         }
 
     };

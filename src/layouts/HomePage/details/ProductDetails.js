@@ -20,7 +20,7 @@ export default function ProductDetails() {
     const [title, setTitle] = useState();
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
-    const { addItem, items } = useCart();
+    const { addItem, items, updateItemQuantity } = useCart();
     const { id } = useParams();
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.data);
@@ -29,8 +29,6 @@ export default function ProductDetails() {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-
-
 
 
     useEffect(() => {
