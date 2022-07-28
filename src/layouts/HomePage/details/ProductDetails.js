@@ -4,7 +4,7 @@ import { getSingleProduct } from '../../../redux/actions/productActions';
 import { addComment, loadComments } from '../../../redux/actions/commentAction';
 import { useParams } from 'react-router-dom';
 import './productdetails.scss'
-import { Avatar, Button, Col, List, Row } from 'antd';
+import { Avatar, Button, Col, List, message, Row } from 'antd';
 import { AiFillCarryOut, AiTwotoneRedEnvelope, AiOutlineExclamationCircle } from "react-icons/ai";
 import { useCart } from 'react-use-cart';
 import { AiFillSafetyCertificate } from 'react-icons/ai';
@@ -47,6 +47,12 @@ export default function ProductDetails() {
             setTitle('')
         }
     }
+
+    const handleAddProduct = (product) => {
+        addItem(product)
+        message.success('thêm thành công')
+    }
+
     return (
         <div className='productDetails'>
             <div className="headers">
@@ -122,7 +128,7 @@ export default function ProductDetails() {
                         </Row>
                         <Row className='ant-row-6' gutter={[16, 16]}>
                             <Col span={12}>
-                                <Button onClick={() => addItem(items)} type='primary' size="large" block>Thêm vào giỏ hàng</Button>
+                                <Button onClick={() => handleAddProduct(product)} type='primary' size="large" block>Thêm vào giỏ hàng</Button>
                             </Col>
                             <Col span={12}>
                                 <Button type='primary' size="large" block danger>Mua ngay</Button>

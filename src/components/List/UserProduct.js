@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
 import './userproduct.scss'
-import { Card, List, } from 'antd';
+import { Card, List, message, } from 'antd';
 import { FaStar, FaCartPlus } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,10 @@ import { Pagination } from 'antd';
 const pageSize = 15;
 
 export default function UserProduct() {
+    const { addItem } = useCart();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { products } = useSelector(state => state.data)
 
     const [states, setStates] = useState(
         {
@@ -23,12 +27,6 @@ export default function UserProduct() {
         }
     );
 
-    const { addItem } = useCart();
-    const navigate = useNavigate();
-
-
-    const dispatch = useDispatch();
-    const { products } = useSelector(state => state.data)
 
 
     useEffect(() => {
@@ -62,14 +60,14 @@ export default function UserProduct() {
 
     }
 
+    const handleAddProduct = (item) => {
+        addItem(item)
+        message.success('thêm thành công')
+    }
+
     return (
         <div >
             <div className="container-fluid content">
-                {/* <div className='content-title'>
-                    <span className='title'>shopphone</span>
-                    <span> / Điện thoại - Máy tính bảng</span>
-                </div>
-                <h1>Bán điện thoại - máy tính bảng</h1> */}
                 <List
                     grid={{
                         gutter: 16,
@@ -105,7 +103,7 @@ export default function UserProduct() {
                                         <div className='star'>
                                             <span><FaStar color='#ffc600' />5</span>
                                         </div>
-                                        <FaCartPlus onClick={() => addItem(item)} color='brown' size={20} ></FaCartPlus>
+                                        <FaCartPlus onClick={() => handleAddProduct(item)} color='brown' size={20} ></FaCartPlus>
                                     </div>
                                 </Card>
                             </List.Item>
