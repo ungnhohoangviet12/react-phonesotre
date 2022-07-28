@@ -51,8 +51,11 @@ export default function UserProduct() {
             minIndex: (page - 1) * pageSize,
             maxIndex: page * pageSize
         });
-        console.log(states);
     };
+
+
+
+    console.log(products);
 
 
     const handleDetails = (id) => {
@@ -81,7 +84,8 @@ export default function UserProduct() {
                     dataSource={products}
                     renderItem={(item, index) =>
                         index >= states.minIndex &&
-                        index < states.maxIndex && (
+                        index < states.maxIndex &&
+                        (
                             <List.Item>
 
                                 <Card title={item.title}

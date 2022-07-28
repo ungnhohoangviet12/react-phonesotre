@@ -14,14 +14,19 @@ import ListProduct from './Products/ListProduct';
 import ListUsers from './Users/ListUsers/ListUsers';
 import ViewUser from './Users/ViewUser/ViewUser';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import * as types from '../../redux/actionType';
 const { Sider, Content } = Layout;
 
 export default function Admin() {
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
     const handlelogout = () => {
+        dispatch({
+            type: types.LOGOUT
+        })
         navigate('/')
-        window.location.reload()
     }
 
     return (

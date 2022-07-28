@@ -3,10 +3,13 @@ import HomePage from './layouts/HomePage/HomePage';
 import 'antd/dist/antd.min.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Admin from './layouts/Admin/Admin';
+import { useSelector } from 'react-redux';
 
 
 function App() {
+  const { profile, isAuthenticated } = useSelector(state => state.auth)
 
+  console.log(isAuthenticated, 'isAuthenticated');
 
   return (
     <div className="app">
@@ -33,8 +36,10 @@ function App() {
           <Route path='product/details/:id' />
         </Route>
 
-        {/* <Route path="*" element={<Navigate to={getEmail === "admin" && getPassword === "admin" ? "/" : "/"} />} /> */}
+        {/* {isAuthenticated && <Navigate to='/admin' />}  */}
+        {/* {isAuthenticated && <Route path="*" element={<Navigate replace to="/admin" />} />} */}
       </Routes>
+      {isAuthenticated && <Navigate to="/admin/dashboard" replace={true} />}
     </div>
   );
 }

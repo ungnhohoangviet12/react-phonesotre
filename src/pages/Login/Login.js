@@ -19,38 +19,35 @@ export default function AppLogin() {
 
 
     const onFinish = (values) => {
-        const find = users.findIndex(todo => (todo.email === values.email && todo.password === values.password))
-        if (find !== -1 && users[find].role === true) {
-            dispatch(actLoginSuccess({
-                profile: values,
-                isLogin: true
-            }));
-            const info = {
-                email: values.email,
-                password: values.password
-            }
-            localStorage.setItem('info', JSON.stringify(info))
-            navigate('/admin')
-            window.location.reload()
-            message.success('đăng nhập thành công')
-
-
-
-        } else if (find !== -1 && users[find].role === false) {
-            dispatch(actLoginSuccess({
-                profile: values,
-            }));
-            message.success('đăng nhập thành công')
-            window.location.reload()
-            navigate('/')
-
+        const existedUserIndex = users.findIndex(todo => (todo.email === values.email && todo.password === values.password))
+        if (existedUserIndex === -1) {
+            message.error('Tài khoản mật khẩu k chính xác')
+            return
         }
 
-        else {
-            alert("bạn đã nhập sai")
-        }
+        dispatch(actLoginSuccess({
+            profile: users[existedUserIndex]
+        }))
 
+        // if (find !== -1 && users[find].role === true) {
+        //     dispatch(actLoginSuccess({
+        //         profile: values,
+        //         isLogin: true
+        //     }));
 
+        //     navigate('/admin/dashboard')
+        //     message.success('đăng nhập thành công')
+        // } else if (find !== -1 && users[find].role === false) {
+        //     dispatch(actLoginSuccess({
+        //         profile: values,
+        //     }));
+        //     message.success('đăng nhập thành công')
+        //     navigate('/')
+        // }
+
+        // else {
+        //     alert("bạn đã nhập sai")
+        // }
     };
 
     useEffect(() => {

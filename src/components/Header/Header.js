@@ -46,7 +46,7 @@ export default function AppHeader() {
                     <Menu
                         mode="horizontal"
                         defaultSelectedKeys={['Home']}
-                        items={true ? [
+                        items={[
                             {
                                 key: '1',
                                 label: (
@@ -66,39 +66,6 @@ export default function AppHeader() {
 
                             },
                             {
-                                key: '6',
-                                icon: <i className="fa-solid fa-right-from-bracket"></i>,
-                                label: (
-                                    <Link onClick={remove} to='/login' >Đăng xuất</Link>
-                                ),
-
-                            },
-
-
-                        ] : [
-                            {
-                                key: '1',
-                                icon: <i className="fa-solid fa-house" />,
-                                label: (
-                                    <Link to='/' >Trang chủ</Link>
-                                ),
-
-                            },
-                            {
-                                key: '2',
-                                icon: <i className="fa-solid fa-house" />,
-                                label: (
-                                    <Link to='/product' >Sản Phẩm</Link>
-                                ),
-                            },
-                            {
-                                key: '3',
-                                icon: <i className="fa-solid fa-cart-arrow-down" />,
-                                label: (
-                                    <Link to='/cart' ><span>{totalUniqueItems}</span></Link>
-                                ),
-                            },
-                            {
                                 key: '4',
                                 icon: <UploadOutlined />,
                                 label: (
@@ -114,6 +81,16 @@ export default function AppHeader() {
                                 ),
 
                             },
+
+                            {
+                                key: '6',
+                                icon: <i className="fa-solid fa-right-from-bracket"></i>,
+                                label: (
+                                    <Link onClick={remove} to='/login' >Đăng xuất</Link>
+                                ),
+
+                            },
+
 
                         ]}
                     />
