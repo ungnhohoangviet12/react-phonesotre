@@ -12,7 +12,6 @@ export default function AppLogin() {
     const dispatch = useDispatch();
     const users = useSelector(state => state.data2.users)
 
-
     useEffect(() => {
         dispatch(loadUsers())
     }, [])
@@ -26,7 +25,8 @@ export default function AppLogin() {
         }
 
         dispatch(actLoginSuccess({
-            profile: users[existedUserIndex]
+            profile: users[existedUserIndex],
+            navigate: navigate
         }))
 
         // if (find !== -1 && users[find].role === true) {

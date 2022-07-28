@@ -12,7 +12,7 @@ const initialState = {
 export const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.LOGIN_SUCCESS: {
-            const { profile } = action.payload;
+            const { profile, navigate } = action.payload;
             console.log('hihihi');
             state = {
                 profile: profile,
@@ -22,6 +22,9 @@ export const authReducer = (state = initialState, action) => {
                 isAuthenticated: profile?.role
             };
             localStorage.setItem(INFO_USER_KEY, JSON.stringify(profile))
+            if (profile?.role) {
+                !!navigate && navigate('/admin/dashboard')
+            } else !!navigate && navigate('/')
             return { ...state };
         }
         // case types.GET_PROFILE_SUCCESS: {

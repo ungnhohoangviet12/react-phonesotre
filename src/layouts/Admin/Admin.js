@@ -90,15 +90,6 @@ export default function Admin() {
                         minHeight: 280,
                     }}
                 >
-                    <Routes>
-                        <Route path='products' element={<ListProduct />} />
-                        <Route path='products/add' element={<AddProduct />} />
-                        <Route path='products/edit/:id' element={<EditProduct />} />
-                        <Route path='users' element={<ListUsers />} />
-                        <Route path='users/view/:id' element={<ViewUser />} />
-                        <Route path='orders' element={<ListOrders />} />
-                        <Route path='dashboard' element={<DashBoard />} />
-                    </Routes>
                     <Outlet />
                 </Content>
             </Layout>

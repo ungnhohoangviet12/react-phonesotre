@@ -47,7 +47,7 @@ export const addComment = (comment) => {
     return function (dispatch) {
         axios.post(`${process.env.REACT_APP_BE_URL}/comments`, comment).then((resp) => {
             console.log("resp", resp);
-            dispatch(commentAdd());
+            dispatch(loadComments());
             // dispatch(loadUsers());
         }).catch(error => console.log(error))
     };
