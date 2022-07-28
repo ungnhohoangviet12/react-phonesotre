@@ -28,6 +28,26 @@
     }
     i{
       color: white;
+      margin: 0;
+    }
+
+    .fa-cart-arrow-down  {
+        position: relative;
+        .cart {
+          display: inline-block;
+          height: 18px;
+          width: 18px;
+          position: absolute;
+          background-color: #fff;
+          border: 2px solid #ee2624;
+          border-radius:50%;
+          color: #ee2624;
+          padding: 4px;
+          font-weight: bold;
+          left: 85%;
+          top: -95%;
+          font-size: 8px;
+        }
     }
 
     .bot {

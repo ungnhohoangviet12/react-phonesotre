@@ -49,7 +49,6 @@ export default function AppHeader() {
                         items={true ? [
                             {
                                 key: '1',
-                                icon: <i className="fa-solid fa-house" />,
                                 label: (
                                     <Link to='/' >Trang chủ</Link>
                                 ),
@@ -57,17 +56,14 @@ export default function AppHeader() {
                             },
                             {
                                 key: '2',
-                                icon: <i className="fa-solid fa-house" />,
                                 label: (
                                     <Link to='/product' >Sản Phẩm</Link>
                                 ),
                             },
                             {
                                 key: '3',
-                                icon: <i className="fa-solid fa-cart-arrow-down" />,
-                                label: (
-                                    <Link to='/cart' ><span>{totalUniqueItems}</span></Link>
-                                ),
+                                icon: <i className="fa-solid fa-cart-arrow-down" ><Link to='/cart' ></Link><span className='cart'>{totalUniqueItems}</span></i>,
+
                             },
                             {
                                 key: '6',
