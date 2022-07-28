@@ -1,10 +1,22 @@
+import axios from 'axios';
 import * as types from '../actionType';
 
 export const actLogin = (payload) => {
-    return {
-        type: types.LOGIN,
-        payload: payload,
-    };
+    return async (dispatch) => {
+        const { data: users } = await axios.get(`${process.env.REACT_APP_BE_URL}/users`)
+        const existedUserIndex = users.findIndex(todo => (todo.email === payload.email && todo.password === payload.password))
+        if (existedUserIndex === -1) {
+            dispatch({
+                type: types.LOGOUT
+            })
+            return
+        }
+
+        dispatch(actLoginSuccess({
+            profile: users[existedUserIndex],
+            navigate: payload?.navigate
+        }))
+    }
 };
 
 export const actLoginFail = () => {

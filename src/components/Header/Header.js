@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import './header.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { searchProduct } from '../../redux/actions/productActions';
 
 const { Search } = Input;
@@ -12,7 +12,7 @@ const { Search } = Input;
 
 export default function AppHeader() {
     const dispatch = useDispatch();
-    // const { isLoggIn } = useSelector(state => state.auth)
+    const { isLoggIn, profile } = useSelector(state => state.auth)
     const { totalUniqueItems } = useCart();
 
 

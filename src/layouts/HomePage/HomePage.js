@@ -11,6 +11,7 @@ import AppRegister from '../../pages/Register/Register';
 import './cartpage.scss'
 import UserProduct from '../../components/List/UserProduct';
 import ProductDetails from './details/ProductDetails';
+import { useSelector } from 'react-redux';
 
 
 const { Header } = Layout;
@@ -23,14 +24,7 @@ export default function HomePage() {
                     <AppHeader />
                 </Header>
                 <Content>
-                    <Routes>
-                        <Route path='' element={<AppContent />} />
-                        <Route path='/product' element={<UserProduct />} />
-                        <Route path='/cart' element={<CartPage />} />
-                        <Route path='/login' element={<AppLogin />} />
-                        <Route path='/register' element={<AppRegister />} />
-                        <Route path='product/details/:id' element={<ProductDetails />} />
-                    </Routes>
+                    <Outlet />
                 </Content>
                 <Footer>
                     <AppFooter />
