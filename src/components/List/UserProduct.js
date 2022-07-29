@@ -182,14 +182,12 @@ export default function UserProduct() {
                             </List.Item>
                         )}
                 />
-                <div style={{ textAlign: 'center' }}>
-                    <Pagination pageSize={pageSize}
-                        defaultCurrent={2}
-                        current={states.current}
-                        total={products.length}
-                        onChange={handleChange}
-                        style={{ bottom: "0px" }} />
-                </div>
+                <Pagination className='pagination' pageSize={pageSize}
+                    defaultCurrent={2}
+                    current={states.current}
+                    total={products.length}
+                    onChange={handleChange}
+                />
             </div>
         </div>
     )
