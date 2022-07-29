@@ -1,101 +1,53 @@
-import { UploadOutlined } from '@ant-design/icons';
-import { Menu, Input, Row, Col, message } from 'antd';
+import { Row, Col } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import './header.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchProduct } from '../../redux/actions/productActions';
-
-const { Search } = Input;
+import { actLogout } from '../../redux/actions/authAction';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function AppHeader() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const { isLoggIn, profile } = useSelector(state => state.auth)
     const { totalUniqueItems } = useCart();
-
-
 
     const handleSearch = (e) => {
         dispatch(searchProduct(e.target.value))
 
     }
 
-    const handleUser = () => {
-        message.success('có cái nồi')
-    }
-
-    const remove = () => {
+    const handleLogout = () => {
+        dispatch(actLogout())
+        navigate('/login')
 
     }
 
     return (
-
         <div>
             <div className="top">
                 <div className="header">
                     <div className="logo" >
-                        <h3 className='title-header'>Shop store</h3>
+                        <h1 className='title-header'>Shop store</h1>
                     </div>
-                    <div className='w-400' >
-                        <Search onChange={handleSearch} placeholder="Tìm kiếm trên Shopphone" enterButton size='large' />
+                    <input type="text" placeholder='Tìm kiếm' onChange={handleSearch} />
+                    <div className='menu-bar'>
+                        <ul>
+                            <li><Link to='/' >Trang chủ</Link></li>
+                            <li><Link to='/product' >Sản Phẩm</Link></li>
+                            <li className='cart'>
+                                <Link to='/cart' ><i className="fa-solid fa-cart-arrow-down" ><span className='cart-icon'>{totalUniqueItems}</span></i></Link>
+                            </li>
+                            <li><Link to='/cart' >Cart</Link></li>
+                            {!isLoggIn && <li><Link to='/login' >Đăng Nhập</Link></li>}
+                            {isLoggIn && <li onClick={handleLogout}>Đăng xuất</li>}
+                            {/* <Link to='/register' >Đăng ký</Link> */}
+                        </ul>
                     </div>
-                    <img onClick={handleUser} width={50} style={{ borderRadius: '50%' }} src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
-
-                    <Menu
-                        mode="horizontal"
-                        defaultSelectedKeys={['Home']}
-                        items={[
-                            {
-                                key: '1',
-                                label: (
-                                    <Link to='/' >Trang chủ</Link>
-                                ),
-
-                            },
-                            {
-                                key: '2',
-                                label: (
-                                    <Link to='/product' >Sản Phẩm</Link>
-                                ),
-                            },
-                            {
-                                key: '3',
-                                icon: <i className="fa-solid fa-cart-arrow-down" ><Link to='/cart' ></Link><span className='cart'>{totalUniqueItems}</span></i>,
-
-                            },
-                            {
-                                key: '4',
-                                icon: <UploadOutlined />,
-                                label: (
-                                    <Link to='/login' >Đăng nhập</Link>
-                                ),
-
-                            },
-                            {
-                                key: '5',
-                                icon: <UploadOutlined />,
-                                label: (
-                                    <Link to='/register' >Đăng ký</Link>
-                                ),
-
-                            },
-
-                            {
-                                key: '6',
-                                icon: <i className="fa-solid fa-right-from-bracket"></i>,
-                                label: (
-                                    <Link onClick={remove} to='/login' >Đăng xuất</Link>
-                                ),
-
-                            },
-
-
-                        ]}
-                    />
                 </div >
-
             </div >
             <div className="bot" >
                 <Row gutter={[16, 16]}>

@@ -1,14 +1,70 @@
 .mainLayout .ant-layout-header {
   .header {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
     margin-top: 0;
     height: 60px;
-    button {
-      background-color: black;
-      border: 1px solid black;
+
+    h1 {
+      width: 180px;
+      font-size: 1.5em;
+      color: white;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Times New Roman', Times, serif ;
+      font-style: italic;
+      font-weight: bold;
+      margin-left: 50px;
     }
+    
     input {
+      width: 800px;
+      height: 42px;
       border: 1px solid red;
+      margin: 15px 50px;
+      outline: none;
+      border-radius: 2px;
+      padding: 0 15px;
+      font-weight: 500;
+
     }
+    .menu-bar {
+      text-align: center;
+      ul {
+        display: flex;
+        list-style: none;
+        color: #fff;
+        li {
+          width: 120px;
+          padding: 15px;
+          &:hover {
+            background-color:brown;
+            font-weight: 600;
+            border-radius: 5px;
+          }
+        }
+      
+        .cart {
+          width: 50px;
+          .cart-icon {
+            display: inline-block;
+            height: 18px;
+            width: 18px;
+            position: absolute;
+            background-color: #fff;
+            border: 2px solid #ee2624;
+            border-radius:50%;
+            color: #ee2624;
+            padding: 4px;
+            font-weight: bold;
+            left: 85%;
+            top: -95%;
+            font-size: 8px;
+          }
+        }
+      }
+    }
+
+    
   
   }
     padding: 0;
@@ -17,37 +73,17 @@
     background-color: #ee2624;
     display: block;
   
-    .title-header {
-      margin-left: 40px;
-    }
     a {
       color: white !important;
       .ant-menu-item:after {
         width: 0px;
       }
     }
-    i{
-      color: white;
-      margin: 0;
-    }
+ 
 
     .fa-cart-arrow-down  {
         position: relative;
-        .cart {
-          display: inline-block;
-          height: 18px;
-          width: 18px;
-          position: absolute;
-          background-color: #fff;
-          border: 2px solid #ee2624;
-          border-radius:50%;
-          color: #ee2624;
-          padding: 4px;
-          font-weight: bold;
-          left: 85%;
-          top: -95%;
-          font-size: 8px;
-        }
+        
     }
 
     .bot {
