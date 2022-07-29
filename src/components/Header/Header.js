@@ -37,7 +37,7 @@ export default function AppHeader() {
                     <div className="logo" >
                         <h1 className='title-header'>Shop store</h1>
                     </div>
-                    <input type="text" placeholder='Tìm kiếm' onChange={handleSearch} />
+                    <input type="text" placeholder='Tìm kiếm sản phẩm' onChange={handleSearch} />
                     {isLoggIn && <img onClick={handleProfile} src={profile.avatar} alt="" />}
                     <div className='menu-bar'>
                         <ul>

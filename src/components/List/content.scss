@@ -5,7 +5,7 @@
             font-size: 26px;
         }
         height: 450px;
-        background-image:linear-gradient(#f9920f , red, blue); 
+        background: #ee2624; 
         border-radius: 14px;
         padding: 30px;
         .item-slick {
@@ -186,6 +186,12 @@
                 }
                 h2 {
                     margin: 10px;
+                    font-weight: 1000;
+                    font-size: 23px;
+                    line-height: 2.2rem;
+                    color: #0f1e29;
+                    letter-spacing: .015rem;
+                    font-family: inherit;
                 }
             }
             
@@ -203,6 +209,7 @@
             text-align: center;
             font-size:1.7;
             font-weight: 700px;
+            font-weight: 700;
         }
         .cart {
             width: 100%;
@@ -223,16 +230,23 @@
     
                 p {
                     margin: 0;
-                    font-size: 18px;
-                    font-weight: 470;
+                    font-size: 16px;
+                    font-weight: 400;
                 }
                 .blue {
                     color: #2f80ed;
+                    font-size: 16px;
+                    font-weight: 500;
                 }
     
                 }
             }
         }
+    }
+
+    .pagination {
+        margin: 20px 0;
+        text-align: center;
     }
 
 

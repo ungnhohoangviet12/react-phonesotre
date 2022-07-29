@@ -172,12 +172,11 @@ export default function AppContent() {
                     )
                 }
             />
-            <Pagination pageSize={pageSize}
+            <Pagination className='pagination' pageSize={pageSize}
                 defaultCurrent={1}
                 current={states.current}
                 total={products.length}
-                onChange={handleChange}
-                style={{ bottom: "0px", textAlign: 'center' }} />
+                onChange={handleChange} />
             <div className='slick'>
                 <h1 style={{ color: 'white' }}>SĂN SALE GIÁ SỐC MỖI NGÀY</h1>
                 <Slider {...settings}>
