@@ -30,7 +30,6 @@ export default function HomePage() {
                     <AppFooter />
                 </Footer>
             </Layout>
-            <Outlet />
         </div>
     )
 }
