@@ -45,32 +45,35 @@
           width: 120px;
           padding: 15px;
           margin: 15px;
-          background-color: rgba(255,172,10,.6);
           border-radius: 4px;
+          font-weight: 500;
+          &:hover {
+          background-color: rgba(255,172,10,.6);
+          }
         }
       
         .cart {
+          background: rgba(255,172,10,.6);
           width: 50px;
           .cart-icon {
             display: inline-block;
             height: 18px;
             width: 18px;
             position: absolute;
-            background-color: #fff;
+            background-color: red;
             border: 2px solid #ee2624;
             border-radius:50%;
-            color: #ee2624;
+            color: #fff;
             padding: 4px;
             font-weight: bold;
-            left: 85%;
-            top: -95%;
+            left: 100%;
+            top: -100%;
             font-size: 8px;
           }
         }
       }
       
     }
-    
       
       img{
         height: 40px;
@@ -78,9 +81,7 @@
         border-radius: 50%;
         cursor: pointer;
       }
-    
   }
-    
     a {
       color: black !important;
       .ant-menu-item:after {
@@ -90,7 +91,6 @@
 
     .fa-cart-arrow-down  {
         position: relative;
-        
     }
 
     .bot {
