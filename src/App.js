@@ -20,6 +20,7 @@ import DashBoard from './layouts/Admin/DashBoard/DashBoard';
 import { useEffect } from 'react';
 import { INFO_USER_KEY } from './constants/constants';
 import { actLogin } from './redux/actions/authAction';
+import Profile from './pages/Profile/Profile';
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           <Route path='/cart' element={<CartPage />} />
           <Route path='/login' element={<AppLogin />} />
           <Route path='/register' element={<AppRegister />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='product/details/:id' element={<ProductDetails />} />
         </Route>
       </Routes>

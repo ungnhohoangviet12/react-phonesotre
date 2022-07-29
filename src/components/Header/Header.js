@@ -17,6 +17,7 @@ export default function AppHeader() {
     const { isLoggIn, profile } = useSelector(state => state.auth)
     const { totalUniqueItems } = useCart();
 
+
     const handleSearch = (e) => {
         dispatch(searchProduct(e.target.value))
 

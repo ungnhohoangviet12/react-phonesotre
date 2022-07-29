@@ -1,18 +1,15 @@
 import {
-    HomeOutlined,
+
+    BorderOuterOutlined,
+    GiftOutlined,
+    PicLeftOutlined,
+    SettingOutlined,
     UploadOutlined,
     UserOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu } from 'antd';
-import { Link, Outlet, Route, Routes } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import './admin.scss'
-import DashBoard from './DashBoard/DashBoard';
-import ListOrders from './Orders/ListOrders';
-import AddProduct from './Products/addProducts/AddProduct';
-import EditProduct from './Products/editProducts/EditProduct';
-import ListProduct from './Products/ListProduct';
-import ListUsers from './Users/ListUsers/ListUsers';
-import ViewUser from './Users/ViewUser/ViewUser';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as types from '../../redux/actionType';
@@ -40,7 +37,7 @@ export default function Admin() {
                     items={[
                         {
                             key: '1',
-                            icon: <HomeOutlined />,
+                            icon: <PicLeftOutlined />,
                             label: (
                                 <Link to='/admin/dashboard' >Dashboard</Link>
                             ),
@@ -48,7 +45,7 @@ export default function Admin() {
                         },
                         {
                             key: '2',
-                            icon: <UserOutlined />,
+                            icon: <GiftOutlined />,
                             label: (
                                 <Link to='/admin/Products' >Products</Link>
                             ),
@@ -62,7 +59,7 @@ export default function Admin() {
                         },
                         {
                             key: '4',
-                            icon: <UploadOutlined />,
+                            icon: <BorderOuterOutlined />,
                             label: (
                                 <Link to='/admin/orders' >Orders</Link>
                             ),
@@ -70,12 +67,18 @@ export default function Admin() {
                         },
                         {
                             key: '5',
-                            // icon: <UploadOutlined />,
+                            icon: <SettingOutlined />,
+                            label: (
+                                <Link to='/admin/orders' >Setting</Link>
+                            ),
+
+                        },
+                        {
+                            key: '6',
                             label: (
                                 < Button onClick={handlelogout}>logout</Button>
 
                             ),
-
                         },
 
                     ]}

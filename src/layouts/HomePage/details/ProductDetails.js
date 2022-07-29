@@ -20,10 +20,11 @@ export default function ProductDetails() {
     const [title, setTitle] = useState();
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
-    const { addItem, items, updateItemQuantity } = useCart();
+    const { addItem } = useCart();
     const { id } = useParams();
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.data);
+    const { profile } = useSelector(state => state.auth)
 
 
     useEffect(() => {
@@ -120,8 +121,11 @@ export default function ProductDetails() {
                                     <List.Item.Meta
                                         avatar={<Avatar src="https://images.unsplash.com/photo-1610041880800-9a4ec629b1ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />}
                                         title={item.title}
+                                        description={item.title}
                                     />
+
                                 </List.Item>
+
                             )}
                         />
                     </Col>
