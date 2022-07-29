@@ -8,9 +8,6 @@ import './listproduct.scss';
 
 const ListProduct = () => {
     const navigate = useNavigate();
-
-
-
     const handleDelete = (id) => {
         dispatch(deleteProduct(id));
         dispatch(loadProducts());
@@ -26,7 +23,6 @@ const ListProduct = () => {
     useEffect(() => {
         dispatch(loadProducts())
     }, [])
-
 
     const columns = [
         {

@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
 import './userproduct.scss'
-import { Card, List, message, } from 'antd';
+import { Card, Checkbox, Col, List, message, Row, Select } from 'antd';
 import { FaStar, FaCartPlus } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
-import { Pagination } from 'antd';
-
-
+import { Pagination, } from 'antd';
+const { Option } = Select;
 const pageSize = 15;
-
 export default function UserProduct() {
     const { addItem } = useCart();
     const navigate = useNavigate();
@@ -26,9 +24,6 @@ export default function UserProduct() {
             maxIndex: 0
         }
     );
-
-
-
     useEffect(() => {
         dispatch(loadProducts())
         setStates({
@@ -42,9 +37,6 @@ export default function UserProduct() {
         window.scrollTo(0, 0)
     }, [])
 
-
-
-
     const handleChange = (page) => {
         setStates({
             current: page,
@@ -52,25 +44,102 @@ export default function UserProduct() {
             maxIndex: page * pageSize
         });
     };
-
-
-
-    console.log(products);
-
-
-    const handleDetails = (id) => {
-        navigate(`/product/details/${id}`)
+    const handleOnchangeCheckbox = () => {
 
     }
-
+    const handleDetails = (id) => {
+        navigate(`/product/details/${id}`)
+    }
     const handleAddProduct = (item) => {
         addItem(item)
         message.success('thêm thành công')
     }
-
     return (
-        <div >
-            <div className="container-fluid content">
+        <div className='main'>
+            <div className='sibar'>
+                <div className="fixed">
+                    <h3>Danh mục</h3>
+                    <div>
+                        <h4>Phương thức vận chuyển</h4>
+                        <Checkbox.Group style={{ width: '100%' }} onChange={handleOnchangeCheckbox}>
+                            <Row>
+                                <Checkbox value="hoatoc">Hỏa tốc</Checkbox>
+                            </Row>
+                            <Row>
+                                <Checkbox value="chuyenphat">Chuyển Phát tiêu</Checkbox>
+                            </Row>
+                        </Checkbox.Group>
+                    </div>
+                    <div>
+                        <h4>Loại shop</h4>
+                        <Checkbox.Group style={{ width: '100%' }} onChange={handleOnchangeCheckbox}>
+                            <Row>
+                                <Checkbox value="senmall">SenMall</Checkbox>
+                            </Row>
+                            <Row>
+                                <Checkbox value="sum">Shop+</Checkbox>
+                            </Row>
+                            <Row>
+                                <Checkbox value="tugiao">Shop tự giao</Checkbox>
+                            </Row>
+                            <Row>
+                                <Checkbox value="uytin">Shop uy tín</Checkbox>
+                            </Row>
+                        </Checkbox.Group>
+                    </div>
+                    <div>
+                        <h4>Ưu đãi</h4>
+                        <Checkbox.Group style={{ width: '100%' }} onChange={handleOnchangeCheckbox}>
+                            <Row>
+                                <Checkbox value="ting">TING TING! SALE LI</Checkbox>
+                            </Row>
+                            <Row>
+                                <Checkbox value="deal">DEAL SỐC TRONG N</Checkbox>
+                            </Row>
+                            <Row>
+                                <Checkbox value="flash">Flash Sale</Checkbox>
+                            </Row>
+                            <Row>
+                                <Checkbox value="voucher">Voucher Shop đến 50</Checkbox>
+                            </Row>
+                        </Checkbox.Group>
+                    </div>
+                    <div>
+                        <h4>Đánh giá</h4>
+                        <p>5 sao</p>
+                        <p>4-5 sao</p>
+                        <p>3-5sao</p>
+                    </div>
+                    <div>
+                        <h4>Bộ lọc khác</h4>
+                        <Checkbox.Group style={{ width: '100%' }} onChange={handleOnchangeCheckbox}>
+                            <Row>
+                                <Checkbox value="video">Có video</Checkbox>
+                            </Row>
+                        </Checkbox.Group>
+                    </div>
+                </div>
+            </div>
+            <div className="container-userproduct">
+                <Row className='search__product'>
+                    <span className='search__lable' htmlFor="">Tìm kiếm theo:</span>
+                    <Select
+                        labelInValue
+                        defaultValue={{
+                            value: 'dt',
+                            label: 'điện thoại',
+                        }}
+                        style={{
+                            width: 120,
+                        }}
+                    // onChange={handleChange}
+                    >
+                        <Option value="dtc">Điện thoại cũ</Option>
+                        <Option value="dtn">Điện thoại mới</Option>
+                        <Option value="lt">Lap Top</Option>
+                        <Option value="tn">Tai nghe</Option>
+                    </Select>
+                </Row>
                 <List
                     grid={{
                         gutter: 16,
@@ -78,8 +147,8 @@ export default function UserProduct() {
                         sm: 2,
                         md: 3,
                         lg: 4,
-                        xl: 5,
-                        xxl: 5,
+                        xl: 4,
+                        xxl: 4,
                     }}
                     dataSource={products}
                     renderItem={(item, index) =>
@@ -111,7 +180,6 @@ export default function UserProduct() {
                                     </div>
                                 </Card>
                             </List.Item>
-
                         )}
                 />
                 <div style={{ textAlign: 'center' }}>
@@ -123,7 +191,6 @@ export default function UserProduct() {
                         style={{ bottom: "0px" }} />
                 </div>
             </div>
-
         </div>
     )
 }

@@ -1,36 +1,35 @@
-.search  {
-    margin-top: 150px;
-    margin-left: 100px;
-}
-
-
-.container-userproduct {
-    width: 95%;
-    margin-left: 5%;
-    min-height: 700px;
+.main {
+    margin-top: 100px;
     display: flex;
-
     .sibar {
-        margin-top: 100px;
-        width: 20%;
-        height: 100%;
-        background-color: blue;
-
-        li {
-            height: 100px;
+        width: 17%;
+        margin-bottom: 10px;
+        padding: 20px;
+        height: 600px;
+        .fixed {
+            position: fixed;
+            height: 600px;
+            top: 100px;
+            overflow: scroll;
+            .ant-checkbox-wrapper {
+                margin: 4px 0;
+            }
         }
-      
+        
     }
-
-}
-
-.chonloc {
-    display: flex;
-    margin-left: 10px;
     
-    select {
-        border: 1px solid gray;
-        margin-left: 10px;
-    }
-}
+    .container-userproduct {
+        width: 100%;
+        min-height: 700px;
 
+        .search__product {
+            margin: 10px;
+            .search__lable {
+                font-size: 16px;
+                margin: 3px 5px;
+            }
+        }
+    
+    }
+    
+}
