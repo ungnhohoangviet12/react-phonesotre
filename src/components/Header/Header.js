@@ -41,10 +41,9 @@ export default function AppHeader() {
                             <li className='cart'>
                                 <Link to='/cart' ><i className="fa-solid fa-cart-arrow-down" ><span className='cart-icon'>{totalUniqueItems}</span></i></Link>
                             </li>
-                            <li><Link to='/cart' >Cart</Link></li>
                             {!isLoggIn && <li><Link to='/login' >Đăng Nhập</Link></li>}
                             {isLoggIn && <li onClick={handleLogout}>Đăng xuất</li>}
-                            {/* <Link to='/register' >Đăng ký</Link> */}
+
                         </ul>
                     </div>
                 </div >

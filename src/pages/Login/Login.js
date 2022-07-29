@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import './login.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadUsers } from '../../redux/actions/userActions';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { actLoginSuccess } from '../../redux/actions/authAction';
 
 
@@ -29,25 +29,6 @@ export default function AppLogin() {
             navigate: navigate
         }))
 
-        // if (find !== -1 && users[find].role === true) {
-        //     dispatch(actLoginSuccess({
-        //         profile: values,
-        //         isLogin: true
-        //     }));
-
-        //     navigate('/admin/dashboard')
-        //     message.success('đăng nhập thành công')
-        // } else if (find !== -1 && users[find].role === false) {
-        //     dispatch(actLoginSuccess({
-        //         profile: values,
-        //     }));
-        //     message.success('đăng nhập thành công')
-        //     navigate('/')
-        // }
-
-        // else {
-        //     alert("bạn đã nhập sai")
-        // }
     };
 
     useEffect(() => {
@@ -105,6 +86,7 @@ export default function AppLogin() {
                         Submit
                     </Button>
                 </Form.Item>
+                <Link to='/register' >Đăng ký</Link>
             </Form>
         </div>
     );

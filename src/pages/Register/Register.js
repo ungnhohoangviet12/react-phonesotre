@@ -9,7 +9,7 @@ import { DatePicker } from 'antd';
 import './register.scss'
 import { addUser } from '../../redux/actions/userActions';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function AppRegister() {
 
@@ -228,6 +228,7 @@ export default function AppRegister() {
                         Register
                     </Button>
                 </Form.Item>
+                <Link to='/login'>Đăng nhập</Link>
             </Form>
         </div>
     )

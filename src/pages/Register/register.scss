@@ -15,4 +15,14 @@
     button {
         height : 50px;
     }
+
+    a {
+        color: black;
+        float: right;
+        font-weight: 500;
+        &:hover {
+            color: red;
+            cursor: pointer;
+        }
+    }
 }
