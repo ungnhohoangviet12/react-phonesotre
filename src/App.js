@@ -3,7 +3,7 @@ import HomePage from './layouts/HomePage/HomePage';
 import 'antd/dist/antd.min.css';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Admin from './layouts/Admin/Admin';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import AppContent from './components/List/Content';
 import UserProduct from './components/List/UserProduct';
 import CartPage from './layouts/HomePage/CartPage';

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
 import './userproduct.scss'
-import { Card, Checkbox, Col, List, message, Row, Select } from 'antd';
+import { Card, Checkbox, List, message, Row, Select } from 'antd';
 import { FaStar, FaCartPlus } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackTop, Card, Col, List, Row } from 'antd';
+import { BackTop, Col, List, Row } from 'antd';
 import './footer.scss';
 
 const data = [
