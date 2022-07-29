@@ -28,7 +28,6 @@ function App() {
 
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem(INFO_USER_KEY))
-    // console.log(profile);
     dispatch(actLogin({
       email: profile?.email,
       password: profile?.password,

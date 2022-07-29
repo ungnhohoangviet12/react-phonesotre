@@ -6,7 +6,9 @@ body {
   overflow-x: hidden;
 }
 
-
+main {
+  width: 100%;
+}
 .container-fluid {
   margin: 0 auto;
   max-width: 1200px;
@@ -32,12 +34,7 @@ header
 footer
 ------
 */
-.ant-layout-footer {
-  background: #111 !important;
-  color: #fff !important;
-  padding: 60px 0 !important;
-  text-align: center;
-}
+
 
 .footer .logo {
   font-size: 22px;
@@ -49,10 +46,6 @@ footer
   color: #1890ff;
   font-size: 28px;
   margin: 0 5px 0 0;
-}
-
-.footer .logo a {
-  color: #fff;
 }
 
 .footer .socials {
@@ -71,9 +64,6 @@ footer
   color: #fff;
 }
 
-.footer .socials a:hover {
-  color: #1890ff;
-}
 
 .footer .goTop:hover {
   opacity: 0.7;
