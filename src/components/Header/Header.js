@@ -1,4 +1,4 @@
-import { Row, Col } from 'antd';
+import { Row, Col, Avatar, Image } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { searchProduct } from '../../redux/actions/productActions';
 import { actLogout } from '../../redux/actions/authAction';
 import { useNavigate } from 'react-router-dom';
+
 
 
 export default function AppHeader() {
@@ -23,7 +24,10 @@ export default function AppHeader() {
     const handleLogout = () => {
         dispatch(actLogout())
         navigate('/login')
+    }
 
+    const handleProfile = () => {
+        navigate('./profile')
     }
 
     return (
@@ -34,6 +38,7 @@ export default function AppHeader() {
                         <h1 className='title-header'>Shop store</h1>
                     </div>
                     <input type="text" placeholder='Tìm kiếm' onChange={handleSearch} />
+                    {isLoggIn && <img onClick={handleProfile} src={profile.avatar} alt="" />}
                     <div className='menu-bar'>
                         <ul>
                             <li><Link to='/' >Trang chủ</Link></li>
@@ -43,7 +48,6 @@ export default function AppHeader() {
                             </li>
                             {!isLoggIn && <li><Link to='/login' >Đăng Nhập</Link></li>}
                             {isLoggIn && <li onClick={handleLogout}>Đăng xuất</li>}
-
                         </ul>
                     </div>
                 </div >

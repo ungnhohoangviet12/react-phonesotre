@@ -1,4 +1,10 @@
 .mainLayout .ant-layout-header {
+  padding: 0;
+    height: 83px;
+    line-height: 1.6;
+    background-color: #ee2624;
+    display: block;
+
   .header {
     display: flex;
     align-items: center;
@@ -28,11 +34,13 @@
 
     }
     .menu-bar {
+      margin: 0;
       text-align: center;
       ul {
         display: flex;
         list-style: none;
         color: #fff;
+
         li {
           width: 120px;
           padding: 15px;
@@ -62,24 +70,25 @@
           }
         }
       }
+      
     }
-
     
-  
+      
+      img{
+        height: 40px;
+        width: 61px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    
   }
-    padding: 0;
-    height: 83px;
-    line-height: 1.6;
-    background-color: #ee2624;
-    display: block;
-  
+    
     a {
       color: white !important;
       .ant-menu-item:after {
         width: 0px;
       }
     }
- 
 
     .fa-cart-arrow-down  {
         position: relative;
