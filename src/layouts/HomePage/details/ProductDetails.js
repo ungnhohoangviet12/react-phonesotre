@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Profiler, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSingleProduct } from '../../../redux/actions/productActions';
 import { addComment, loadComments } from '../../../redux/actions/commentAction';
@@ -14,6 +14,7 @@ import { addOrder } from '../../../redux/actions/orderAction';
 
 
 export default function ProductDetails() {
+    const { profile } = useSelector(state => state.auth)
     const { comments } = useSelector(state => state.comment)
     const [mount, setMount] = useState(1);
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -24,8 +25,8 @@ export default function ProductDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.data);
-    const { profile } = useSelector(state => state.auth)
 
+    console.log(profile, "profile");
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -38,14 +39,23 @@ export default function ProductDetails() {
     }, [])
 
     const handleAddComment = () => {
-        if (title) {
-            dispatch(addComment({
-                ad: product.id,
-                title: title
-            }))
-            dispatch(loadComments())
-            setTitle('')
+        if (!!profile.firstname && !!profile.lastname && profile.email) {
+            if (title) {
+                dispatch(addComment({
+                    avatar: profile.avatar,
+                    nickname: profile.nickname,
+                    ad: product.id,
+                    title: title
+                }))
+                dispatch(loadComments())
+                setTitle('');
+                message.success('có tài khoản')
+
+            }
+        } else {
+            message.error('bạn chưa đăng nhập tài khoản');
         }
+
     }
 
     const handleAddProduct = () => {
@@ -90,7 +100,7 @@ export default function ProductDetails() {
                                 const ratingValue = i + 1
 
                                 return (
-                                    <label>
+                                    <label key={i}>
                                         <input
                                             style={{ display: 'none' }}
                                             type="radio"
@@ -119,11 +129,10 @@ export default function ProductDetails() {
                             renderItem={(item) => (
                                 <List.Item>
                                     <List.Item.Meta
-                                        avatar={<Avatar src="https://images.unsplash.com/photo-1610041880800-9a4ec629b1ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />}
-                                        title={item.title}
+                                        avatar={<Avatar src={item.avatar} />}
+                                        title={item.nickname}
                                         description={item.title}
                                     />
-
                                 </List.Item>
 
                             )}
@@ -144,7 +153,7 @@ export default function ProductDetails() {
                                 <span className='purchases'>Chọn số lượng:</span>
                             </Col>
                             <Col className='ant-col-4' span={12}>
-                                <Button onClick={() => setMount(mount - 1)}>_</Button>
+                                <Button onClick={() => mount > 0 && setMount(mount - 1)}>_</Button>
                                 <h3 className='amount-product'>{mount}</h3>
                                 <Button onClick={() => setMount(mount + 1)}>+</Button>
                             </Col>

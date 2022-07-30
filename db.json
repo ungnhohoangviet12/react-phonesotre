@@ -105,8 +105,8 @@
   ],
   "users": [
     {
-      "FirstName": "Hoài",
-      "LastName": "Trâm",
+      "firstname": "Hoài",
+      "lastname": "Trâm",
       "email": "hoaitram@gmail.com",
       "password": "tramiudau",
       "confirm": "tramiudau",
@@ -121,8 +121,8 @@
       "role": false
     },
     {
-      "FirstName": "Hoài",
-      "LastName": "Trâm",
+      "firstname": "Hoài",
+      "lastname": "Trâm",
       "email": "1",
       "password": "1",
       "confirm": "1",
@@ -138,12 +138,12 @@
       "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
-      "FirstName": "Đặng",
-      "LastName": "Vân",
-      "email": "dangthingocvan@gmail.com",
-      "password": "vannancy",
-      "confirm": "vannancy",
-      "nickname": "dangthingocvan.lovechina",
+      "firstname": "Đặng",
+      "lastname": "Vân",
+      "email": "2",
+      "password": "2",
+      "confirm": "2",
+      "nickname": "shiba Trịnh Nguyện",
       "prefix": "84",
       "phone": "065964512",
       "year": "2003-05-15T11:29:50.434Z",
@@ -152,11 +152,11 @@
       "city": "Quảng Nam",
       "id": "DWk7o_wtv",
       "role": false,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80"
     },
     {
-      "FirstName": "ngueyn",
-      "LastName": "teo",
+      "firstname": "ngueyn",
+      "lastname": "teo",
       "email": "nguyenvanteo@gmail.com",
       "password": "saranhez0",
       "confirm": "saranhez0",
@@ -172,8 +172,8 @@
       "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
-      "FirstName": "ngueyn",
-      "LastName": "teo",
+      "firstname": "ngueyn",
+      "lastname": "teo",
       "email": "nguyenvanteo@gmail.com",
       "password": "saranhez0",
       "confirm": "saranhez0",
@@ -189,8 +189,8 @@
       "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
-      "FirstName": "ngueyn",
-      "LastName": "teo",
+      "firstname": "ngueyn",
+      "lastname": "teo",
       "email": "nguyenvanteo@gmail.com",
       "password": "saranhez0",
       "confirm": "saranhez0",
@@ -206,8 +206,8 @@
       "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
-      "FirstName": "Nguyễn",
-      "LastName": "ÁNh",
+      "firstname": "Nguyễn",
+      "lastname": "ÁNh",
       "email": "nguyenngocanh@gmail.com",
       "password": "nguyenngocanh",
       "confirm": "nguyenngocanh",
@@ -223,8 +223,8 @@
       "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
-      "FirstName": "ngueyn",
-      "LastName": "teo",
+      "firstname": "ngueyn",
+      "lastname": "teo",
       "email": "nguyenvanteo@gmail.com",
       "password": "saranhez0",
       "confirm": "saranhez0",
@@ -240,8 +240,8 @@
       "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
-      "FirstName": "Bảo",
-      "LastName": "Ngọc",
+      "firstname": "Bảo",
+      "lastname": "Ngọc",
       "email": "nguyenbaongoc@gmail.com",
       "password": "nguyenbaongoc",
       "confirm": "nguyenbaongoc",
@@ -257,8 +257,8 @@
       "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
-      "FirstName": "hồ",
-      "LastName": "ly",
+      "firstname": "hồ",
+      "lastname": "ly",
       "email": "hothely@gmail.com",
       "password": "hothely",
       "confirm": "hothely",
@@ -274,8 +274,8 @@
       "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
     },
     {
-      "FirstName": "nguyễn ",
-      "LastName": "long",
+      "firstname": "nguyễn ",
+      "lastname": "long",
       "email": "nguyenvanlong@gmail.com",
       "password": "saranhez0",
       "confirm": "saranhez0",
@@ -290,8 +290,8 @@
       "role": false
     },
     {
-      "FirstName": "ads",
-      "LastName": "dsadsa",
+      "firstname": "ads",
+      "lastname": "dsadsa",
       "email": "nguyenvanlong@gmail.com",
       "password": "1",
       "confirm": "1",
@@ -306,8 +306,8 @@
       "role": false
     },
     {
-      "FirstName": "ads",
-      "LastName": "dsadsa",
+      "firstname": "ads",
+      "lastname": "dsadsa",
       "email": "admin@gmail.com",
       "password": "1",
       "confirm": "1",
@@ -324,525 +324,37 @@
   ],
   "orders": [
     {
-      "amount": 1,
-      "total": 170000,
-      "day": "2022-07-28T08:37:24.972Z",
+      "amount": 9,
+      "total": 1530000,
+      "day": "2022-07-30T10:12:51.732Z",
       "name": "hoang viet",
-      "id": 17
-    },
-    {
-      "amount": 7,
-      "total": 1050000,
-      "day": "2022-07-28T08:39:53.445Z",
-      "name": "hoang viet",
-      "id": 19
-    },
-    {
-      "amount": 1,
-      "total": 540000,
-      "day": "2022-07-28T11:13:51.838Z",
-      "name": "hoang viet",
-      "id": 20
-    },
-    {
-      "amount": 2,
-      "total": 690000,
-      "day": "2022-07-28T11:13:57.522Z",
-      "name": "hoang viet",
-      "id": 21
-    },
-    {
-      "amount": 1,
-      "total": 136000,
-      "day": "2022-07-28T11:14:16.911Z",
-      "name": "hoang viet",
-      "id": 22
-    },
-    {
-      "amount": 4,
-      "total": 600000,
-      "day": "2022-07-28T11:25:13.492Z",
-      "name": "hoang viet",
-      "id": 23
-    },
-    {
-      "amount": 1,
-      "total": 68000,
-      "day": "2022-07-28T16:00:34.459Z",
-      "name": "hoang viet",
-      "id": 24
-    },
-    {
-      "amount": 4,
-      "total": 272000,
-      "day": "2022-07-28T16:01:20.235Z",
-      "name": "hoang viet",
-      "id": 25
-    },
-    {
-      "amount": 2,
-      "total": 4070000,
-      "day": "2022-07-29T06:29:42.263Z",
-      "name": "hoang viet",
-      "id": 26
+      "id": 1
     }
   ],
   "comments": [
     {
-      "id": 1,
-      "title": "điện thoại xiaomi mi8 mình thấy khóa ok, giá rẻ mà lại tốt, mình đã sài nó được 4 năm nay rồi mà chưa hư hại gì cả"
-    },
-    {
-      "id": 2,
-      "title": "điện thoại xiaomi mi8 mình thấy khóa ok, giá rẻ mà lại tốt, mình đã sài nó được 4 năm nay rồi mà chưa hư hại gì cả"
-    },
-    {
-      "id": 3,
-      "title": "điện thoại xiaomi mi8 mình thấy khóa ok, giá rẻ mà lại tốt, mình đã sài nó được 4 năm nay rồi mà chưa hư hại gì cả"
-    },
-    {
-      "id": 4,
-      "title": "điện thoại xiaomi mi8 mình thấy khóa ok, giá rẻ mà lại tốt, mình đã sài nó được 4 năm nay rồi mà chưa hư hại gì cả"
-    },
-    {
-      "id": 5,
-      "title": "điện thoại xiaomi mi8 mình thấy khóa ok, giá rẻ mà lại tốt, mình đã sài nó được 4 năm nay rồi mà chưa hư hại gì cả"
-    },
-    {
-      "id": 6,
-      "title": "điện thoại xiaomi mi8 mình thấy khóa ok, giá rẻ mà lại tốt, mình đã sài nó được 4 năm nay rồi mà chưa hư hại gì cả"
-    },
-    {
-      "dsadsa": "",
-      "id": 7
-    },
-    {
-      "dsadsadsadsa": "",
-      "id": 8
-    },
-    {
-      "dsadsadsadsa": "",
-      "id": 9
-    },
-    {
-      "ad": 2624,
-      "title": "dsa",
-      "id": 10
-    },
-    {
-      "ad": 2624,
-      "title": "a",
-      "id": 11
-    },
-    {
-      "ad": 2624,
-      "title": "ds",
-      "id": 12
-    },
-    {
-      "ad": 2624,
-      "title": "a",
-      "id": 13
-    },
-    {
-      "ad": 2624,
-      "title": "a",
-      "id": 14
-    },
-    {
-      "ad": 2630,
-      "title": "a",
-      "id": 15
-    },
-    {
-      "ad": 2630,
-      "title": "a",
-      "id": 16
-    },
-    {
-      "ad": 2630,
-      "title": "sa",
-      "id": 17
-    },
-    {
-      "ad": 2630,
-      "title": "dsadsadsa",
-      "id": 18
-    },
-    {
-      "ad": 2630,
-      "title": "gdagdasdasfsa",
-      "id": 19
-    },
-    {
-      "ad": 2630,
-      "title": "fsdfds",
-      "id": 20
-    },
-    {
-      "ad": 2616,
-      "title": "sản phẩm chất lượng",
-      "id": 21
-    },
-    {
-      "ad": 2616,
-      "title": "sản phẩm tốt đó\n",
-      "id": 22
-    },
-    {
-      "ad": 2616,
-      "title": "cũng khá là ngon",
-      "id": 23
-    },
-    {
-      "ad": 2622,
-      "title": "dsa",
-      "id": 24
-    },
-    {
-      "ad": 2621,
-      "title": "sản phẩm như cạc",
-      "id": 25
-    },
-    {
-      "ad": 2621,
-      "title": "ss",
-      "id": 26
-    },
-    {
-      "ad": 2621,
-      "title": "dsdsa",
-      "id": 27
-    },
-    {
-      "ad": 2621,
-      "title": "dsadsa",
-      "id": 28
-    },
-    {
-      "ad": 2621,
-      "title": "dsadsa",
-      "id": 29
-    },
-    {
-      "ad": 2621,
-      "title": "dsadsa",
-      "id": 30
-    },
-    {
-      "ad": 2621,
-      "title": "dsdsadsa",
-      "id": 31
-    },
-    {
-      "ad": 2613,
-      "title": "dsadsa",
-      "id": 32
-    },
-    {
-      "ad": 2613,
-      "title": "dsa",
-      "id": 33
-    },
-    {
-      "ad": 2613,
-      "title": "dsadas",
-      "id": 34
-    },
-    {
-      "ad": 2613,
-      "title": "dsadsa",
-      "id": 35
-    },
-    {
-      "ad": 2613,
-      "title": "a",
-      "id": 36
-    },
-    {
-      "ad": 2613,
-      "title": "a",
-      "id": 37
-    },
-    {
-      "ad": 2613,
-      "title": "",
-      "id": 38
-    },
-    {
-      "ad": 2613,
-      "title": "",
-      "id": 39
-    },
-    {
-      "ad": 2613,
-      "title": "",
-      "id": 40
-    },
-    {
-      "ad": 2613,
-      "title": "",
-      "id": 41
-    },
-    {
-      "ad": 2613,
-      "title": "",
-      "id": 42
-    },
-    {
-      "ad": 2614,
-      "title": "dsa",
-      "id": 43
-    },
-    {
-      "ad": 2614,
-      "title": "dsa",
-      "id": 44
-    },
-    {
-      "ad": 2622,
-      "title": "sản phẩm quá rẻ",
-      "id": 45
-    },
-    {
-      "ad": 2622,
-      "title": "hehe",
-      "id": 46
-    },
-    {
-      "ad": 2627,
-      "title": "dsadsa",
-      "id": 47
-    },
-    {
-      "ad": 2627,
-      "title": "dsadsa",
-      "id": 48
-    },
-    {
-      "ad": 2615,
-      "title": "dsdas",
-      "id": 49
-    },
-    {
-      "ad": 2614,
-      "title": "mthrdfhf",
-      "id": 50
-    },
-    {
-      "ad": 2614,
-      "title": "hdfhdf",
-      "id": 51
-    },
-    {
-      "ad": 2614,
-      "title": "hgdfhdf",
-      "id": 52
-    },
-    {
-      "ad": 2614,
-      "title": "hfghdfhf",
-      "id": 53
+      "ad": 2620,
+      "title": "sản phẩm như đb",
+      "id": 1
     },
     {
       "ad": 2620,
-      "title": "sản phẩm như cạc",
-      "id": 54
+      "title": "sản phẩm chất lượng đó\n",
+      "id": 2
     },
     {
-      "ad": 2620,
-      "title": "s",
-      "id": 55
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2613,
+      "title": "1 sản phẩm ngon đó",
+      "id": 3
     },
     {
-      "ad": 2620,
-      "title": "fsd",
-      "id": 56
-    },
-    {
-      "ad": 2620,
-      "title": "fdsafdsa",
-      "id": 57
-    },
-    {
-      "ad": 2620,
-      "title": "fsdfds",
-      "id": 58
-    },
-    {
-      "ad": 2626,
-      "title": "l",
-      "id": 59
-    },
-    {
-      "ad": 2626,
-      "title": ";",
-      "id": 60
-    },
-    {
-      "ad": 2626,
-      "title": "q",
-      "id": 61
-    },
-    {
-      "ad": 2626,
-      "title": "q",
-      "id": 62
-    },
-    {
-      "ad": 2626,
-      "title": "ewqewq",
-      "id": 63
-    },
-    {
-      "ad": 2626,
-      "title": "ewewq",
-      "id": 64
-    },
-    {
-      "ad": 2626,
-      "title": "ewq",
-      "id": 65
-    },
-    {
-      "ad": 2626,
-      "title": "q",
-      "id": 66
-    },
-    {
-      "ad": 2626,
-      "title": "q",
-      "id": 67
-    },
-    {
-      "ad": 2621,
-      "title": "ssadsa",
-      "id": 68
-    },
-    {
-      "ad": 2628,
-      "title": "s",
-      "id": 69
-    },
-    {
-      "ad": 2628,
-      "title": "s",
-      "id": 70
-    },
-    {
-      "ad": 2628,
-      "title": "s",
-      "id": 71
-    },
-    {
-      "ad": 2628,
-      "title": "s",
-      "id": 72
-    },
-    {
-      "ad": 2614,
-      "title": "s",
-      "id": 73
-    },
-    {
-      "ad": 2630,
-      "title": "fdsfsad",
-      "id": 74
-    },
-    {
-      "ad": 2630,
-      "title": "tôi yêu trâm",
-      "id": 75
-    },
-    {
-      "ad": 2630,
-      "title": "s",
-      "id": 76
-    },
-    {
-      "ad": 2616,
-      "title": "mua về dùng vài ngày là hư hết",
-      "id": 77
-    },
-    {
-      "ad": 2616,
-      "title": "đúng thiệt là chán",
-      "id": 78
-    },
-    {
-      "ad": 2616,
-      "title": "tôi thất vọng về bạn quá đi",
-      "id": 79
-    },
-    {
-      "ad": 2616,
-      "title": "fdsfasd",
-      "id": 80
-    },
-    {
-      "ad": 2616,
-      "title": "fasdfsda",
-      "id": 81
-    },
-    {
-      "ad": 2616,
-      "title": "fsad",
-      "id": 82
-    },
-    {
-      "ad": 2615,
-      "title": "asd",
-      "id": 83
-    },
-    {
-      "ad": 2615,
-      "title": "1231231231",
-      "id": 84
-    },
-    {
-      "ad": 2615,
-      "title": "zxczxczxczxc",
-      "id": 85
-    },
-    {
-      "ad": 2623,
-      "title": "sản phẩm tốt đó",
-      "id": 86
-    },
-    {
-      "ad": 2623,
-      "title": "fdsfsa",
-      "id": 87
-    },
-    {
-      "ad": 2623,
-      "title": "fsdfsda",
-      "id": 88
-    },
-    {
-      "ad": 2623,
-      "title": "fsdfsda",
-      "id": 89
-    },
-    {
-      "ad": 2623,
-      "title": "sfdsafdsa",
-      "id": 90
-    },
-    {
-      "ad": 2623,
-      "title": "fdsfas",
-      "id": 91
-    },
-    {
-      "ad": 2628,
-      "title": "sản phẩm chất lượng đó",
-      "id": 92
-    },
-    {
-      "ad": 2625,
-      "title": "tôi yêu em trâm hoài",
-      "id": 93
+      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
+      "nickname": "shiba Trịnh Nguyện",
+      "ad": 2613,
+      "title": "sản phẩm này cũng ngon đó mà không có tiền mua",
+      "id": 4
     }
   ]
 }

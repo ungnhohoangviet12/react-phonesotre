@@ -1,4 +1,4 @@
-import { Button, Col, Modal, Radio, Row, Space, Table, RadioChangeEventTarget, Popconfirm, message } from 'antd';
+import { Button, Col, Modal, Radio, Row, Space, Table, Popconfirm, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
@@ -134,7 +134,7 @@ export default function CartPage() {
                         <Table columns={columns} dataSource={items} />
                     </Col>
                     <Col span={2} />
-                    <Col className="col-cart" style={{ height: "373px", borderRadius: '20px', }} span={6}>
+                    <Col className="col-cart" span={6}>
                         <h2>Tổng giỏ hàng</h2>
                         <div className='sumprice'>
                             <div style={{ height: '70px', marginTop: '20px' }}>
@@ -150,8 +150,10 @@ export default function CartPage() {
                             </Popconfirm>
                         </div>
 
-                        <Button type='primary' block onClick={showModal}>Thanh toán</Button><br />
-                        <Button block onClick={() => navigate("/")}>Tiếp tục mua hàng</Button>
+                        <Row gutter={[0, 16]}>
+                            <Button type='primary' block onClick={showModal}>Thanh toán</Button><br />
+                            <Button type='primary' danger block onClick={() => navigate("/")}>Tiếp tục mua hàng</Button>
+                        </Row>
                     </Col>
                 </Row>
 

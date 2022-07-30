@@ -76,10 +76,10 @@ export default function AppRegister() {
                 onFinish={onFinish}
                 scrollToFirstError
             >
-                <Form.Item name={['FirstName']} rules={[{ required: true }]}>
+                <Form.Item name={['firstname']} rules={[{ required: true }]}>
                     <Input placeholder='hãy nhập họ' />
                 </Form.Item>
-                <Form.Item name={['LastName']} rules={[{ required: true }]}>
+                <Form.Item name={['lastname']} rules={[{ required: true }]}>
                     <Input placeholder='hãy nhập tên' />
                 </Form.Item>
 
