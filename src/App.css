@@ -6,9 +6,7 @@ body {
   overflow-x: hidden;
 }
 
-main {
-  width: 100%;
-}
+
 .container-fluid {
   margin: 0 auto;
   max-width: 1200px;

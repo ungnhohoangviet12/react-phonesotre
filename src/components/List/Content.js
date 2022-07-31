@@ -114,7 +114,7 @@ export default function AppContent() {
                 <List
                     grid={{
                         gutter: [16, 16],
-                        xs: 3,
+                        xs: 2,
                         sm: 3,
                         md: 4,
                         lg: 4,

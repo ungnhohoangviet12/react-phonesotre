@@ -121,7 +121,7 @@ export default function ProductDetails() {
                         <Row gutter={[16, 16]}>
                             <h2>Bình luận:</h2>
                             <TextArea value={title} placeholder='hãy nêu nhận xét của bạn' cols={45} rows={5} showCount maxLength={100} onChange={(e) => setTitle(e.target.value)} />
-                            <Button onClick={handleAddComment} type='primary'>Submit</Button>
+                            <Button onClick={handleAddComment} type='primary'>Gửi</Button>
                         </Row>
                         <List
                             itemLayout="horizontal"
