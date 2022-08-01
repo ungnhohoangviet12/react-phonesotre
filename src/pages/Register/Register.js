@@ -225,7 +225,7 @@ export default function AppRegister() {
                 <Form.Item {...tailFormItemLayout}>
                     <Button type="primary"
                         block htmlType="submit">
-                        Register
+                        Đăng ký
                     </Button>
                 </Form.Item>
                 <Link to='/login'>Đăng nhập</Link>

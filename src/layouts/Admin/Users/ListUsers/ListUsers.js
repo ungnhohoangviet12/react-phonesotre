@@ -28,43 +28,43 @@ const ListUsers = () => {
 
     const columns = [
         {
-            title: 'FirstName',
-            dataIndex: 'FirstName',
-            key: 'FirstName',
+            title: 'Họ',
+            dataIndex: 'firstname',
+            key: 'firstname',
         },
         {
-            title: 'LastName',
-            dataIndex: 'LastName',
-            key: 'LastName',
+            title: 'Tên',
+            dataIndex: 'lastname',
+            key: 'lastname',
         },
         {
-            title: 'phone',
+            title: 'Số điện thoại',
             dataIndex: 'phone',
             key: 'phone',
         },
         {
-            title: 'gender',
+            title: 'Giới Tính',
             key: 'gender',
             dataIndex: 'gender',
         },
         {
-            title: 'role',
+            title: 'Quyền',
             key: 'role',
             dataIndex: 'role',
         },
         {
-            title: 'Action',
+            title: 'Hoạt động',
             key: 'action',
             render: (text, record, index) => (
                 <Space size="middle">
-                    <Button type='primary' onClick={() => handleView(record.id)}>View</Button>
+                    <Button type='primary' onClick={() => handleView(record.id)}>Xem</Button>
                     <Popconfirm
                         title="Bạn có muốn xóa người dùng?"
                         onConfirm={() => handleDeleteUser(record.id)}
                         okText="Yes"
                         cancelText="No"
                     >
-                        <Button type='primary' danger>Delete</Button>
+                        <Button type='primary' danger>Xóa</Button>
                     </Popconfirm>
                 </Space>
             ),

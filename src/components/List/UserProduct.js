@@ -127,7 +127,7 @@ export default function UserProduct() {
                         labelInValue
                         defaultValue={{
                             value: 'dt',
-                            label: 'điện thoại',
+                            label: 'phone',
                         }}
                         style={{
                             width: 120,

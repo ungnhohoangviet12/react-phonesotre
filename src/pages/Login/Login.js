@@ -53,7 +53,7 @@ export default function AppLogin() {
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
-                <h1>Login</h1>
+                <h1>Đăng nhập</h1>
                 <Form.Item
                     name="email"
                     rules={[
@@ -78,12 +78,12 @@ export default function AppLogin() {
                     <Input.Password placeholder='mật khẩu' />
                 </Form.Item>
                 <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 2, span: 16 }}>
-                    <Checkbox>Remember me</Checkbox>
+                    <Checkbox>xác nhận</Checkbox>
                 </Form.Item>
                 <Form.Item
                 >
                     <Button type="primary" block htmlType="submit">
-                        Submit
+                        Đăng nhập
                     </Button>
                 </Form.Item>
                 <Link to='/register' >Đăng ký</Link>

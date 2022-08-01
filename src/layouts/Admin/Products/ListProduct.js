@@ -26,7 +26,7 @@ const ListProduct = () => {
 
     const columns = [
         {
-            title: 'Name',
+            title: 'Tên',
             dataIndex: 'name',
             key: 'name',
             render: (text, record, index) => {
@@ -38,7 +38,7 @@ const ListProduct = () => {
             }
         },
         {
-            title: 'Price',
+            title: 'Giá tiền',
             key: 'price',
             render: (text, record) => {
                 return (
@@ -47,7 +47,7 @@ const ListProduct = () => {
             }
         },
         {
-            title: 'Image',
+            title: 'Hình ảnh',
             key: 'image',
             render: (text, record, index) => {
                 return (
@@ -57,7 +57,7 @@ const ListProduct = () => {
         },
 
         {
-            title: 'Action',
+            title: 'Hoạt động',
             key: 'action',
             render: (text, record, index) => {
                 return (
@@ -65,10 +65,10 @@ const ListProduct = () => {
 
                         <Button
                             onClick={() => handleEdit(record.id)}
-                            type='primary' >Edit
+                            type='primary' >Sửa
                         </Button>
                         <Popconfirm onConfirm={() => handleDelete(record.id)} title="Bạn có muốn xóa sản phẩm?" okText="Có" cancelText="Không" >
-                            <Button type='primary' danger>Delete</Button>
+                            <Button type='primary' danger>Xóa</Button>
                         </Popconfirm>
 
                     </Space>
@@ -79,7 +79,7 @@ const ListProduct = () => {
 
     return (
         <div>
-            <Button type='primary'><Link to='/admin/products/add'>Add Product</Link></Button>
+            <Button type='primary'><Link to='/admin/products/add'>Thêm sản phẩm</Link></Button>
             <Table columns={columns} dataSource={products} />;
         </div>
     )

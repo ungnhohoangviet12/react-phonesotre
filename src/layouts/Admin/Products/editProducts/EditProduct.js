@@ -92,13 +92,13 @@ export default function EditProduct() {
                 <Form.Item
                 >
                     <Button type="primary" block htmlType="submit">
-                        Submit
+                        Gửi
                     </Button>
                 </Form.Item>
                 <Form.Item
                 >
                     <Button onClick={handleBack} type="primary" danger>
-                        Back
+                        Quay lại
                     </Button>
                 </Form.Item>
             </Form>

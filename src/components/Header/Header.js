@@ -45,11 +45,11 @@ export default function AppHeader() {
                     <div className='menu-bar'>
                         <ul>
                             <li><Link to='/' >Trang chủ</Link></li>
-                            <li><Link to='/product' >Sản Phẩm</Link></li>
+                            <li><Link to='/product' >Sản phẩm</Link></li>
                             <li className='cart'>
                                 <Link to='/cart' ><i className="fa-solid fa-cart-arrow-down" ><span className='cart-icon'>{totalUniqueItems}</span></i></Link>
                             </li>
-                            {!isLoggIn && <li><Link to='/login' >Đăng Nhập</Link></li>}
+                            {!isLoggIn && <li><Link to='/login' >Đăng nhập</Link></li>}
                             {isLoggIn && <li onClick={handleLogout}>Đăng xuất</li>}
                         </ul>
                     </div>
@@ -79,7 +79,7 @@ export default function AppHeader() {
                         <span><img width={20} src={Images.pc} alt="" />PC, Máy in</span>
                     </Col>
                     <Col span={3}>
-                        <span>Máy cũ giá rẻ</span>
+                        <span>Máy cũ</span>
                     </Col>
                 </Row>
             </div >

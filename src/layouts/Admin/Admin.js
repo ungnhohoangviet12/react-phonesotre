@@ -39,7 +39,7 @@ export default function Admin() {
                             key: '1',
                             icon: <PicLeftOutlined />,
                             label: (
-                                <Link to='/admin/dashboard' >Dashboard</Link>
+                                <Link to='/admin/dashboard' >Bảng điều khiển</Link>
                             ),
 
                         },
@@ -47,21 +47,21 @@ export default function Admin() {
                             key: '2',
                             icon: <GiftOutlined />,
                             label: (
-                                <Link to='/admin/Products' >Products</Link>
+                                <Link to='/admin/Products' >Sản phẩm</Link>
                             ),
                         },
                         {
                             key: '3',
                             icon: <UserOutlined />,
                             label: (
-                                <Link to='/admin/users' >Users</Link>
+                                <Link to='/admin/users' >Người dùng</Link>
                             ),
                         },
                         {
                             key: '4',
                             icon: <BorderOuterOutlined />,
                             label: (
-                                <Link to='/admin/orders' >Orders</Link>
+                                <Link to='/admin/orders' >Đơn hàng</Link>
                             ),
 
                         },
@@ -69,14 +69,14 @@ export default function Admin() {
                             key: '5',
                             icon: <SettingOutlined />,
                             label: (
-                                <Link to='/admin/orders' >Setting</Link>
+                                <Link to='/admin/orders' >Cài đặt</Link>
                             ),
 
                         },
                         {
                             key: '6',
                             label: (
-                                < Button onClick={handlelogout}>logout</Button>
+                                < Button onClick={handlelogout}>Đăng xuất</Button>
 
                             ),
                         },
