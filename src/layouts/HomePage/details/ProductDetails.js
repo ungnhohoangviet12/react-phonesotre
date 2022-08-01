@@ -1,4 +1,4 @@
-import React, { Profiler, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSingleProduct } from '../../../redux/actions/productActions';
 import { addComment, loadComments } from '../../../redux/actions/commentAction';
@@ -19,19 +19,17 @@ export default function ProductDetails() {
     const [mount, setMount] = useState(1);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [title, setTitle] = useState();
-    const [rating, setRating] = useState(null);
+    const [rating, setRating] = useState(5);
     const [hover, setHover] = useState(null);
     const { addItem } = useCart();
     const { id } = useParams();
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.data);
 
-    console.log(profile, "profile");
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-
 
     useEffect(() => {
         dispatch(getSingleProduct(id))
@@ -42,6 +40,7 @@ export default function ProductDetails() {
         if (!!profile.firstname && !!profile.lastname && profile.email) {
             if (title) {
                 dispatch(addComment({
+                    rating: rating,
                     avatar: profile.avatar,
                     nickname: profile.nickname,
                     ad: product.id,
@@ -49,7 +48,6 @@ export default function ProductDetails() {
                 }))
                 dispatch(loadComments())
                 setTitle('');
-                message.success('có tài khoản')
 
             }
         } else {
@@ -79,9 +77,26 @@ export default function ProductDetails() {
     }
 
 
+
     const handleCancel = () => {
         setIsModalVisible(false)
     }
+
+    const findComment = comments.filter(s => s.ad === product.id)
+    const amountComment = findComment.length
+
+
+    const trungbinh = () => {
+        let sum = 0
+        for (let i = 0; i < findComment.length; i++) {
+            sum += findComment[i].rating
+        }
+        return sum / findComment.length
+
+    }
+    console.log(trungbinh());
+
+
 
     return (
         <div className='productDetails'>
@@ -133,6 +148,19 @@ export default function ProductDetails() {
                                         title={item.nickname}
                                         description={item.title}
                                     />
+                                    {/* rating */}
+                                    {[...Array(item.rating)].map((star, i) => {
+                                        return (
+                                            <label key={i}>
+
+                                                <FaStar
+                                                    color="#ffc107"
+                                                    className='star' size={14}
+                                                />
+                                            </label>
+                                        )
+                                    })}
+
                                 </List.Item>
 
                             )}
@@ -199,7 +227,7 @@ export default function ProductDetails() {
                             <h4>Thông tin cơ bản</h4>
                         </Row>
                         <Row className='ant-row-10'>
-                            <h4>Đánh giá nhận xét về sản phẩm ( 5 lượt đánh giá )</h4>
+                            <h4>Đánh giá nhận xét về sản phẩm ({amountComment} lượt đánh giá )</h4>
                             <div>
                                 <FaStar />
                             </div>

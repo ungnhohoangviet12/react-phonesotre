@@ -324,112 +324,52 @@
   ],
   "comments": [
     {
-      "ad": 2620,
-      "title": "sản phẩm như đb",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
+      "nickname": "shiba Trịnh Nguyện",
+      "ad": 2614,
+      "title": "sản phẩm khá là ngon",
       "id": 1
     },
     {
-      "ad": 2620,
-      "title": "sản phẩm chất lượng đó\n",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
+      "nickname": "shiba Trịnh Nguyện",
+      "ad": 2614,
+      "title": "dsadsa",
       "id": 2
     },
     {
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "tramyeudau.sakura",
-      "ad": 2613,
-      "title": "1 sản phẩm ngon đó",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
+      "nickname": "shiba Trịnh Nguyện",
+      "ad": 2614,
+      "title": "dsadas",
       "id": 3
     },
     {
+      "rating": 5,
       "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
       "nickname": "shiba Trịnh Nguyện",
-      "ad": 2613,
-      "title": "sản phẩm này cũng ngon đó mà không có tiền mua",
+      "ad": 2614,
+      "title": "dsdsa",
       "id": 4
     },
     {
-      "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      "nickname": "teonana123.belo",
-      "ad": 2613,
-      "title": "sản phẩm quá chất lượng",
+      "rating": 2,
+      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
+      "nickname": "shiba Trịnh Nguyện",
+      "ad": 2614,
+      "title": "a",
       "id": 5
     },
     {
-      "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      "nickname": "teonana123.belo",
-      "ad": 2613,
-      "title": "cũng ok đó",
+      "rating": 1,
+      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
+      "nickname": "shiba Trịnh Nguyện",
+      "ad": 2614,
+      "title": "0",
       "id": 6
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      "nickname": "teonana123.belo",
-      "ad": 2616,
-      "title": "sản phẩm như cạc",
-      "id": 7
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "tramyeudau.sakura",
-      "ad": 2630,
-      "title": "sản phẩm như shit, sài vài ngày là hư rồi",
-      "id": 8
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
-      "nickname": "shiba Trịnh Nguyện",
-      "ad": 2615,
-      "title": "2",
-      "id": 9
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
-      "nickname": "shiba Trịnh Nguyện",
-      "ad": 2614,
-      "title": "2",
-      "id": 10
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      "nickname": "teonana123.belo",
-      "ad": 2614,
-      "title": "2121",
-      "id": 11
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
-      "nickname": "shiba Trịnh Nguyện",
-      "ad": 2621,
-      "title": "fsafsad",
-      "id": 12
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
-      "nickname": "shiba Trịnh Nguyện",
-      "ad": 2621,
-      "title": "sản phẩm đạt chất lượng cao\n",
-      "id": 13
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "tramyeudau.sakura",
-      "ad": 2614,
-      "title": "dsadas",
-      "id": 14
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": 2615,
-      "title": "đasa",
-      "id": 15
-    },
-    {
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": 2615,
-      "title": "sấ",
-      "id": 16
     }
   ]
 }
