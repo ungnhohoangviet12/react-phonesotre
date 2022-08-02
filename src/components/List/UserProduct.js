@@ -8,14 +8,12 @@ import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
 import { Pagination, } from 'antd';
 import { BiArrowToBottom, BiArrowToTop } from 'react-icons/bi';
-const { Option } = Select;
 const pageSize = 15;
 export default function UserProduct() {
     const { addItem } = useCart();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { products } = useSelector(state => state.data)
-
     const [theloai, setTheloai] = useState('');
     const [sortProduct, setSortProduct] = useState('');
     const [states, setStates] = useState(
@@ -59,8 +57,6 @@ export default function UserProduct() {
         message.success('thêm thành công')
     }
 
-
-
     if (sortProduct === 'tang') {
         products.sort((a, b) => {
             return a.price - b.price
@@ -71,8 +67,6 @@ export default function UserProduct() {
             return b.price - a.price
         })
     }
-
-    const test = 2
 
     return (
         <div className='main'>
@@ -166,6 +160,8 @@ export default function UserProduct() {
                         xl: 4,
                         xxl: 4,
                     }}
+
+                    // search 
                     dataSource={(theloai === "laptop" ? products.filter(s => s.theloai === "laptop") : theloai === "tainghe" ? products.filter(s => s.theloai === "tainghe") : theloai === "phone" ? products.filter(s => s.theloai === "phone") : products)}
                     renderItem={(item, index) =>
                         index >= states.minIndex &&

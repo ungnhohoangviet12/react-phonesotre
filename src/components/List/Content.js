@@ -23,13 +23,11 @@ export default function AppContent() {
             maxIndex: 0
         }
     );
-
     const { addItem } = useCart();
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { products } = useSelector(state => state.data)
     const { search } = useSelector(state => state)
-
     const settings = {
         dots: true,
         infinite: false,
@@ -79,6 +77,7 @@ export default function AppContent() {
         })
     }, [])
 
+
     const handleDetails = (id) => {
         navigate(`product/details/${id}`)
 
@@ -121,7 +120,6 @@ export default function AppContent() {
                         xxl: 5,
                     }}
 
-
                     dataSource={products.filter((item) => {
                         if (search === "") {
                             return item
@@ -152,7 +150,7 @@ export default function AppContent() {
                                     <div className='sell'>
                                         <span>Đã bán {item.sell}</span>
                                         <div className='star'>
-                                            <span><FaStar color='#ffc600' /> 5</span>
+                                            <span><FaStar color='#ffc600' /> {item?.trungbinh?.toFixed(1)}</span>
                                         </div>
                                         <FaCartPlus onClick={() => handleToDetails(item)} color='brown' size={20} ></FaCartPlus>
                                     </div>

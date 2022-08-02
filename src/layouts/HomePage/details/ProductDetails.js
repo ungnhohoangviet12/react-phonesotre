@@ -26,7 +26,16 @@ export default function ProductDetails() {
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.data);
 
+    const findComment = comments.filter(s => s.ad === product.id)
+    const amountComment = findComment.length
+    const trungbinh = () => {
+        let sum = 0
+        for (let i = 0; i < findComment.length; i++) {
+            sum += findComment[i].rating
+        }
+        return sum / findComment.length
 
+    }
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -37,14 +46,6 @@ export default function ProductDetails() {
 
     }, [])
 
-    const trungbinh = () => {
-        let sum = 0
-        for (let i = 0; i < findComment.length; i++) {
-            sum += findComment[i].rating
-        }
-        return sum / findComment.length
-
-    }
 
     const handleAddComment = () => {
         if (!!profile.firstname && !!profile.lastname && profile.email) {
@@ -58,15 +59,12 @@ export default function ProductDetails() {
                 }))
                 dispatch(loadComments())
                 setTitle('');
-
-
             }
         } else {
             message.error('bạn chưa đăng nhập tài khoản');
         }
 
     }
-    console.log('product', product);
 
     const handleAddProduct = () => {
         addItem(product)
@@ -89,19 +87,9 @@ export default function ProductDetails() {
     }
 
 
-
     const handleCancel = () => {
         setIsModalVisible(false)
     }
-
-    const findComment = comments.filter(s => s.ad === product.id)
-    const amountComment = findComment.length
-
-
-
-
-
-
 
     return (
         <div className='productDetails'>
@@ -151,7 +139,7 @@ export default function ProductDetails() {
                                     <List.Item.Meta
                                         avatar={<Avatar src={item.avatar} />}
                                         title={item.nickname}
-                                        description={item.title}
+                                        description={item?.title}
                                     />
                                     {/* rating */}
                                     {[...Array(item.rating)].map((star, i) => {
@@ -167,7 +155,6 @@ export default function ProductDetails() {
                                     })}
 
                                 </List.Item>
-
                             )}
                         />
                     </Col>
