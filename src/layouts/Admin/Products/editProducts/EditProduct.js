@@ -18,14 +18,11 @@ export default function EditProduct() {
 
     useEffect(() => {
         if (Object.entries(product).length) {
-            console.log(product, 'user');
             form.setFieldsValue({ ...product })
         }
     }, [product])
 
     const onFinish = (values) => {
-        console.log('Success:', values);
-        console.log(id);
         if (!values.name || !values.price || !values.image) {
         } else {
             dispatch(updateProduct(values, id));
@@ -36,7 +33,6 @@ export default function EditProduct() {
 
 
     const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
     };
 
     const handleBack = () => {

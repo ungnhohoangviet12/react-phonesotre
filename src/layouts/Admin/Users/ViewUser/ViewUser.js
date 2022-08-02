@@ -11,7 +11,6 @@ export default function ViewUser() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const { user } = useSelector(state => state.data2);
-    console.log(user);
 
     useEffect(() => {
         dispatch(getSingleUser(id))

@@ -13,7 +13,6 @@ export const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.LOGIN_SUCCESS: {
             const { profile, navigate } = action.payload;
-            console.log('hihihi');
             state = {
                 profile: profile,
                 isLoggIn: true,

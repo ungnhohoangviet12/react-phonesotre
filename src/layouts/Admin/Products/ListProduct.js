@@ -18,7 +18,6 @@ const ListProduct = () => {
     }
     const dispatch = useDispatch();
     const products = useSelector(state => state.data.products)
-    console.log(products);
 
     useEffect(() => {
         dispatch(loadProducts())

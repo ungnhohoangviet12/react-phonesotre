@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
 import './userproduct.scss'
-import { Card, Checkbox, List, message, Row, Select } from 'antd';
+import { Card, Checkbox, Col, List, message, Row, Select } from 'antd';
 import { FaStar, FaCartPlus } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +15,7 @@ export default function UserProduct() {
     const dispatch = useDispatch();
     const { products } = useSelector(state => state.data)
 
+    const [sortProduct, setSortProduct] = useState('');
     const [states, setStates] = useState(
         {
             data: [],
@@ -24,6 +25,7 @@ export default function UserProduct() {
             maxIndex: 0
         }
     );
+    console.log(sortProduct);
     useEffect(() => {
         dispatch(loadProducts())
         setStates({
@@ -54,6 +56,27 @@ export default function UserProduct() {
         addItem(item)
         message.success('thêm thành công')
     }
+
+
+    if (sortProduct === 'price') {
+        products.sort((a, b) => {
+            return a.price - b.price
+        })
+    }
+    if (sortProduct === 'name') {
+        products.sort((a, b) => {
+            return b.price - a.price
+        })
+    }
+
+
+    if (sortProduct === 'name') {
+        products.filter(s => s.price === 2900000)
+    }
+
+
+
+
     return (
         <div className='main'>
             <div className='sibar'>
@@ -121,24 +144,20 @@ export default function UserProduct() {
                 </div>
             </div>
             <div className="container-userproduct">
+                <Row gutter={[16, 16]}>
+                    <Col span={6}>
+                        <span>Điện thoại</span>
+                    </Col>
+                    <Col span={6}>
+                        <span>Tai nghe</span>
+                    </Col>
+                    <Col span={6}>
+                        <span>Laptop</span>
+                    </Col>
+                </Row>
                 <Row className='search__product'>
-                    <span className='search__lable' htmlFor="">Tìm kiếm theo:</span>
-                    <Select
-                        labelInValue
-                        defaultValue={{
-                            value: 'dt',
-                            label: 'phone',
-                        }}
-                        style={{
-                            width: 120,
-                        }}
-                    // onChange={handleChange}
-                    >
-                        <Option value="dtc">Điện thoại cũ</Option>
-                        <Option value="dtn">Điện thoại mới</Option>
-                        <Option value="lt">Lap Top</Option>
-                        <Option value="tn">Tai nghe</Option>
-                    </Select>
+                    <li onClick={() => setSortProduct('price')} type="radio" name='sort' >Giảm</li>
+                    <li onClick={() => setSortProduct('name')} type="radio" name='sort' >Tăng</li>
                 </Row>
                 <List
                     grid={{

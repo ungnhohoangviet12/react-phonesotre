@@ -25,7 +25,6 @@ const commentUpdate = (comment) => ({
 export const loadComments = () => {
     return function (dispatch) {
         axios.get(`${process.env.REACT_APP_BE_URL}/comments`).then((resp) => {
-            console.log("resp", resp);
             dispatch(getComments(resp.data));
         }).catch(error => console.log(error))
     };
@@ -35,7 +34,6 @@ export const loadComments = () => {
 export const deleteComment = (id) => {
     return function (dispatch) {
         axios.delete(`${process.env.REACT_APP_BE_URL}/comments/${id}`).then((resp) => {
-            console.log("resp", resp);
             dispatch(commentDelete());
             dispatch(loadComments());
         }).catch(error => console.log(error))
@@ -46,7 +44,6 @@ export const deleteComment = (id) => {
 export const addComment = (comment) => {
     return function (dispatch) {
         axios.post(`${process.env.REACT_APP_BE_URL}/comments`, comment).then((resp) => {
-            console.log("resp", resp);
             dispatch(loadComments());
             // dispatch(loadUsers());
         }).catch(error => console.log(error))
@@ -65,7 +62,6 @@ export const getSingleComment = (id) => {
 };
 
 export const updateComment = (comments, id) => {
-    console.log(comments, id);
     return function (dispatch) {
         axios.put(`${process.env.REACT_APP_BE_URL}/comments/${id}`, comments).then((resp) => {
             console.log("resp", resp);

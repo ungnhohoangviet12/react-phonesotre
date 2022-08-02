@@ -43,12 +43,10 @@ export default function AppRegister() {
     const navigate = useNavigate();
 
     const onFinish = (data) => {
-        console.log('Success:', data);
         if (!data.FirstName || !data.LastName || !data.city) {
         } else {
             data.role = "user"
             dispatch(addUser(data));
-            console.log(data);
             navigate('/login');
         }
     };

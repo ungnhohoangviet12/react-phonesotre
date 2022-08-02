@@ -65,10 +65,10 @@ export default function AppContent() {
         ]
     };
 
-
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
 
     useEffect(() => {
         dispatch(loadProducts())
@@ -95,7 +95,6 @@ export default function AppContent() {
             minIndex: (page - 1) * pageSize,
             maxIndex: page * pageSize
         });
-        console.log(states);
     };
 
 
@@ -153,7 +152,7 @@ export default function AppContent() {
                                     <div className='sell'>
                                         <span>Đã bán {item.sell}</span>
                                         <div className='star'>
-                                            <span><FaStar color='#ffc600' />5</span>
+                                            <span><FaStar color='#ffc600' /> 5</span>
                                         </div>
                                         <FaCartPlus onClick={() => handleToDetails(item)} color='brown' size={20} ></FaCartPlus>
                                     </div>

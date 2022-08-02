@@ -6,8 +6,9 @@ import phukien from '../assets/images/phukien.png';
 import smat from '../assets/images/smat.png';
 import tablet from '../assets/images/tablet.png';
 import logo from '../assets/images/logo.png';
+import emty from '../assets/images/emty.jpg'
 
-const Images = { phone, dongho, pc, phukien, smat, tablet, laptop, logo }
+const Images = { phone, dongho, pc, phukien, smat, tablet, laptop, logo, emty }
 
 
 export default Images

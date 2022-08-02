@@ -7,7 +7,6 @@ import { message } from 'antd';
 
 const ListOrders = () => {
     const { orders } = useSelector(state => state.order)
-    console.log(orders);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(loadOrders())

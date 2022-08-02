@@ -9,7 +9,6 @@ export default function AddProduct() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const onFinish = (values) => {
-        console.log('Success:', values);
         if (!values.name || !values.price || !values.image) {
         } else {
             dispatch(addProduct(values));
@@ -18,7 +17,6 @@ export default function AddProduct() {
     };
 
     const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
     };
 
     const handleBack = () => {

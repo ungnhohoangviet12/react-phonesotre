@@ -18,7 +18,6 @@ export default function CartPage() {
             setIsModalVisible(true)
         }
     };
-    console.log(new Date());
     const handleOk = () => {
         if (isEmpty) {
             setIsModalVisible(false);
@@ -115,7 +114,6 @@ export default function CartPage() {
     ];
 
     const onChange = (e) => {
-        console.log('radio checked', e.target.value);
         setValue(e.target.value);
     };
 

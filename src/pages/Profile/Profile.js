@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Row, Col, Button, Image, Avatar } from 'antd';
 import './profile.scss';
 import { useSelector } from 'react-redux';
+import Images from '../../constants/image';
 
 
 export default function Profile() {
@@ -15,9 +16,8 @@ export default function Profile() {
             <h1 className='information'>Personal information</h1>
             <Row >
                 <Col span={12}>
-                    <Avatar className='avatar' src={<Image src={profile.avatar} style={{ width: 200 }} />} />
+                    <Avatar className='avatar' src={<Image src={profile.avatar || Images.emty} style={{ width: 200 }} />} />
                     <p className='email'>{profile.email}</p>
-                    <Button>Cập nhật thông tin</Button>
                 </Col>
                 <Col>
                     <p className='firstname'>First name: {profile.firstname}</p>

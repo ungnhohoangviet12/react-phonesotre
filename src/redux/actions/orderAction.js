@@ -25,7 +25,6 @@ const orderUpdate = (order) => ({
 export const loadOrders = () => {
     return function (dispatch) {
         axios.get(`${process.env.REACT_APP_BE_URL}/orders`).then((resp) => {
-            console.log("resp", resp);
             dispatch(getOrders(resp.data));
         }).catch(error => console.log(error))
     };
@@ -46,7 +45,6 @@ export const deleteOrder = (id) => {
 export const addOrder = (order) => {
     return function (dispatch) {
         axios.post(`${process.env.REACT_APP_BE_URL}/orders`, order).then((resp) => {
-            console.log("resp", resp);
             dispatch(orderAdd());
             // dispatch(loadUsers());
         }).catch(error => console.log(error))
@@ -57,7 +55,6 @@ export const addOrder = (order) => {
 export const getSingleOrder = (id) => {
     return function (dispatch) {
         axios.get(`${process.env.REACT_APP_BE_URL}/orders/${id}`).then((resp) => {
-            console.log("resp", resp);
             dispatch(getOrder(resp.data));
         }).catch(error => console.log(error))
     };
@@ -68,7 +65,6 @@ export const updateOrder = (order, id) => {
     console.log(order, id);
     return function (dispatch) {
         axios.put(`${process.env.REACT_APP_BE_URL}/orders/${id}`, order).then((resp) => {
-            console.log("resp", resp);
             dispatch(orderUpdate());
         }).catch(error => console.log(error))
     };

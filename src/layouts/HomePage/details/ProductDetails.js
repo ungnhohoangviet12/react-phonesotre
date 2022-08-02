@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSingleProduct } from '../../../redux/actions/productActions';
+import { getSingleProduct, updateProduct } from '../../../redux/actions/productActions';
 import { addComment, loadComments } from '../../../redux/actions/commentAction';
 import { useParams } from 'react-router-dom';
 import './productdetails.scss'
@@ -34,7 +34,17 @@ export default function ProductDetails() {
     useEffect(() => {
         dispatch(getSingleProduct(id))
         dispatch(loadComments())
+
     }, [])
+
+    const trungbinh = () => {
+        let sum = 0
+        for (let i = 0; i < findComment.length; i++) {
+            sum += findComment[i].rating
+        }
+        return sum / findComment.length
+
+    }
 
     const handleAddComment = () => {
         if (!!profile.firstname && !!profile.lastname && profile.email) {
@@ -49,12 +59,14 @@ export default function ProductDetails() {
                 dispatch(loadComments())
                 setTitle('');
 
+
             }
         } else {
             message.error('bạn chưa đăng nhập tài khoản');
         }
 
     }
+    console.log('product', product);
 
     const handleAddProduct = () => {
         addItem(product)
@@ -86,15 +98,8 @@ export default function ProductDetails() {
     const amountComment = findComment.length
 
 
-    const trungbinh = () => {
-        let sum = 0
-        for (let i = 0; i < findComment.length; i++) {
-            sum += findComment[i].rating
-        }
-        return sum / findComment.length
 
-    }
-    console.log(trungbinh());
+
 
 
 
@@ -227,9 +232,10 @@ export default function ProductDetails() {
                             <h4>Thông tin cơ bản</h4>
                         </Row>
                         <Row className='ant-row-10'>
-                            <h4>Đánh giá nhận xét về sản phẩm ({amountComment} lượt đánh giá )</h4>
+                            <h4>Đánh giá nhận xét về sản phẩm ( {amountComment}  lượt đánh giá )  </h4>
+                            <span className='danhgia'>{trungbinh() ? trungbinh().toFixed(1) : 'Chưa có đánh giá'}</span>
                             <div>
-                                <FaStar />
+                                <FaStar className='start__danhgia' size={20} style={{ marginTop: '0', marginLeft: '5px', color: '#ffc107' }} />
                             </div>
 
                         </Row>
