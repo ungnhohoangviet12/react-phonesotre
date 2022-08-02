@@ -88,7 +88,7 @@ export default function EditProduct() {
                 <Form.Item
                 >
                     <Button type="primary" block htmlType="submit">
-                        Gửi
+                        Cập nhật
                     </Button>
                 </Form.Item>
                 <Form.Item

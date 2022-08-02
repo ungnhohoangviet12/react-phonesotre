@@ -27,15 +27,16 @@
         
             li {
                 list-style-type: none;
+                font-size: 20px;
                 width: 100px;
                 height: 40px;
-                background-color: green;
                 margin: 10px;
-                color: white;
+                color: black;
                 font-weight: bold;
                 text-align: center;
                 padding-top: 5px;
                 border-radius: 10px;
+                cursor: pointer;
             }
         }
         .pagination {

@@ -33,11 +33,11 @@ export default function ViewUser() {
                 <Col span={16}>
                     <Row gutter={[16, 16]}>
                         <Col span={12}>Họ:</Col>
-                        <Col span={12}>{user.FirstName}</Col>
+                        <Col span={12}>{user.firstname}</Col>
                     </Row>
                     <Row gutter={[16, 16]}>
                         <Col span={12}>Tên:</Col>
-                        <Col span={12}>{user.LastName}</Col>
+                        <Col span={12}>{user.lastname}</Col>
                     </Row>
                     <Row gutter={[16, 16]}>
                         <Col span={12}>Email:</Col>
@@ -69,7 +69,7 @@ export default function ViewUser() {
                     </Row>
                 </Col>
                 <Col span={8}>
-                    <Avatar size={300} src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-1/267436021_642706536872183_5532148059756767659_n.jpg?stp=dst-jpg_s200x200&_nc_cat=111&ccb=1-7&_nc_sid=7206a8&_nc_ohc=ttwnXsYRcLkAX9Xrna_&_nc_ht=scontent.fdad1-3.fna&oh=00_AT-h8Ta875RxodIqoOZzO9nWRDJ008b64HaatpYZrtEdcQ&oe=62E6D702" />
+                    <Avatar size={300} src={user.avatar} />
                 </Col>
             </Row>
 

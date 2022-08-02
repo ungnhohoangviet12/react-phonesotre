@@ -7,6 +7,7 @@ import { FaStar, FaCartPlus } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
 import { Pagination, } from 'antd';
+import { BiArrowToBottom, BiArrowToTop } from 'react-icons/bi';
 const { Option } = Select;
 const pageSize = 15;
 export default function UserProduct() {
@@ -15,6 +16,7 @@ export default function UserProduct() {
     const dispatch = useDispatch();
     const { products } = useSelector(state => state.data)
 
+    const [theloai, setTheloai] = useState('');
     const [sortProduct, setSortProduct] = useState('');
     const [states, setStates] = useState(
         {
@@ -58,24 +60,19 @@ export default function UserProduct() {
     }
 
 
-    if (sortProduct === 'price') {
+
+    if (sortProduct === 'tang') {
         products.sort((a, b) => {
             return a.price - b.price
         })
     }
-    if (sortProduct === 'name') {
+    else if (sortProduct === 'giam') {
         products.sort((a, b) => {
             return b.price - a.price
         })
     }
 
-
-    if (sortProduct === 'name') {
-        products.filter(s => s.price === 2900000)
-    }
-
-
-
+    const test = 2
 
     return (
         <div className='main'>
@@ -146,18 +143,18 @@ export default function UserProduct() {
             <div className="container-userproduct">
                 <Row gutter={[16, 16]}>
                     <Col span={6}>
-                        <span>Điện thoại</span>
+                        <span onClick={() => setTheloai('phone')}>Điện thoại</span>
                     </Col>
                     <Col span={6}>
-                        <span>Tai nghe</span>
+                        <span onClick={() => setTheloai('tainghe')}>Tai nghe</span>
                     </Col>
                     <Col span={6}>
-                        <span>Laptop</span>
+                        <span onClick={() => setTheloai('laptop')}>Laptop</span>
                     </Col>
                 </Row>
                 <Row className='search__product'>
-                    <li onClick={() => setSortProduct('price')} type="radio" name='sort' >Giảm</li>
-                    <li onClick={() => setSortProduct('name')} type="radio" name='sort' >Tăng</li>
+                    <li onClick={() => setSortProduct('giam')} type="radio" name='sort' >Giảm <BiArrowToBottom /> </li>
+                    <li onClick={() => setSortProduct('tang')} type="radio" name='sort' >Tăng <BiArrowToTop /></li>
                 </Row>
                 <List
                     grid={{
@@ -169,7 +166,7 @@ export default function UserProduct() {
                         xl: 4,
                         xxl: 4,
                     }}
-                    dataSource={products}
+                    dataSource={(theloai === "laptop" ? products.filter(s => s.theloai === "laptop") : theloai === "tainghe" ? products.filter(s => s.theloai === "tainghe") : theloai === "phone" ? products.filter(s => s.theloai === "phone") : products)}
                     renderItem={(item, index) =>
                         index >= states.minIndex &&
                         index < states.maxIndex &&

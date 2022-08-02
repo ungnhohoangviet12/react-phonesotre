@@ -6,21 +6,23 @@
       "image": "https://media3.scdn.vn/img2/2018/8_5/G8MtY5_simg_de2fe0_250x250_maxb.jpg",
       "id": 2615,
       "trungbinh": 5,
-      "giatri": 1
+      "theloai": "laptop"
     },
     {
       "name": "Adapter 19.5V - 4.74A dùng cho laptop Sony Vaio",
       "price": "150000",
       "image": "https://media3.scdn.vn/img4/2021/08_20/Nt2QuY5ucVg0nTNDXUrl_simg_de2fe0_250x250_maxb.jpg",
       "id": 2616,
-      "trungbinh": 3.5
+      "trungbinh": 3.5,
+       "theloai": "laptop"
     },
     {
       "name": "Laptop 2540p i5 đã qua sử dụng",
       "price": "3900000",
       "image": "https://media3.scdn.vn/img4/2020/05_07/oaN8R0ATfYdFogSNpTp0_simg_de2fe0_250x250_maxb.jpg",
       "id": 2617,
-      "trungbinh": 4
+      "trungbinh": 4,
+      "theloai": "laptop"
     },
     {
       "name": "USB TP-LINK TL-WN722N củ qua sử dụng,dùng để thu Wi-Fi ko dây cho máy tính để bàn hay laptop bị hư cạc Wi-Fi,cấm cục vào lỗ USB cài win hay cài driver sài sài OK,driver a! em download trên mạng về cài vào.bấm đặc hàng em gửi cho thanks!",
@@ -34,27 +36,31 @@
       "price": "23000000",
       "image": "https://media3.scdn.vn/img4/2022/06_17/c5MJBeotJBm0DcDxi7gn_simg_de2fe0_250x250_maxb.png",
       "id": 2620,
-      "trungbinh": 4.666666666666667
+      "trungbinh": 4.666666666666667,
+      "theloai": "laptop"
     },
     {
       "name": "Tai nghe Headphone Game Ovann X3",
       "price": "170000",
       "image": "https://media3.scdn.vn/img4/2020/04_28/XojSRxRBS5Z5UVgqos0q_simg_de2fe0_250x250_maxb.jpg",
       "id": 2621,
-      "trungbinh": null
+      "trungbinh": null,
+      "theloai": "tainghe"
     },
     {
       "name": "Tai Nghe Chuyên Chơi Game",
       "price": "540000",
       "image": "https://media3.scdn.vn/img4/2020/05_18/3QcpIM6IqfAcDAuj2KpO_simg_de2fe0_250x250_maxb.jpg",
-      "id": 2622
+      "id": 2622,
+      "theloai": "tainghe"
     },
     {
       "name": "Tai nghe bộ đàm hai chân cắm - 2 chân cắm 3.5mm và 2.5mm",
       "price": "68000",
       "image": "https://media3.scdn.vn/img4/2020/05_18/3QcpIM6IqfAcDAuj2KpO_simg_de2fe0_250x250_maxb.jpg",
       "id": 2623,
-      "trungbinh": null
+      "trungbinh": null,
+      "theloai": "tainghe"
     },
     {
       "name": "Tai nghe Gnet H99 cổng 3.5",
@@ -68,40 +74,46 @@
       "price": "252000",
       "image": "https://media3.scdn.vn/img4/2021/04_22/XuX2xW4MKYkw4V0LaAlN_simg_de2fe0_250x250_maxb.jpg",
       "id": 2625,
-      "trungbinh": 3
+      "trungbinh": 3,
+      "theloai": "tainghe"
     },
     {
       "name": "TAI NGHE HEADPHONE OVAN X1",
       "price": "136000",
       "image": "https://media3.scdn.vn/img2/2018/8_9/44NuTa_simg_de2fe0_250x250_maxb.jpg",
-      "id": 2626
+      "id": 2626,
+      "theloai": "tainghe"
     },
     {
       "name": "TAI NGHE HEADPHONE OVAN X2",
       "price": "189000",
       "image": "https://media3.scdn.vn/img2/2018/8_31/LliUJo_simg_de2fe0_250x250_maxb.jpg",
-      "id": 2627
+      "id": 2627,
+      "theloai": "tainghe"
     },
     {
       "name": "Tai nghe Headphone Game Ovann X3",
       "price": "249000",
       "image": "https://media3.scdn.vn/img1/2015/10_12/f8bbe6_simg_de2fe0_250x250_maxb.jpg",
       "id": 2628,
-      "trungbinh": 5
+      "trungbinh": 5,
+      "theloai": "tainghe"
     },
     {
       "name": "TAI NGHE NET CAO CẤP OVANN X4",
       "price": "154000",
       "image": "https://media3.scdn.vn/img4/2021/01_22/YvEAsPKpXPcUITjoOtcv_simg_de2fe0_250x250_maxb.jpg",
       "id": 2629,
-      "trungbinh": 5
+      "trungbinh": 5,
+      "theloai": "tainghe"
     },
     {
       "name": "TAI NGHE NET CAO CẤP OVANN X5",
       "price": "199000",
       "image": "https://media3.scdn.vn/img4/2021/01_22/2P3NLNYgIY0KeV9Qpmbn_simg_de2fe0_250x250_maxb.jpg",
       "id": 2630,
-      "trungbinh": 1
+      "trungbinh": 1,
+      "theloai": "tainghe"
     }
   ],
   "users": [
@@ -342,6 +354,20 @@
       "day": "2022-08-02T10:38:42.236Z",
       "name": "hoang viet",
       "id": 6
+    },
+    {
+      "amount": 1,
+      "total": 540000,
+      "day": "2022-08-02T12:15:52.216Z",
+      "name": "hoang viet",
+      "id": 7
+    },
+    {
+      "amount": 1,
+      "total": 540000,
+      "day": "2022-08-02T12:15:58.181Z",
+      "name": "hoang viet",
+      "id": 8
     }
   ],
   "comments": [
@@ -664,6 +690,102 @@
       "ad": 2621,
       "title": "dsa",
       "id": 40
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "a",
+      "id": 41
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "a",
+      "id": 42
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "fdsaaf",
+      "id": 43
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "a",
+      "id": 44
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "a",
+      "id": 45
+    },
+    {
+      "rating": 1,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "aa",
+      "id": 46
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2617,
+      "title": "dsadsa",
+      "id": 47
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2617,
+      "title": "dsasd",
+      "id": 48
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2617,
+      "title": "đas",
+      "id": 49
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "dsadas",
+      "id": 50
+    },
+    {
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "dasd",
+      "id": 51
+    },
+    {
+      "rating": 1,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 2622,
+      "title": "a",
+      "id": 52
     }
   ]
 }
