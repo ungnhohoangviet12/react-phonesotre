@@ -137,6 +137,9 @@ export default function UserProduct() {
             <div className="container-userproduct">
                 <Row gutter={[16, 16]}>
                     <Col span={6}>
+                        <span className='filtername' onClick={() => setTheloai('')}>Tất cả</span>
+                    </Col>
+                    <Col span={6}>
                         <span className='filtername' onClick={() => setTheloai('phone')}>Điện thoại</span>
                     </Col>
                     <Col span={6}>
