@@ -8,11 +8,11 @@ import {
 import { DatePicker } from 'antd';
 import './register.scss'
 import { addUser } from '../../redux/actions/userActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function AppRegister() {
-
+    const { users } = useSelector(state => state.data2)
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -42,10 +42,13 @@ export default function AppRegister() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+
     const onFinish = (data) => {
-        if (!data.FirstName || !data.LastName || !data.city) {
+        const finIndex = users.findIndex(user => user.email === data.email)
+        if (finIndex !== -1) {
+            alert('email đã tồn tại')
         } else {
-            data.role = "user"
+            data.role = false
             dispatch(addUser(data));
             navigate('/login');
         }
@@ -74,10 +77,10 @@ export default function AppRegister() {
                 onFinish={onFinish}
                 scrollToFirstError
             >
-                <Form.Item name={['firstname']} rules={[{ required: true }]}>
+                <Form.Item name={['firstname']} rules={[{ required: true, message: 'Bạn phải nhập họ!' }]}>
                     <Input placeholder='hãy nhập họ' />
                 </Form.Item>
-                <Form.Item name={['lastname']} rules={[{ required: true }]}>
+                <Form.Item name={['lastname']} rules={[{ required: true, message: 'Bạn phải nhập tên!' }]}>
                     <Input placeholder='hãy nhập tên' />
                 </Form.Item>
 
@@ -87,11 +90,11 @@ export default function AppRegister() {
                     rules={[
                         {
                             type: 'email',
-                            message: 'The input is not valid E-mail!',
+                            message: 'Email không hợp lệ!',
                         },
                         {
                             required: true,
-                            message: 'Please input your E-mail!',
+                            message: 'Bạn phải nhập email!',
                         },
                     ]}
                 >
@@ -104,7 +107,7 @@ export default function AppRegister() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your password!',
+                            message: 'Bạn phải nhập mật khẩu!',
                         },
                     ]}
                     hasFeedback
@@ -120,7 +123,7 @@ export default function AppRegister() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please confirm your password!',
+                            message: 'Xác nhận mật khẩu!',
                         },
                         ({ getFieldValue }) => ({
                             validator(_, value) {
@@ -128,7 +131,7 @@ export default function AppRegister() {
                                     return Promise.resolve();
                                 }
 
-                                return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                                return Promise.reject(new Error('Mật khẩu không trùng'));
                             },
                         }),
                     ]}
@@ -143,12 +146,12 @@ export default function AppRegister() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your nickname!',
+                            message: 'Hãy nhập tên tài khoản!',
                             whitespace: true,
                         },
                     ]}
                 >
-                    <Input placeholder='hãy nhập tên đăng nhập' />
+                    <Input placeholder='hãy nhập tên tài khoản' />
                 </Form.Item>
 
 
@@ -158,7 +161,7 @@ export default function AppRegister() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your phone number!',
+                            message: 'Hãy nhập số điện thoại!',
                         },
                     ]}
                 >
@@ -174,10 +177,10 @@ export default function AppRegister() {
                 <Form.Item style={{ marginBottom: 0 }}>
                     <Form.Item
                         name="year"
-                        rules={[{ required: true }]}
+                        rules={[{ required: true, message: 'Hãy nhập ngày sinh' }]}
                         style={{ display: 'inline-block' }}
                     >
-                        <DatePicker style={{ width: 200 }} placeholder='Select Your Birth Day' />
+                        <DatePicker style={{ width: 200 }} placeholder='Ngày sinh' />
                     </Form.Item>
                 </Form.Item>
                 <Form.Item
@@ -186,14 +189,14 @@ export default function AppRegister() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please select gender!',
+                            message: 'Hãy chọn giới tính!',
                         },
                     ]}
                 >
                     <Select placeholder="Giới tính">
-                        <Option value="male">Male</Option>
-                        <Option value="female">Female</Option>
-                        <Option value="other">Other</Option>
+                        <Option value="male">Nam</Option>
+                        <Option value="female">Nữ</Option>
+                        <Option value="other">Khác</Option>
                     </Select>
                 </Form.Item>
 
@@ -202,7 +205,7 @@ export default function AppRegister() {
                         <Form.Item
                             name={['district']}
                             noStyle
-                            rules={[{ required: true, message: 'District is required' }]}
+                            rules={[{ required: true, message: 'hãy nhập Quận / Huyện' }]}
                         >
                             <Input style={{ width: '100%' }} placeholder="Quận / Huyện" />
                         </Form.Item>
@@ -214,7 +217,7 @@ export default function AppRegister() {
                         <Form.Item
                             name={['city']}
                             noStyle
-                            rules={[{ required: true, message: 'City is required' }]}
+                            rules={[{ required: true, message: 'Hãy nhập Tỉnh / Thành phố' }]}
                         >
                             <Input style={{ width: '100%' }} placeholder="Tỉnh / Thành Phố" />
                         </Form.Item>

@@ -3,8 +3,6 @@ import {
     BorderOuterOutlined,
     GiftOutlined,
     PicLeftOutlined,
-    SettingOutlined,
-    UploadOutlined,
     UserOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu } from 'antd';
@@ -62,14 +60,6 @@ export default function Admin() {
                             icon: <BorderOuterOutlined />,
                             label: (
                                 <Link to='/admin/orders' >Đơn hàng</Link>
-                            ),
-
-                        },
-                        {
-                            key: '5',
-                            icon: <SettingOutlined />,
-                            label: (
-                                <Link to='/admin/orders' >Cài đặt</Link>
                             ),
 
                         },

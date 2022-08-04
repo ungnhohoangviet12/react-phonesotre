@@ -58,7 +58,7 @@ export default function AppLogin() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your email!',
+                            message: 'Bạn phải nhập email!',
                         },
                     ]}
                 >
@@ -70,7 +70,7 @@ export default function AppLogin() {
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your password!',
+                            message: 'Bạn phải nhập mật khẩu!',
                         },
                     ]}
                 >

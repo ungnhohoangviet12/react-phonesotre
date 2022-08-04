@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSingleProduct, updateProduct } from '../../../redux/actions/productActions';
+import { getSingleProduct } from '../../../redux/actions/productActions';
 import { addComment, loadComments } from '../../../redux/actions/commentAction';
 import { useParams } from 'react-router-dom';
 import './productdetails.scss'
@@ -25,6 +25,8 @@ export default function ProductDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const { product } = useSelector(state => state.data);
+    const today = new Date();
+    const date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
 
     const findComment = comments.filter(s => s.ad === product.id)
     const amountComment = findComment.length
@@ -55,7 +57,8 @@ export default function ProductDetails() {
                     avatar: profile.avatar,
                     nickname: profile.nickname,
                     ad: product.id,
-                    title: title
+                    title: title,
+                    date: date,
                 }))
                 dispatch(loadComments())
                 setTitle('');
@@ -153,7 +156,7 @@ export default function ProductDetails() {
                                             </label>
                                         )
                                     })}
-
+                                    <span style={{ marginLeft: '10px' }}>{item.date}</span>
                                 </List.Item>
                             )}
                         />

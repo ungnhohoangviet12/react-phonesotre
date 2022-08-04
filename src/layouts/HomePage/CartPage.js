@@ -1,15 +1,14 @@
-import { Button, Col, Modal, Radio, Row, Space, Table, Popconfirm, message } from 'antd';
+import { Button, Col, Modal, Row, Space, Table, Popconfirm, message } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import { useDispatch } from 'react-redux';
 import { addOrder } from '../../redux/actions/orderAction';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function CartPage() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const { isEmpty, items, totalItems, totalUniqueItems, cartTotal, removeItem, updateItemQuantity, emptyCart } = useCart();
-    const navigate = useNavigate();
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = () => {
         if (totalUniqueItems > 0) {
@@ -41,7 +40,10 @@ export default function CartPage() {
         setIsModalVisible(false);
     };
 
-    const [value, setValue] = useState(1);
+
+    const handleDetails = (id) => {
+        navigate(`/product/details/${id}`)
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -58,7 +60,7 @@ export default function CartPage() {
             title: 'Sản phẩm',
             key: 'product',
             render: (_, record) => (
-                <img width={40} src={record.image} alt="" />
+                <img onClick={() => handleDetails(record.id)} width={100} src={record.image} alt="" />
             ),
         },
         {
@@ -101,59 +103,42 @@ export default function CartPage() {
             render: (_, record) => (
                 <Space size="middle">
                     <Popconfirm
-                        title="Are you sure to delete this task?"
+                        title="Bạn có muốn xóa sản phẩm"
                         onConfirm={() => handleRemoveItem(record.id)}
                         okText="Có"
                         cancelText="không"
                     >
-                        <Button type='primary' danger>Delete</Button>
+                        <Button type='primary' danger>Xóa</Button>
                     </Popconfirm>
                 </Space>
             ),
         },
     ];
 
-    const onChange = (e) => {
-        setValue(e.target.value);
-    };
+
 
     return (
 
         <div>
 
             <div className='container-cart'>
-                {isEmpty ? <h1>Giỏ hàng rỗng</h1> : <h1> số lượng sẩn phẩm: {totalUniqueItems}</h1>
-                }
-                <h4>Tổng số mặt hàng: {totalItems}</h4>
-
 
                 <Row gutter={[16, 16]}>
-                    <Col className='scroll-product' span={16}>
-                        <Table columns={columns} dataSource={items} />
+                    <Table columns={columns} dataSource={items} />
+                    <h4>Tổng số mặt hàng: {totalItems}</h4>
+
+                </Row>
+                <Row>
+                    <Col span={12}>
+                        <span className='tongtien'>Tổng tiền:</span>
                     </Col>
-                    <Col span={2} />
-                    <Col className="col-cart" span={6}>
-                        <h2>Tổng giỏ hàng</h2>
-                        <div className='sumprice'>
-                            <div style={{ height: '70px', marginTop: '20px' }}>
-                                <Radio.Group onChange={onChange} value={value}>
-                                    <Radio value={1}>Thanh toán trực tiếp</Radio>
-                                    <Radio value={2}>Thanh toán online</Radio>
-                                </Radio.Group>
-                            </div>
-                            <h3>Tổng tiền: <span style={{ color: 'red', display: 'inline-block' }} className='cartTotal'>{new Intl.NumberFormat('vi').format(cartTotal)}đ</span></h3>
-
-                            <Popconfirm onConfirm={() => emptyCart()} title="bạn có muốn xóa hết?" okText="Có" cancelText="Không">
-                                <Button danger >clear</Button>
-                            </Popconfirm>
-                        </div>
-
-                        <Row gutter={[0, 16]}>
-                            <Button type='primary' block onClick={showModal}>Thanh toán</Button><br />
-                            <Button type='primary' danger block onClick={() => navigate("/")}>Tiếp tục mua hàng</Button>
-                        </Row>
+                    <Col span={12}>
+                        <span className='price'>
+                            {new Intl.NumberFormat('vi').format(cartTotal)}đ
+                        </span>
                     </Col>
                 </Row>
+                <Button block type='primary' size='large' onClick={showModal}>Thanh toán</Button><br />
 
                 <Modal title="Thanh toán" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                     <h1>{isEmpty ? "Giỏ hàng rỗng" : "Bạn có muốn thanh toán hay không"}</h1>

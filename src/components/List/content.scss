@@ -110,7 +110,9 @@
     }
 
     .item-name {
-        height: 3rem;
+        font-size: 18px;
+        font-weight: bold;
+        height: 4rem;
         text-overflow: ellipsis;
         overflow: hidden;
         display: -webkit-box;

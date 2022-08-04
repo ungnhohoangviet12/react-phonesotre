@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productActions';
 import './userproduct.scss'
-import { Card, Checkbox, Col, List, message, Row, Select } from 'antd';
+import { Card, Checkbox, Col, List, message, Row } from 'antd';
 import { FaStar, FaCartPlus } from 'react-icons/fa';
 import { useCart } from 'react-use-cart';
 import { useNavigate } from 'react-router-dom';
@@ -137,13 +137,13 @@ export default function UserProduct() {
             <div className="container-userproduct">
                 <Row gutter={[16, 16]}>
                     <Col span={6}>
-                        <span onClick={() => setTheloai('phone')}>Điện thoại</span>
+                        <span className='filtername' onClick={() => setTheloai('phone')}>Điện thoại</span>
                     </Col>
                     <Col span={6}>
-                        <span onClick={() => setTheloai('tainghe')}>Tai nghe</span>
+                        <span className='filtername' onClick={() => setTheloai('tainghe')}>Tai nghe</span>
                     </Col>
                     <Col span={6}>
-                        <span onClick={() => setTheloai('laptop')}>Laptop</span>
+                        <span className='filtername' onClick={() => setTheloai('laptop')}>Laptop</span>
                     </Col>
                 </Row>
                 <Row className='search__product'>
@@ -181,7 +181,7 @@ export default function UserProduct() {
                                     </div>
                                     <div className='hoatoc'>
                                         <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
-                                        <span>hỏa tốc</span>
+                                        <span className=''>hỏa tốc</span>
                                     </div>
                                     <div className='sell'>
                                         <span>Đã bán {item.sell}</span>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Row, Col, Button, Image, Avatar } from 'antd';
+import { Row, Col, Image, Avatar } from 'antd';
 import './profile.scss';
 import { useSelector } from 'react-redux';
 import Images from '../../constants/image';
@@ -13,7 +13,7 @@ export default function Profile() {
     const { profile } = useSelector(state => state.auth)
     return (
         <div className='container__profile'>
-            <h1 className='information'>Personal information</h1>
+            <h1 className='information'>Thông tin cá nhân</h1>
             <Row >
                 <Col span={12}>
                     <Avatar className='avatar' src={<Image src={profile.avatar || Images.emty} style={{ width: 200 }} />} />

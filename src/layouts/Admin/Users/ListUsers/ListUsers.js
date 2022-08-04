@@ -50,7 +50,9 @@ const ListUsers = () => {
         {
             title: 'Quyền',
             key: 'role',
-            dataIndex: 'role',
+            render: (text, record) => (
+                <span>{record.role === true ? "admin" : "user"}</span>
+            )
         },
         {
             title: 'Hoạt động',

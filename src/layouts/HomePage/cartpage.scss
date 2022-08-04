@@ -4,15 +4,13 @@
 
 .container-cart {
     margin: 140px auto;
-    max-width: 1200px;
+    max-width: 800px;
     padding: 0 15px;
     background-color: white;
-
-   
-    .scroll-product {
-        height: 500px;
-        overflow: scroll;
+    .scroll-product  {
+        margin: 0 auto;
     }
+  
     .col-cart {
         height: 373px;
         border: 1px solid gray;
@@ -43,12 +41,23 @@
         display: flex;
     }
   }
-  
+  .tongtien {
+    font-size: 16px;
+    font-weight: bold;
+}
+    .price {
+        color: red;
+        font-size: 20px;
+        font-weight: bold;
+    }
   .totalUniqueItems {
     color: red;
+   
 }
 
 .render-name  {
+    font-weight: bold;
+    font-size: 16px;
     display: inline-block;
     height: 3rem;
     text-overflow: ellipsis;
