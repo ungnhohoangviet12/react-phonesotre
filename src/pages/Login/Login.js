@@ -20,7 +20,7 @@ export default function AppLogin() {
     const onFinish = (values) => {
         const existedUserIndex = users.findIndex(todo => (todo.email === values.email && todo.password === values.password))
         if (existedUserIndex === -1) {
-            message.error('Tài khoản mật khẩu k chính xác')
+            message.error('Tài khoản mật khẩu không chính xác')
             return
         }
 

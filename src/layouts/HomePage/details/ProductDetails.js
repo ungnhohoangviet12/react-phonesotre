@@ -233,7 +233,7 @@ export default function ProductDetails() {
                     </Col>
                 </Row>
                 <Modal title="Thanh toán" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                    <h1>Bạn có muốn thanh toán hay không</h1>
+                    <h1>Bạn có muốn thanh toán hay không ?</h1>
                 </Modal>
             </div>
 

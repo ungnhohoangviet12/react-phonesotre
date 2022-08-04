@@ -141,7 +141,7 @@ export default function CartPage() {
                 <Button block type='primary' size='large' onClick={showModal}>Thanh toán</Button><br />
 
                 <Modal title="Thanh toán" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                    <h1>{isEmpty ? "Giỏ hàng rỗng" : "Bạn có muốn thanh toán hay không"}</h1>
+                    <h1>{isEmpty ? "Giỏ hàng rỗng" : "Bạn có muốn thanh toán hay không ?"}</h1>
                 </Modal>
             </div>
         </div >
