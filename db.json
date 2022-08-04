@@ -1,6 +1,41 @@
 {
   "products": [
     {
+      "name": "IPHONE 4 8GB",
+      "price": "325000",
+      "image": "https://media3.scdn.vn/img3/2019/5_10/N1n6Aq_simg_de2fe0_250x250_maxb.jpg",
+      "id":"844635133218648453",
+      "theloai": "phone"
+      },
+      {
+      "name": "iPhone 7 32Gb Quốc tế Fullbox",
+      "price": "4500000",
+      "image": "https://media3.scdn.vn/img3/2019/3_15/I8C519_simg_de2fe0_250x250_maxb.jpg",
+      "id":"654684321848",
+      "theloai":"phone"
+      },
+      {
+      "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
+      "price": "26990000",
+      "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
+      "id":"8798789793256",
+      "theloai":"phone"
+      },
+      {
+      "name": "iPhone 13 Pro 256GB Chính Hãng (VN/A)",
+      "price": "26790000",
+      "image": "https://media3.scdn.vn/img4/2022/07_08/j5asoy9HWTj21a29iZLo_simg_de2fe0_250x250_maxb.jpg",
+      "id":"431535135135135315436",
+      "theloai":"phone"
+      },
+      {
+      "name": "Iphone 11 pro Trả Bảo Hành",
+      "price": "21000000",
+      "image": "https://media3.scdn.vn/img4/2020/04_24/47dxwigPtC2OBYiKb6cl_simg_de2fe0_250x250_maxb.jpg",
+      "id":"55464651244532525",
+      "theloai":"phone"
+      },
+    {
       "name": "máy tính bảng lai laptop ram 4Gb Rom 64Gb  nghe gọi nhắn tin",
       "price": "2900000",
       "image": "https://media3.scdn.vn/img2/2018/8_5/G8MtY5_simg_de2fe0_250x250_maxb.jpg",
