@@ -16,6 +16,9 @@ export default function UserProduct() {
     const { products } = useSelector(state => state.data)
     const [theloai, setTheloai] = useState('');
     const [sortProduct, setSortProduct] = useState('');
+    const [hoatoc, setHoatoc] = useState(false);
+    const [chuyenphat, setChuyenphat] = useState(false);
+    const [ratings, setRatings] = useState(0);
     const [states, setStates] = useState(
         {
             data: [],
@@ -57,6 +60,8 @@ export default function UserProduct() {
         message.success('thêm thành công')
     }
 
+
+
     if (sortProduct === 'tang') {
         products.sort((a, b) => {
             return a.price - b.price
@@ -68,6 +73,7 @@ export default function UserProduct() {
         })
     }
 
+
     return (
         <div className='main'>
             <div className='sibar'>
@@ -77,10 +83,10 @@ export default function UserProduct() {
                         <h4>Phương thức vận chuyển</h4>
                         <Checkbox.Group style={{ width: '100%' }} onChange={handleOnchangeCheckbox}>
                             <Row>
-                                <Checkbox value="hoatoc">Hỏa tốc</Checkbox>
+                                <Checkbox checked={hoatoc} onChange={e => setHoatoc(e.target.checked)} value="hoatoc">Hỏa tốc</Checkbox>
                             </Row>
                             <Row>
-                                <Checkbox value="chuyenphat">Chuyển Phát tiêu</Checkbox>
+                                <Checkbox checked={chuyenphat} onChange={e => setChuyenphat(e.target.checked)} value="chuyenphat">Chuyển Phát tiêu</Checkbox>
                             </Row>
                         </Checkbox.Group>
                     </div>
@@ -120,9 +126,9 @@ export default function UserProduct() {
                     </div>
                     <div>
                         <h4>Đánh giá</h4>
-                        <p>5 sao</p>
-                        <p>4-5 sao</p>
-                        <p>3-5sao</p>
+                        <p className='ratings' onClick={() => setRatings(5)}>5 sao</p>
+                        <p className='ratings' onClick={() => setRatings(4)}>4-5 sao</p>
+                        <p className='ratings' onClick={() => setRatings(3)}>3-5sao</p>
                     </div>
                     <div>
                         <h4>Bộ lọc khác</h4>
@@ -165,7 +171,11 @@ export default function UserProduct() {
                     }}
 
                     // search 
-                    dataSource={(theloai === "laptop" ? products.filter(s => s.theloai === "laptop") : theloai === "tainghe" ? products.filter(s => s.theloai === "tainghe") : theloai === "phone" ? products.filter(s => s.theloai === "phone") : products)}
+                    dataSource={
+                        (theloai ? (products.filter(s => s.theloai === theloai)) :
+                            ratings ? products.filter(s => s.trungbinh >= ratings) :
+                                products)
+                    }
                     renderItem={(item, index) =>
                         index >= states.minIndex &&
                         index < states.maxIndex &&
@@ -184,12 +194,12 @@ export default function UserProduct() {
                                     </div>
                                     <div className='hoatoc'>
                                         <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
-                                        <span className=''>hỏa tốc</span>
+                                        <span className=''>{item.transport}</span>
                                     </div>
                                     <div className='sell'>
                                         <span>Đã bán {item.sell}</span>
                                         <div className='star'>
-                                            <span><FaStar color='#ffc600' />5</span>
+                                            <span><FaStar color='#ffc600' />{item.trungbinh}</span>
                                         </div>
                                         <FaCartPlus onClick={() => handleAddProduct(item)} color='brown' size={20} ></FaCartPlus>
                                     </div>

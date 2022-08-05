@@ -37,7 +37,6 @@ export default function AppHeader() {
             <div className="top">
                 <div className="header">
                     <div className="logo" >
-
                         <h1 className='title-header'>Shop store</h1>
                     </div>
                     <input type="text" placeholder='Tìm kiếm...' onChange={handleSearch} />

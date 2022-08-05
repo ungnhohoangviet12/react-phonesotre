@@ -18,7 +18,6 @@ export default function ViewUser() {
 
 
 
-
     return (
         <div className='container-view'>
             <Row >

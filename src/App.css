@@ -9,7 +9,7 @@ body {
 
 .container-fluid {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 90%;
   padding: 0;
 }
 p {
@@ -21,12 +21,7 @@ p {
 header
 ------ 
 */
-.ant-layout-header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 999;
-}
+
 
 /* 
 footer

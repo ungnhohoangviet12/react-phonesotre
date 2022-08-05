@@ -1,7 +1,7 @@
 import { Button, Col, Modal, Row, Space, Table, Popconfirm, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useCart } from 'react-use-cart';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addOrder } from '../../redux/actions/orderAction';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,6 +10,7 @@ export default function CartPage() {
     const dispatch = useDispatch();
     const { isEmpty, items, totalItems, totalUniqueItems, cartTotal, removeItem, updateItemQuantity, emptyCart } = useCart();
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const { profile } = useSelector(state => state.auth)
     const showModal = () => {
         if (totalUniqueItems > 0) {
             setIsModalVisible(true);
@@ -24,10 +25,12 @@ export default function CartPage() {
         } else {
 
             dispatch(addOrder({
+                status: false,
                 amount: totalItems,
+                items: items,
                 total: cartTotal,
                 day: new Date(),
-                name: 'hoang viet'
+                idUser: profile
             }));
             setIsModalVisible(false);
             message.success('thanh toán thành công')

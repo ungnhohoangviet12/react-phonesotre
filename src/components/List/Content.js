@@ -107,20 +107,69 @@ export default function AppContent() {
                     <span className='title'>shopphone</span>
                     <span> / Điện thoại - Máy tính bảng</span>
                 </div>
-                <h1>Bán điện thoại - máy tính bảng</h1>
-
+                <h1>Sản phẩm bán chạy</h1>
                 <List
                     grid={{
                         gutter: [16, 16],
                         xs: 2,
-                        sm: 3,
-                        md: 4,
+                        sm: 2,
+                        md: 3,
                         lg: 4,
                         xl: 5,
                         xxl: 5,
                     }}
 
-                    dataSource={products.filter((item) => {
+                    dataSource={products.filter(item => {
+                        if (search === "") {
+                            return item
+                        } else if (item.name.toLowerCase().includes(search.toLowerCase())) {
+                            return item
+
+                        }
+                    })}
+                    renderItem={(item, index) =>
+                        index >= states.minIndex &&
+                        index < states.maxIndex &&
+                        (
+                            < List.Item key={index}>
+                                <Card title={item.title}
+                                    style={{ width: 220 }}
+                                    cover={<img className='item-image' onClick={() => handleDetails(item.id)} alt="example" src={item.image} />}
+                                >
+                                    <p className='item-name'>{item.name}</p>
+                                    <p className='item-price'>{new Intl.NumberFormat('vi').format(item.price)}đ</p>
+                                    <div>
+                                        <span>189.000đ</span>
+                                        <span className='price-red'>{item.sale}</span>
+                                    </div>
+                                    <div className='hoatoc'>
+                                        <img src="https://media3.scdn.vn/img4/2022/04_14/P8X20So6YTrWe466Xr7v.png" alt="" />
+                                        <span>hỏa tốc</span>
+                                    </div>
+                                    <div className='sell'>
+                                        <span>Đã bán {item.sell}</span>
+                                        <div className='star'>
+                                            <span><FaStar color='#ffc600' /> {item?.trungbinh?.toFixed(1)}</span>
+                                        </div>
+                                        <FaCartPlus onClick={() => handleToDetails(item)} color='brown' size={20} ></FaCartPlus>
+                                    </div>
+                                </Card>
+                            </List.Item >
+                        )
+                    }
+                />
+                <List
+                    grid={{
+                        gutter: [16, 16],
+                        xs: 2,
+                        sm: 2,
+                        md: 3,
+                        lg: 4,
+                        xl: 5,
+                        xxl: 5,
+                    }}
+
+                    dataSource={products.filter(item => {
                         if (search === "") {
                             return item
                         } else if (item.name.toLowerCase().includes(search.toLowerCase())) {

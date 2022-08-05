@@ -5,17 +5,17 @@ import { Content, Footer } from 'antd/lib/layout/layout';
 import AppFooter from '../../components/Footer/Footer';
 import { Outlet } from 'react-router-dom';
 import './cartpage.scss'
+import './hompage.scss'
 
 
-const { Header } = Layout;
 
 export default function HomePage() {
     return (
         <div>
             <Layout className='mainLayout'>
-                <Header>
+                <div className='ant-layout-header'>
                     <AppHeader />
-                </Header>
+                </div>
                 <Content>
                     <Outlet />
                 </Content>

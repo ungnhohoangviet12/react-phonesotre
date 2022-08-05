@@ -5,35 +5,40 @@
       "price": "325000",
       "image": "https://media3.scdn.vn/img3/2019/5_10/N1n6Aq_simg_de2fe0_250x250_maxb.jpg",
       "id": "844635133218648453",
-      "theloai": "phone"
+      "theloai": "phone",
+      "transport": "hỏa tốc"
     },
     {
       "name": "iPhone 7 32Gb Quốc tế Fullbox",
       "price": "4500000",
       "image": "https://media3.scdn.vn/img3/2019/3_15/I8C519_simg_de2fe0_250x250_maxb.jpg",
       "id": "654684321848",
-      "theloai": "phone"
+      "theloai": "phone",
+      "transport": "hỏa tốc"
     },
     {
       "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
       "price": "26990000",
       "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
       "id": "8798789793256",
-      "theloai": "phone"
+      "theloai": "phone",
+      "transport": "hỏa tốc"
     },
     {
       "name": "iPhone 13 Pro 256GB Chính Hãng (VN/A)",
       "price": "26790000",
       "image": "https://media3.scdn.vn/img4/2022/07_08/j5asoy9HWTj21a29iZLo_simg_de2fe0_250x250_maxb.jpg",
       "id": "431535135135135315436",
-      "theloai": "phone"
+      "theloai": "phone",
+      "transport": "hỏa tốc"
     },
     {
       "name": "Iphone 11 pro Trả Bảo Hành",
       "price": "21000000",
       "image": "https://media3.scdn.vn/img4/2020/04_24/47dxwigPtC2OBYiKb6cl_simg_de2fe0_250x250_maxb.jpg",
       "id": "55464651244532525",
-      "theloai": "phone"
+      "theloai": "phone",
+      "transport": "hỏa tốc"
     },
     {
       "name": "máy tính bảng lai laptop ram 4Gb Rom 64Gb  nghe gọi nhắn tin",
@@ -41,7 +46,8 @@
       "image": "https://media3.scdn.vn/img2/2018/8_5/G8MtY5_simg_de2fe0_250x250_maxb.jpg",
       "id": 2615,
       "theloai": "laptop",
-      "trungbinh": 4.111111111111111
+      "trungbinh": 4,
+      "transport": "hỏa tốc"
     },
     {
       "name": "Adapter 19.5V - 4.74A dùng cho laptop Sony Vaio",
@@ -49,7 +55,8 @@
       "image": "https://media3.scdn.vn/img4/2021/08_20/Nt2QuY5ucVg0nTNDXUrl_simg_de2fe0_250x250_maxb.jpg",
       "id": 2616,
       "trungbinh": 3.5,
-      "theloai": "laptop"
+      "theloai": "laptop",
+      "transport": "hỏa tốc"
     },
     {
       "name": "Laptop 2540p i5 đã qua sử dụng",
@@ -57,30 +64,34 @@
       "image": "https://media3.scdn.vn/img4/2020/05_07/oaN8R0ATfYdFogSNpTp0_simg_de2fe0_250x250_maxb.jpg",
       "id": 2617,
       "trungbinh": 5,
-      "theloai": "laptop"
+      "theloai": "laptop",
+      "transport": "hỏa tốc"
     },
     {
       "name": "USB TP-LINK TL-WN722N củ qua sử dụng,dùng để thu Wi-Fi ko dây cho máy tính để bàn hay laptop bị hư cạc Wi-Fi,cấm cục vào lỗ USB cài win hay cài driver sài sài OK,driver a! em download trên mạng về cài vào.bấm đặc hàng em gửi cho thanks!",
       "price": "190000",
       "image": "https://media3.scdn.vn/img4/2022/05_06/7w2fPdqA8mDcMtV8BvAC_simg_de2fe0_250x250_maxb.jpg",
       "id": 2618,
-      "trungbinh": 4.714285714285714
+      "trungbinh": 4,
+      "transport": "hỏa tốc"
     },
     {
       "name": "Surface Laptop Go (THJ-00001)(i5 1035G1/8GB RAM/256GB SSD/12.4 Cảm ứng/Win 10/Bạc)",
       "price": "23000000",
       "image": "https://media3.scdn.vn/img4/2022/06_17/c5MJBeotJBm0DcDxi7gn_simg_de2fe0_250x250_maxb.png",
       "id": 2620,
-      "trungbinh": 4.666666666666667,
-      "theloai": "laptop"
+      "trungbinh": 4,
+      "theloai": "laptop",
+      "transport": "hỏa tốc"
     },
     {
       "name": "Tai nghe Headphone Game Ovann X3",
       "price": "170000",
       "image": "https://media3.scdn.vn/img4/2020/04_28/XojSRxRBS5Z5UVgqos0q_simg_de2fe0_250x250_maxb.jpg",
       "id": 2621,
-      "trungbinh": null,
-      "theloai": "tainghe"
+      "trungbinh": 2,
+      "theloai": "tainghe",
+      "transport": "hỏa tốc"
     },
     {
       "name": "Tai Nghe Chuyên Chơi Game",
@@ -88,14 +99,15 @@
       "image": "https://media3.scdn.vn/img4/2020/05_18/3QcpIM6IqfAcDAuj2KpO_simg_de2fe0_250x250_maxb.jpg",
       "id": 2622,
       "theloai": "tainghe",
-      "trungbinh": 5
+      "trungbinh": 5,
+      "transport": "chuyển phát tiêu"
     },
     {
       "name": "Tai nghe bộ đàm hai chân cắm - 2 chân cắm 3.5mm và 2.5mm",
       "price": "68000",
       "image": "https://media3.scdn.vn/img4/2020/05_18/3QcpIM6IqfAcDAuj2KpO_simg_de2fe0_250x250_maxb.jpg",
       "id": 2623,
-      "trungbinh": 2.142857142857143,
+      "trungbinh": 2,
       "theloai": "tainghe"
     },
     {
@@ -471,200 +483,109 @@
   ],
   "orders": [
     {
+      "status": true,
       "amount": 2,
-      "total": 3200000,
-      "day": "2022-07-31T06:54:24.633Z",
-      "name": "hoang viet",
-      "id": 2
+      "items": [
+        {
+          "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
+          "price": "26990000",
+          "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
+          "id": "8798789793256",
+          "theloai": "phone",
+          "quantity": 2,
+          "itemTotal": 53980000
+        }
+      ],
+      "total": 53980000,
+      "day": "2022-08-05T15:30:14.113Z",
+      "idUser": {
+        "firstname": "ngueyn",
+        "lastname": "teo",
+        "email": "3",
+        "password": "3",
+        "confirm": "3",
+        "nickname": "teonana123.belo",
+        "prefix": "84",
+        "phone": "584186966",
+        "year": "2022-07-21T11:29:50.434Z",
+        "gender": "male",
+        "district": "Numbenr",
+        "city": "con tom",
+        "id": "DWk7o_was",
+        "role": false,
+        "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+      },
+      "id": 30
     },
     {
-      "amount": 7,
-      "total": 10020000,
-      "day": "2022-07-31T07:07:10.929Z",
-      "name": "hoang viet",
-      "id": 3
-    },
-    {
-      "amount": 3,
-      "total": 408000,
-      "day": "2022-08-02T04:49:16.781Z",
-      "name": "hoang viet",
-      "id": 4
-    },
-    {
-      "amount": 6,
-      "total": 5414000,
-      "day": "2022-08-02T08:57:19.928Z",
-      "name": "hoang viet",
-      "id": 5
-    },
-    {
-      "amount": 1,
-      "total": 249000,
-      "day": "2022-08-02T10:38:42.236Z",
-      "name": "hoang viet",
-      "id": 6
-    },
-    {
-      "amount": 1,
-      "total": 540000,
-      "day": "2022-08-02T12:15:52.216Z",
-      "name": "hoang viet",
-      "id": 7
-    },
-    {
-      "amount": 1,
-      "total": 540000,
-      "day": "2022-08-02T12:15:58.181Z",
-      "name": "hoang viet",
-      "id": 8
-    },
-    {
-      "amount": 1,
-      "total": 189000,
-      "day": "2022-08-03T03:04:17.097Z",
-      "name": "hoang viet",
-      "id": 9
-    },
-    {
-      "amount": 11,
-      "total": 5652000,
-      "day": "2022-08-03T03:06:22.165Z",
-      "name": "hoang viet",
-      "id": 10
-    },
-    {
-      "amount": 1,
-      "total": 3900000,
-      "day": "2022-08-03T03:07:13.913Z",
-      "name": "hoang viet",
-      "id": 11
-    },
-    {
+      "status": true,
       "amount": 2,
-      "total": 4090000,
-      "day": "2022-08-03T03:18:42.020Z",
-      "name": "hoang viet",
-      "id": 12
+      "items": [
+        {
+          "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
+          "price": "26990000",
+          "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
+          "id": "8798789793256",
+          "theloai": "phone",
+          "quantity": 2,
+          "itemTotal": 53980000
+        }
+      ],
+      "total": 53980000,
+      "day": "2022-08-05T15:30:14.113Z",
+      "idUser": {
+        "firstname": "ngueyn",
+        "lastname": "teo",
+        "email": "3",
+        "password": "3",
+        "confirm": "3",
+        "nickname": "teonana123.belo",
+        "prefix": "84",
+        "phone": "584186966",
+        "year": "2022-07-21T11:29:50.434Z",
+        "gender": "male",
+        "district": "Numbenr",
+        "city": "quảng nam",
+        "id": "DWk7o_was",
+        "role": false,
+        "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+      },
+      "id": 30
     },
     {
-      "amount": 6,
-      "total": 408000,
-      "day": "2022-08-04T03:41:20.948Z",
-      "name": "hoang viet",
-      "id": 13
-    },
-    {
+      "status": true,
       "amount": 2,
-      "total": 246000,
-      "day": "2022-08-04T03:42:53.332Z",
-      "name": "hoang viet",
-      "id": 14
-    },
-    {
-      "amount": 20,
-      "total": 8218000,
-      "day": "2022-08-04T03:53:11.790Z",
-      "name": "hoang viet",
-      "id": 15
-    },
-    {
-      "amount": 2,
-      "total": 23190000,
-      "day": "2022-08-04T03:56:06.724Z",
-      "name": "hoang viet",
-      "id": 16
-    },
-    {
-      "amount": 3,
-      "total": 27090000,
-      "day": "2022-08-04T04:03:55.879Z",
-      "name": "hoang viet",
-      "id": 17
-    },
-    {
-      "amount": 16,
-      "total": 29238000,
-      "day": "2022-08-04T04:04:54.057Z",
-      "name": "hoang viet",
-      "id": 18
-    },
-    {
-      "amount": 1,
-      "total": 3900000,
-      "day": "2022-08-04T04:17:17.211Z",
-      "name": "hoang viet",
-      "id": 19
-    },
-    {
-      "amount": 3,
-      "total": 11700000,
-      "day": "2022-08-04T04:20:53.610Z",
-      "name": "hoang viet",
-      "id": 20
-    },
-    {
-      "amount": 16,
-      "total": 2518000,
-      "day": "2022-08-04T04:22:41.632Z",
-      "name": "hoang viet",
-      "id": 21
-    },
-    {
-      "amount": 1,
-      "total": 2900000,
-      "day": "2022-08-04T04:23:41.820Z",
-      "name": "hoang viet",
-      "id": 22
-    },
-    {
-      "amount": 8,
-      "total": 23200000,
-      "day": "2022-08-04T04:23:52.433Z",
-      "name": "hoang viet",
-      "id": 23
-    },
-    {
-      "amount": 1,
-      "total": 199000,
-      "day": "2022-08-04T06:27:35.935Z",
-      "name": "hoang viet",
-      "id": 24
-    },
-    {
-      "amount": 3,
-      "total": 27099000,
-      "day": "2022-08-04T11:33:30.118Z",
-      "name": "hoang viet",
-      "id": 25
-    },
-    {
-      "amount": 1,
-      "total": 26990000,
-      "day": "2022-08-04T11:34:09.901Z",
-      "name": "hoang viet",
-      "id": 26
-    },
-    {
-      "amount": 1,
-      "total": 26990000,
-      "day": "2022-08-04T11:34:24.715Z",
-      "name": "hoang viet",
-      "id": 27
-    },
-    {
-      "amount": 1,
-      "total": 26990000,
-      "day": "2022-08-04T11:34:30.610Z",
-      "name": "hoang viet",
-      "id": 28
-    },
-    {
-      "amount": 18,
-      "total": 485220000,
-      "day": "2022-08-04T11:54:52.823Z",
-      "name": "hoang viet",
-      "id": 29
+      "items": [
+        {
+          "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
+          "price": "26990000",
+          "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
+          "id": "8798789793256",
+          "theloai": "phone",
+          "quantity": 2,
+          "itemTotal": 53980000
+        }
+      ],
+      "total": 53980000,
+      "day": "2022-08-05T15:30:14.113Z",
+      "idUser": {
+        "firstname": "ngueyn",
+        "lastname": "teo",
+        "email": "3",
+        "password": "3",
+        "confirm": "3",
+        "nickname": "hoang viet",
+        "prefix": "84",
+        "phone": "584186966",
+        "year": "2022-07-21T11:29:50.434Z",
+        "gender": "male",
+        "district": "Numbenr",
+        "city": "con tom",
+        "id": "DWk7o_was",
+        "role": false,
+        "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+      },
+      "id": 32
     }
   ],
   "comments": [
@@ -748,6 +669,47 @@
       "title": "sản phẩm kém",
       "date": "4-8-2022",
       "id": 9
+    },
+    {
+      "rating": 5,
+      "nickname": "hoang viet",
+      "ad": 2625,
+      "title": "dsa",
+      "date": "5-8-2022",
+      "id": 10
+    },
+    {
+      "rating": 5,
+      "nickname": "hoang viet",
+      "ad": 2628,
+      "title": "ewqewfdsfds",
+      "date": "5-8-2022",
+      "id": 11
+    },
+    {
+      "rating": 5,
+      "nickname": "hoang viet",
+      "ad": 2617,
+      "title": "dsa",
+      "date": "5-8-2022",
+      "id": 12
+    },
+    {
+      "rating": 5,
+      "nickname": "hoang viet",
+      "ad": 2617,
+      "title": "dsa",
+      "date": "5-8-2022",
+      "id": 13
+    },
+    {
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "nickname": "teonana123.belo",
+      "ad": "431535135135135315436",
+      "title": "sản phẩm ổn",
+      "date": "5-8-2022",
+      "id": 14
     }
   ]
 }

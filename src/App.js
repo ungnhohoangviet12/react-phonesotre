@@ -21,6 +21,7 @@ import { useEffect } from 'react';
 import { INFO_USER_KEY } from './constants/constants';
 import { actLogin } from './redux/actions/authAction';
 import Profile from './pages/Profile/Profile';
+import ViewOrders from './layouts/Admin/Orders/ViewOrders/ViewOrders';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path='products/edit/:id' element={<EditProduct />} />
           <Route path='users' element={<ListUsers />} />
           <Route path='users/view/:id' element={<ViewUser />} />
+          <Route path='orders/view/:id' element={<ViewOrders />} />
           <Route path='orders' element={<ListOrders />} />
           <Route path='dashboard' element={<DashBoard />} />
           <Route path='' element={<Navigate to="/admin/dashboard" replace={true} />} />

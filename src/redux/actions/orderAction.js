@@ -53,9 +53,11 @@ export const addOrder = (order) => {
 };
 
 export const getSingleOrder = (id) => {
+    console.log(id, ' day la id');
     return function (dispatch) {
         axios.get(`${process.env.REACT_APP_BE_URL}/orders/${id}`).then((resp) => {
             dispatch(getOrder(resp.data));
+            console.log(resp, 'hoangviet');
         }).catch(error => console.log(error))
     };
 
