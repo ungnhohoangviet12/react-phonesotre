@@ -74,7 +74,11 @@ export default function ProductDetails() {
         message.success('thêm thành công')
     }
     const handleOrder = () => {
-        setIsModalVisible(true)
+        if (!!profile.firstname && !!profile.password) {
+            setIsModalVisible(true)
+        } else {
+            message.error('bạn chưa đăng nhập tài khoản');
+        }
 
     }
     const handleOk = () => {
@@ -86,8 +90,9 @@ export default function ProductDetails() {
         }))
         setIsModalVisible(false);
         message.success('thanh toán thành công')
-
     }
+
+
 
 
     const handleCancel = () => {

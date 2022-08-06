@@ -12,11 +12,16 @@ export default function CartPage() {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const { profile } = useSelector(state => state.auth)
     const showModal = () => {
-        if (totalUniqueItems > 0) {
-            setIsModalVisible(true);
+        if (!!profile.firstname && profile.password) {
+            if (totalUniqueItems > 0) {
+                setIsModalVisible(true);
+            } else {
+                setIsModalVisible(true)
+            }
         } else {
-            setIsModalVisible(true)
+            message.error('bạn chưa đăng nhập tài khoản')
         }
+
     };
     const handleOk = () => {
         if (isEmpty) {
