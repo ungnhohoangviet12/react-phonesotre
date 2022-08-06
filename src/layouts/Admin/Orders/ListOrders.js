@@ -19,6 +19,7 @@ const ListOrders = () => {
         dispatch(loadOrders());
         message.success('Xóa thành công');
     }
+    console.log(orders);
 
     const columns = [
         {
@@ -28,7 +29,7 @@ const ListOrders = () => {
             render: (text) => <a>{text}</a>,
         },
         {
-            title: 'Khác hàng ',
+            title: 'Khách hàng ',
             key: 'khachang',
             render: (text, record, index) => {
                 return (

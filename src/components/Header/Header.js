@@ -1,5 +1,5 @@
 import { Row, Col } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import './header.scss';
@@ -16,6 +16,7 @@ export default function AppHeader() {
     const dispatch = useDispatch();
     const { isLoggIn, profile } = useSelector(state => state.auth)
     const { totalUniqueItems } = useCart();
+    const [showMenu, setShowMenu] = useState(false)
 
 
     const handleSearch = (e) => {
@@ -34,10 +35,22 @@ export default function AppHeader() {
 
     return (
         <div>
+            {showMenu && <div onClick={() => setShowMenu(!showMenu)} className='lammo'></div>}
+            {showMenu && <ul className='menu__moblie'>
+                <i onClick={() => setShowMenu(!showMenu)} class="fa-solid fa-xmark"></i>
+                <li><Link to='/' >Trang chủ</Link></li>
+                <li><Link to='/product' >Sản phẩm</Link></li>
+                <li className='cart'>
+                    <Link to='/cart' >Giỏ hàng</Link>
+                </li>
+                {!isLoggIn && <li><Link to='/login' >Đăng nhập</Link></li>}
+                {isLoggIn && <li onClick={handleLogout}>Đăng xuất</li>}
+            </ul>}
             <div className="top">
+
                 <div className="header">
-                    <div className='nav-mobile'>
-                        <i class="fa-solid fa-bars"></i>
+                    <div className='nav-mobile' >
+                        <i onClick={() => setShowMenu(!showMenu)} class="fa-solid fa-bars"></i>
                     </div>
                     <div className="logo" >
                         <h1 className='title-header'>Shop store</h1>
