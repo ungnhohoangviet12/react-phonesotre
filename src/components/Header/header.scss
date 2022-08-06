@@ -11,6 +11,11 @@
     width: 100%;
 
     .top {
+      .nav-mobile {
+        font-size: 28px;
+        margin-left: 1rem;
+        display: none;
+      }
       .header {
         display: flex;
         // flex-wrap: wrap;
@@ -18,6 +23,7 @@
         padding: 15px 0;
         margin-top: 0;
         height: 60px;
+       
         .menu-bar {
           margin: 0;
           text-align: center;
@@ -119,25 +125,31 @@
           }
 }
       }
+     
     }
    
 }
 
 @media(max-width:768px) {
+ 
   .top {
+    .nav-mobile  {
+      display: block;
+    }
     .header {
       display: block;
       .menu-bar {
-        ul {
-          li {
-            width: 50px;
-          }
-        }
+        display: none;
+        
       }
     }
+    
     
   }
   .bot {
     display: none;
+    .fa-bars {
+      display: block;
+    }
   }
 }

@@ -2,9 +2,9 @@
   "products": [
     {
       "name": "IPHONE 4 8GB",
-      "price": "325000",
+      "price": 325000,
       "image": "https://media3.scdn.vn/img3/2019/5_10/N1n6Aq_simg_de2fe0_250x250_maxb.jpg",
-      "id": "844635133218648453",
+      "id": 844635133218648400,
       "theloai": "phone",
       "transport": "hỏa tốc"
     },
@@ -12,13 +12,13 @@
       "name": "iPhone 7 32Gb Quốc tế Fullbox",
       "price": "4500000",
       "image": "https://media3.scdn.vn/img3/2019/3_15/I8C519_simg_de2fe0_250x250_maxb.jpg",
-      "id": "654684321848",
+      "id": 654684321848,
       "theloai": "phone",
       "transport": "hỏa tốc"
     },
     {
       "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
-      "price": "26990000",
+      "price": 6990000,
       "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
       "id": "8798789793256",
       "theloai": "phone",
@@ -26,23 +26,23 @@
     },
     {
       "name": "iPhone 13 Pro 256GB Chính Hãng (VN/A)",
-      "price": "26790000",
+      "price": 26790000,
       "image": "https://media3.scdn.vn/img4/2022/07_08/j5asoy9HWTj21a29iZLo_simg_de2fe0_250x250_maxb.jpg",
-      "id": "431535135135135315436",
+      "id": 431535135135135300000,
       "theloai": "phone",
       "transport": "hỏa tốc"
     },
     {
       "name": "Iphone 11 pro Trả Bảo Hành",
-      "price": "21000000",
+      "price": 21000000,
       "image": "https://media3.scdn.vn/img4/2020/04_24/47dxwigPtC2OBYiKb6cl_simg_de2fe0_250x250_maxb.jpg",
-      "id": "55464651244532525",
+      "id": 55464651244532530,
       "theloai": "phone",
       "transport": "hỏa tốc"
     },
     {
       "name": "máy tính bảng lai laptop ram 4Gb Rom 64Gb  nghe gọi nhắn tin",
-      "price": "2900000",
+      "price": 2900000,
       "image": "https://media3.scdn.vn/img2/2018/8_5/G8MtY5_simg_de2fe0_250x250_maxb.jpg",
       "id": 2615,
       "theloai": "laptop",
@@ -51,7 +51,7 @@
     },
     {
       "name": "Adapter 19.5V - 4.74A dùng cho laptop Sony Vaio",
-      "price": "150000",
+      "price": 150000,
       "image": "https://media3.scdn.vn/img4/2021/08_20/Nt2QuY5ucVg0nTNDXUrl_simg_de2fe0_250x250_maxb.jpg",
       "id": 2616,
       "trungbinh": 3.5,
@@ -60,7 +60,7 @@
     },
     {
       "name": "Laptop 2540p i5 đã qua sử dụng",
-      "price": "3900000",
+      "price": 3900000,
       "image": "https://media3.scdn.vn/img4/2020/05_07/oaN8R0ATfYdFogSNpTp0_simg_de2fe0_250x250_maxb.jpg",
       "id": 2617,
       "trungbinh": 5,
@@ -77,7 +77,7 @@
     },
     {
       "name": "Surface Laptop Go (THJ-00001)(i5 1035G1/8GB RAM/256GB SSD/12.4 Cảm ứng/Win 10/Bạc)",
-      "price": "23000000",
+      "price": 23000000,
       "image": "https://media3.scdn.vn/img4/2022/06_17/c5MJBeotJBm0DcDxi7gn_simg_de2fe0_250x250_maxb.png",
       "id": 2620,
       "trungbinh": 4,
@@ -86,7 +86,7 @@
     },
     {
       "name": "Tai nghe Headphone Game Ovann X3",
-      "price": "170000",
+      "price": 170000,
       "image": "https://media3.scdn.vn/img4/2020/04_28/XojSRxRBS5Z5UVgqos0q_simg_de2fe0_250x250_maxb.jpg",
       "id": 2621,
       "trungbinh": 2,
@@ -504,76 +504,6 @@
         "email": "3",
         "password": "3",
         "confirm": "3",
-        "nickname": "teonana123.belo",
-        "prefix": "84",
-        "phone": "584186966",
-        "year": "2022-07-21T11:29:50.434Z",
-        "gender": "male",
-        "district": "Numbenr",
-        "city": "con tom",
-        "id": "DWk7o_was",
-        "role": false,
-        "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-      },
-      "id": 30
-    },
-    {
-      "status": true,
-      "amount": 2,
-      "items": [
-        {
-          "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
-          "price": "26990000",
-          "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
-          "id": "8798789793256",
-          "theloai": "phone",
-          "quantity": 2,
-          "itemTotal": 53980000
-        }
-      ],
-      "total": 53980000,
-      "day": "2022-08-05T15:30:14.113Z",
-      "idUser": {
-        "firstname": "ngueyn",
-        "lastname": "teo",
-        "email": "3",
-        "password": "3",
-        "confirm": "3",
-        "nickname": "teonana123.belo",
-        "prefix": "84",
-        "phone": "584186966",
-        "year": "2022-07-21T11:29:50.434Z",
-        "gender": "male",
-        "district": "Numbenr",
-        "city": "quảng nam",
-        "id": "DWk7o_was",
-        "role": false,
-        "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-      },
-      "id": 30
-    },
-    {
-      "status": true,
-      "amount": 2,
-      "items": [
-        {
-          "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
-          "price": "26990000",
-          "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
-          "id": "8798789793256",
-          "theloai": "phone",
-          "quantity": 2,
-          "itemTotal": 53980000
-        }
-      ],
-      "total": 53980000,
-      "day": "2022-08-05T15:30:14.113Z",
-      "idUser": {
-        "firstname": "ngueyn",
-        "lastname": "teo",
-        "email": "3",
-        "password": "3",
-        "confirm": "3",
         "nickname": "hoang viet",
         "prefix": "84",
         "phone": "584186966",
@@ -586,57 +516,6 @@
         "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
       },
       "id": 32
-    },
-    {
-      "status": false,
-      "amount": 2,
-      "items": [
-        {
-          "name": "iPhone 13 Pro Max 128GB Chính Hãng (VN/A)",
-          "price": "26990000",
-          "image": "https://media3.scdn.vn/img4/2022/07_08/pK7WlEUBE72vd2jpTWvp_simg_de2fe0_250x250_maxb.jpg",
-          "id": "8798789793256",
-          "theloai": "phone",
-          "transport": "hỏa tốc",
-          "quantity": 1,
-          "itemTotal": 26990000
-        },
-        {
-          "name": "iPhone 7 32Gb Quốc tế Fullbox",
-          "price": "4500000",
-          "image": "https://media3.scdn.vn/img3/2019/3_15/I8C519_simg_de2fe0_250x250_maxb.jpg",
-          "id": "654684321848",
-          "theloai": "phone",
-          "transport": "hỏa tốc",
-          "quantity": 1,
-          "itemTotal": 4500000
-        }
-      ],
-      "total": 31490000,
-      "day": "2022-08-06T03:21:04.739Z",
-      "idUser": {},
-      "id": 33
-    },
-    {
-      "status": false,
-      "amount": 1,
-      "items": [
-        {
-          "name": "Adapter 19.5V - 4.74A dùng cho laptop Sony Vaio",
-          "price": "150000",
-          "image": "https://media3.scdn.vn/img4/2021/08_20/Nt2QuY5ucVg0nTNDXUrl_simg_de2fe0_250x250_maxb.jpg",
-          "id": 2616,
-          "trungbinh": 3.5,
-          "theloai": "laptop",
-          "transport": "hỏa tốc",
-          "quantity": 1,
-          "itemTotal": 150000
-        }
-      ],
-      "total": 150000,
-      "day": "2022-08-06T03:22:29.326Z",
-      "idUser": {},
-      "id": 34
     },
     {
       "status": false,
@@ -673,137 +552,68 @@
         "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
       },
       "id": 35
-    },
-    {
-      "amount": 1,
-      "total": 26990000,
-      "day": "2022-08-06T03:28:37.582Z",
-      "name": "hoang viet",
-      "id": 36
     }
   ],
   "comments": [
     {
-      "rating": 3,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
+      "rating": 5,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
       "ad": 2615,
-      "title": "sản phẩm khá là tệ",
-      "date": "4-8-2022",
+      "image": "https://media3.scdn.vn/img2/2018/8_5/G8MtY5_simg_de2fe0_250x250_maxb.jpg",
+      "title": "sản phẩm tốt",
+      "date": "6-8-2022",
       "id": 1
     },
     {
       "rating": 5,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": 2615,
-      "title": "sản phẩm tốt",
-      "date": "4-8-2022",
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 55464651244532530,
+      "image": "https://media3.scdn.vn/img4/2020/04_24/47dxwigPtC2OBYiKb6cl_simg_de2fe0_250x250_maxb.jpg",
+      "title": "sản phảm cũng ngon đó",
+      "date": "6-8-2022",
       "id": 2
     },
     {
       "rating": 5,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": 2615,
-      "title": "sản phẩm cực kì kém",
-      "date": "4-8-2022",
+      "avatar": "https://images.unsplash.com/photo-1628527812000-12c0c51d7def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=325&q=80",
+      "nickname": "shiba Trịnh Nguyện",
+      "ad": 844635133218648400,
+      "image": "https://media3.scdn.vn/img3/2019/5_10/N1n6Aq_simg_de2fe0_250x250_maxb.jpg",
+      "title": "sản phẩm tốt",
+      "date": "6-8-2022",
       "id": 3
     },
     {
-      "rating": 5,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": "844635133218648453",
-      "title": "sản phẩm chất lượng",
-      "date": "4-8-2022",
+      "rating": 2,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 654684321848,
+      "image": "https://media3.scdn.vn/img3/2019/3_15/I8C519_simg_de2fe0_250x250_maxb.jpg",
+      "title": "121",
+      "date": "6-8-2022",
       "id": 4
     },
     {
-      "rating": 1,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": "844635133218648453",
-      "title": "sản phẩm dỏm",
-      "date": "4-8-2022",
+      "rating": 4,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 654684321848,
+      "image": "https://media3.scdn.vn/img3/2019/3_15/I8C519_simg_de2fe0_250x250_maxb.jpg",
+      "title": "dsa",
+      "date": "6-8-2022",
       "id": 5
     },
     {
-      "rating": 5,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": "8798789793256",
-      "title": "sản phẩm chất lượng",
-      "date": "4-8-2022",
-      "id": 6
-    },
-    {
-      "rating": 1,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": "8798789793256",
-      "title": "sảm  phẩm kém",
-      "date": "4-8-2022",
-      "id": 7
-    },
-    {
-      "rating": 5,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": "654684321848",
-      "title": "sản phẩm chất lượng",
-      "date": "4-8-2022",
+      "rating": 4,
+      "avatar": "",
+      "nickname": "tramyeudau.sakura",
+      "ad": 654684321848,
+      "image": "https://media3.scdn.vn/img3/2019/3_15/I8C519_simg_de2fe0_250x250_maxb.jpg",
+      "title": "dsadsa",
+      "date": "6-8-2022",
       "id": 8
-    },
-    {
-      "rating": 1,
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "nickname": "teonana123.belo",
-      "ad": "654684321848",
-      "title": "sản phẩm kém",
-      "date": "4-8-2022",
-      "id": 9
-    },
-    {
-      "rating": 5,
-      "nickname": "hoang viet",
-      "ad": 2625,
-      "title": "dsa",
-      "date": "5-8-2022",
-      "id": 10
-    },
-    {
-      "rating": 5,
-      "nickname": "hoang viet",
-      "ad": 2628,
-      "title": "ewqewfdsfds",
-      "date": "5-8-2022",
-      "id": 11
-    },
-    {
-      "rating": 5,
-      "nickname": "hoang viet",
-      "ad": 2617,
-      "title": "dsa",
-      "date": "5-8-2022",
-      "id": 12
-    },
-    {
-      "rating": 5,
-      "nickname": "hoang viet",
-      "ad": 2617,
-      "title": "dsa",
-      "date": "5-8-2022",
-      "id": 13
-    },
-    {
-      "rating": 5,
-      "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      "nickname": "teonana123.belo",
-      "ad": "431535135135135315436",
-      "title": "sản phẩm ổn",
-      "date": "5-8-2022",
-      "id": 14
     }
   ]
 }

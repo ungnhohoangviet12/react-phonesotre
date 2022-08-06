@@ -64,6 +64,14 @@ export default function Admin() {
 
                         },
                         {
+                            key: '5',
+                            icon: <BorderOuterOutlined />,
+                            label: (
+                                <Link to='/admin/comments' >Bình luận</Link>
+                            ),
+
+                        },
+                        {
                             key: '6',
                             label: (
                                 < Button onClick={handlelogout}>Đăng xuất</Button>

@@ -22,6 +22,7 @@ import { INFO_USER_KEY } from './constants/constants';
 import { actLogin } from './redux/actions/authAction';
 import Profile from './pages/Profile/Profile';
 import ViewOrders from './layouts/Admin/Orders/ViewOrders/ViewOrders';
+import ListComments from './layouts/Admin/Comments/ListComments/ListComments';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path='users/view/:id' element={<ViewUser />} />
           <Route path='orders/view/:id' element={<ViewOrders />} />
           <Route path='orders' element={<ListOrders />} />
+          <Route path='comments' element={<ListComments />} />
           <Route path='dashboard' element={<DashBoard />} />
           <Route path='' element={<Navigate to="/admin/dashboard" replace={true} />} />
         </Route>

@@ -57,6 +57,7 @@ export default function ProductDetails() {
                     avatar: profile.avatar,
                     nickname: profile.nickname,
                     ad: product.id,
+                    image: product.image,
                     title: title,
                     date: date,
                 }))
