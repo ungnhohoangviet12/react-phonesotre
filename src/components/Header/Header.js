@@ -37,7 +37,7 @@ export default function AppHeader() {
         <div>
             {showMenu && <div onClick={() => setShowMenu(!showMenu)} className='lammo'></div>}
             {showMenu && <ul className='menu__moblie'>
-                <i onClick={() => setShowMenu(!showMenu)} class="fa-solid fa-xmark"></i>
+                <i onClick={() => setShowMenu(!showMenu)} className="fa-solid fa-xmark"></i>
                 <li><Link to='/' >Trang chủ</Link></li>
                 <li><Link to='/product' >Sản phẩm</Link></li>
                 <li className='cart'>
@@ -50,7 +50,7 @@ export default function AppHeader() {
 
                 <div className="header">
                     <div className='nav-mobile' >
-                        <i onClick={() => setShowMenu(!showMenu)} class="fa-solid fa-bars"></i>
+                        <i onClick={() => setShowMenu(!showMenu)} className="fa-solid fa-bars"></i>
                     </div>
                     <div className="logo" >
                         <h1 className='title-header'>Shop store</h1>

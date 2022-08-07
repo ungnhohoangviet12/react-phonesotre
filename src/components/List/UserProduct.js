@@ -28,7 +28,6 @@ export default function UserProduct() {
             maxIndex: 0
         }
     );
-    console.log(sortProduct);
     useEffect(() => {
         dispatch(loadProducts())
         setStates({
