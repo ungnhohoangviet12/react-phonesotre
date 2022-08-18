@@ -53,7 +53,7 @@ export default function AppHeader() {
                         <i onClick={() => setShowMenu(!showMenu)} className="fa-solid fa-bars"></i>
                     </div>
                     <div className="logo" >
-                        <h1 className='title-header'>Shop store</h1>
+                        <h1 className='title-header'>Shop Phone</h1>
                     </div>
                     <input type="text" placeholder='Tìm kiếm...' onChange={handleSearch} />
                     {isLoggIn && <img onClick={handleProfile} src={profile.avatar || Images.emty} alt="" />}
