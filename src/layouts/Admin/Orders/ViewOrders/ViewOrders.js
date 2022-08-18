@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { getSingleOrder } from '../../../../redux/actions/orderAction';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Space, Table, Tag } from 'antd';
+import { Avatar, Col, Row, Table } from 'antd';
 
 export default function ViewOrders() {
     const { id } = useParams();
     const { order } = useSelector(state => state.order);
     const dispatch = useDispatch();
-
+    const { items } = order
+    const user = order.idUser
 
     useEffect(() => {
         dispatch(getSingleOrder(id))
@@ -16,80 +17,52 @@ export default function ViewOrders() {
 
     const columns = [
         {
-            title: 'Name',
-            dataIndex: 'name',
+            title: 'Tên sản phẩm',
             key: 'name',
-            render: (text) => <a>{text}</a>,
+            render: (record) => {
+                return (
+                    <li>{record.name}</li>
+                )
+            }
         },
         {
-            title: 'Age',
-            dataIndex: 'age',
-            key: 'age',
+            title: 'Hình ảnh',
+            key: 'image',
+            render: (record) => {
+                return (
+                    <img src={record.image} width={60} alt=''></img>
+                )
+            }
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
-            key: 'address',
+            title: 'Giá sản phẩm',
+            key: 'price',
+            render: (record) => {
+                return (
+                    <li>{record.price}</li>
+                )
+            }
         },
-        {
-            title: 'Tags',
-            key: 'tags',
-            dataIndex: 'tags',
-            render: (_, { tags }) => (
-                <>
-                    {tags.map((tag) => {
-                        let color = tag.length > 5 ? 'geekblue' : 'green';
 
-                        if (tag === 'loser') {
-                            color = 'volcano';
-                        }
 
-                        return (
-                            <Tag color={color} key={tag}>
-                                {tag.toUpperCase()}
-                            </Tag>
-                        );
-                    })}
-                </>
-            ),
-        },
-        {
-            title: 'Action',
-            key: 'action',
-            render: (_, record) => (
-                <Space size="middle">
-                    <a>Invite {record.name}</a>
-                    <a>Delete</a>
-                </Space>
-            ),
-        },
-    ];
-    const data = [
-        {
-            key: '1',
-            name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
-            tags: ['nice', 'developer'],
-        },
-        {
-            key: '2',
-            name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
-            tags: ['loser'],
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
     ];
 
 
     return (
-        <Table columns={columns} dataSource={data} />
+        <div>
+            <h1>Thông tin đơn hàng</h1>
+            <Table columns={columns} dataSource={items} />
+            <Row gutter={[16, 16]}>
+                <Col span={3}><h3>{order.amount} (sản phẩm)</h3></Col>
+                <Col span={10}><h1>Tổng tiền: {new Intl.NumberFormat('vi').format(order.total)}đ</h1></Col>
+                <Col span={8}><h3>Ngày mua hàng: {order.day}</h3></Col>
+            </Row>
+            <h1>Thông tin khách hàng</h1>
+            <Avatar src={user?.avatar}></Avatar>
+            <h4>{user?.nickname}</h4>
+            <h4>{user?.email}</h4>
+            <h4>{user?.city}</h4>
+            <h4>{user?.phone}</h4>
+        </div>
     )
 }
