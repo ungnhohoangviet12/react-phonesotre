@@ -121,7 +121,7 @@ export default function AppContent() {
                     dataSource={products.filter(item => {
                         if (search === "") {
                             return item
-                        } else if (item.name.toLowerCase().includes(search.toLowerCase())) {
+                        } else if (item.name.toLowerCase().includes(search.toLowerCase()) || JSON.stringify(item.price).includes(search)) {
                             return item
 
                         }
