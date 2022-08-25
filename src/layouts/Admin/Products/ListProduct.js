@@ -26,7 +26,6 @@ const ListProduct = () => {
     const columns = [
         {
             title: 'Tên',
-            dataIndex: 'name',
             key: 'name',
             render: (text, record, index) => {
                 return (

@@ -80,7 +80,6 @@ export default function AppContent() {
 
     const handleDetails = (id) => {
         navigate(`product/details/${id}`)
-
     }
 
     const handleToDetails = (item) => {
@@ -104,7 +103,7 @@ export default function AppContent() {
             </div>
             <div className="container-fluid">
                 <div className='content-title'>
-                    <span className='title'>shopphone</span>
+                    <span className='title'>phonestore</span>
                     <span> / Điện thoại - Máy tính bảng</span>
                 </div>
                 <h1>Sản phẩm bán chạy</h1>
