@@ -20,8 +20,9 @@ export default function UserProduct() {
     const [chuyenphat, setChuyenphat] = useState(false);
     const [ratings, setRatings] = useState(0);
     const [states, setStates] = useState(
+        // hoàng việt update
         {
-            data: [],
+
             totalPage: 0,
             current: 1,
             minIndex: 0,
