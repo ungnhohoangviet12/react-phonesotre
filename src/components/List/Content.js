@@ -106,7 +106,7 @@ export default function AppContent() {
                     <span className='title'>phonestore</span>
                     <span> / Điện thoại - Máy tính bảng</span>
                 </div>
-                <h1>Sản phẩm bán chạy</h1>
+                <h1>Sản phẩm yêu thích</h1>
                 <List
                     grid={{
                         gutter: [16, 16],
